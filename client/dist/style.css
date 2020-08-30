@@ -1,0 +1,567 @@
+body {
+  background-color: rgb(250, 242, 236);
+  width: 100vw;
+  height: 150vh;
+  /* overflow: hidden auto; */
+}
+
+#NavBar {
+  background-color: rgb(238, 222, 197);
+  margin-top: -10px;
+  margin-left: -10px;
+  width: 100vw;
+  height: 85px;
+  display: flex;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 2;
+}
+
+#search {
+  height: 30px;
+  width: 400px;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  border: 1px solid transparent;
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+  padding-left: 40px;
+}
+
+#logo {
+  background-image: url("./images/manshaa.png");
+  width: 100%;
+  height: 100%;
+  background-size: 75px 75px;
+  background-repeat: no-repeat;
+  left: 5%;
+  position: absolute;
+}
+
+#profileLogo {
+  background-image: url("./images/user.png");
+  width: 3%;
+  height: 50%;
+  position: absolute;
+  left: 85%;
+  top: 26%;
+  background-color: transparent;
+  border: solid 1px transparent;
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  outline: none;
+}
+#profileLogo:hover {
+  background-size: 40px 40px;
+  left: 84.9%;
+  top: 25%;
+}
+
+#shoppingLogo {
+  background-image: url("./images/bag.png");
+  width: 3%;
+  height: 50%;
+  position: absolute;
+  left: 90%;
+  top: 26%;
+  background-color: transparent;
+  border: solid 1px transparent;
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  outline: none;
+}
+#shoppingLogo:hover {
+  background-size: 40px 40px;
+  left: 89.9%;
+  top: 25%;
+}
+
+#searchLogo {
+  background-image: url("./images/search.png");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 40.5%;
+  top: 35%;
+  background-color: transparent;
+  border: solid 1px transparent;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  outline: none;
+}
+
+#men {
+  position: absolute;
+  left: 13%;
+  top: 38%;
+  font-size: 15px;
+  background-color: transparent;
+  border: solid 1px transparent;
+  outline: none;
+}
+#men:hover {
+  font-size: 20px;
+  left: 9.5%;
+  top: 38%;
+}
+
+#women {
+  position: absolute;
+  left: 20%;
+  top: 37%;
+  font-size: 15px;
+  background-color: transparent;
+  border: solid 1px transparent;
+  outline: none;
+}
+#women:hover {
+  font-size: 20px;
+  left: 16%;
+  top: 38%;
+}
+
+#jewelry {
+  position: absolute;
+  left: 28%;
+  top: 36%;
+  font-size: 15px;
+  background-color: transparent;
+  border: solid 1px transparent;
+  outline: none;
+}
+#jewelry:hover {
+  font-size: 20px;
+  left: 24.5%;
+  top: 38%;
+}
+
+#menSelectionBox {
+  height: 110px;
+  width: 130px;
+  outline: none;
+  background-color: rgb(238, 222, 197, .8);
+}
+#menSelection {
+  background-color: transparent;
+  border: solid 1px transparent;
+  font-size: 20px;
+  margin-top: 10px;
+  outline: none;
+}
+
+#womenSelectionBox {
+  height: 200px;
+  width: 170px;
+  outline: none;
+  background-color: rgb(238, 222, 197, .8);
+}
+#womenSelection {
+  background-color: transparent;
+  border: solid 1px transparent;
+  font-size: 20px;
+  margin-top: 10px;
+  outline: none;
+}
+
+#jewelrySelectionBox {
+  height: 325px;
+  width: 170px;
+  outline: none;
+  background-color: rgb(238, 222, 197, .8);
+}
+#jewelrySelection {
+  background-color: transparent;
+  border: solid 1px transparent;
+  font-size: 20px;
+  margin-top: 10px;
+  outline: none;
+}
+
+#slide {
+  background-image: url("https://rb.gy/oixi4f");
+  background-size: 101.5% 375px;
+  min-width: 102.4%;
+  height: 375px;
+  margin-top: 40px;
+  margin-left: -10px;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
+  transition: 1s;
+}
+
+#slide2 {
+  background-image: url("https://rb.gy/oixi4f");
+  background-size: 50% 350px;
+  min-width: 100%;
+  min-height: 20%;
+  height: 375px;
+  top: 160vh;
+  left: 25vw;
+  padding: 20px;
+  transition: 1s;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#banner {
+  display: flex;
+  width: 100vw;
+  top: 20%;
+  position: absolute;
+  z-index: 1;
+  /* box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6); */
+}
+
+#leftButton {
+  position: absolute;
+  background-image: url("./images/arrow.png");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  height: 35px;
+  width: 35px;
+  top: 50%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  opacity: 0.5;
+}
+
+#leftButton2 {
+  position: absolute;
+  background-image: url("./images/arrow.png");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  height: 35px;
+  width: 35px;
+  top: 180%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  opacity: 0.5;
+}
+
+#rightButton {
+  position: absolute;
+  background-image: url("./images/arrow.png");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  height: 35px;
+  width: 35px;
+  top: 52%;
+  left: 97%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  opacity: 0.5;
+}
+
+#rightButton2 {
+  position: absolute;
+  background-image: url("./images/arrow.png");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  height: 35px;
+  width: 35px;
+  top: 182%;
+  left: 97%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  opacity: 0.5;
+}
+
+#mensPage {
+  position: fixed;
+  top: 400px;
+}
+
+#types {
+  position: absolute;
+  top: 90%;
+  left: 0%;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+}
+
+#leftBox {
+  position: relative;
+  width: 23vw;
+  height: 50vh;
+  left: 7.9%;
+  background-image: url("https://rb.gy/d7o7lq");
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.7);
+}
+
+#middleBox {
+  position: relative;
+  width: 23vw;
+  height: 50vh;
+  left: 15.8%;
+  background-image: url("https://rb.gy/gzcfr4");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 23vw 65vh;
+  background-position: center;
+  box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.5);
+}
+
+#rightBox {
+  position: relative;
+  width: 23vw;
+  height: 50vh;
+  left: 23.7%;
+  background-image: url("https://rb.gy/tn7d3v");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 23vw 65vh;
+  background-position: center;
+  box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.7);
+}
+
+#styles {
+  position: relative;
+  top: 65vh;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  text-align: center;
+  color: gray;
+}
+
+#yourOwn {
+  display: flex;
+  position: relative;
+  top: 123vh;
+}
+
+#traditional {
+  position: absolute;
+  top: 20vh;
+  left: 14.4%;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  color: gray;
+}
+
+#fusion {
+  position: absolute;
+  left: 47%;
+  top: 20vh;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  color: gray;
+}
+
+#western {
+  position: absolute;
+  left: 77.5%;
+  top: 20vh;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  color: gray;
+}
+
+#reviewTitle {
+  position: relative;
+  top: 130vh;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  text-align: center;
+  color: gray;
+}
+
+#reviews {
+  display: flex;
+}
+
+#footer {
+  background-color: rgb(238, 222, 197);
+  top: 220vh;
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  margin-left: -10px;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.6);
+}
+
+#footer2 {
+  background-color: rgb(238, 222, 197);
+  top: 600vh;
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  margin-left: -10px;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.6);
+}
+
+#facebookBox {
+  background-image: url("./images/facebook.png");
+  width: 7%;
+  height: 32%;
+  position: absolute;
+  left: 55%;
+  top: 35%;
+  background-color: transparent;
+  border: solid 1px transparent;
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  outline: none;
+}
+
+#instagramBox {
+  background-image: url("./images/instagram.png");
+  width: 7%;
+  height: 32%;
+  position: absolute;
+  left: 73%;
+  top: 35%;
+  background-color: transparent;
+  border: solid 1px transparent;
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  outline: none;
+}
+
+#mailBox {
+  background-image: url("./images/mail.png");
+  width: 7%;
+  height: 32%;
+  position: absolute;
+  left: 20%;
+  top: 35%;
+  background-color: transparent;
+  border: solid 1px transparent;
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  outline: none;
+}
+
+#phoneBox {
+  background-image: url("./images/phone.png");
+  width: 7%;
+  height: 32%;
+  position: absolute;
+  left: 38%;
+  top: 35%;
+  background-color: transparent;
+  border: solid 1px transparent;
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  outline: none;
+}
+
+#links {
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  color: gray;
+  font-size: 35px;
+  position: absolute;
+  left: 65%;
+}
+
+#contacts {
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  color: gray;
+  font-size: 35px;
+  position: absolute;
+  left: 25%;
+}
+
+#email {
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  color: gray;
+  font-size: 15px;
+  position: absolute;
+  left: 18.7%;
+  top: 65%;
+  height: 3vh;
+}
+
+#phone {
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  color: gray;
+  font-size: 15px;
+  position: absolute;
+  left: 37%;
+  top: 65%;
+  height: 3vh;
+}
+
+#mensPage {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  top: 22vh;
+  left: 8.2vw;
+  width: 100vw;
+  height: 200vh;
+  z-index: 1;
+}
+
+#productImage {
+  width: 20vw;
+  height: 50vh;
+  padding-right: 140px;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  position: relative;
+}
+
+#productContainer {
+  position: relative;
+}
+
+#page1 {
+  position: absolute;
+  left: 84vw;
+  top: 590vh;
+  font-weight: normal;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  outline: none;
+}
+#page1:hover {
+  font-weight: bold;
+}
+
+#page2 {
+  position: absolute;
+  left: 87vw;
+  top: 590vh;
+  font-weight: normal;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  outline: none;
+}
+#page2:hover {
+  font-weight: bold;
+}
+
+#page3 {
+  position: absolute;
+  left: 90vw;
+  top: 590vh;
+  font-weight: normal;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  outline: none;
+}
+#page3:hover {
+  font-weight: bold;
+}
