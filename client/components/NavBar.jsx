@@ -65,7 +65,7 @@ class NavBar extends React.Component {
       if(this.state.menDrop === false && this.state.womenDrop === false && this.state.jewelryDrop === false) {
           return (
             <div id='NavBar'>
-                <div id='logo'></div>
+                <button id='logo' name='logo' onClick={(e) => this.props.change(e)}></button>
                 <button type='button' id='men' onMouseEnter={this.dropMen} onMouseLeave={this.liftMen}>MEN</button>
                 <button type='button' id='women' onMouseEnter={this.dropWomen} onMouseLeave={this.liftWomen}>WOMEN</button>
                 <button type='button' id='jewelry' onMouseEnter={this.dropJewelry} onMouseLeave={this.liftJewelry}>JEWELRY</button>
@@ -80,14 +80,13 @@ class NavBar extends React.Component {
       if(this.state.menDrop === true) {
         return (
             <div id='NavBar'>
-                <div id='logo'>
-                </div>
+                <button id='logo' name='logo' onClick={(e) => this.props.change(e)}></button>
                 <button type='button' name ='men' id='men' onMouseEnter={this.dropMen} onMouseLeave={this.liftMen} onClick={(e) => this.props.change(e)}>
                     MEN
                     <div id='menSelectionBox'>
                         <button type='button' name='sherwani' id='menSelection' onClick={(e) => this.props.change(e)}>SHERWANI</button>
-                        <button type='button' id='menSelection'>SHOES</button>
-                        <button type='button' id='menSelection'>KURTAS</button>
+                        <button type='button' name='shoes' id='menSelection' onClick={(e) => this.props.change(e)}>SHOES</button>
+                        <button type='button' name='kurtas' id='menSelection' onClick={(e) => this.props.change(e)}>KURTAS</button>
                     </div>
                 </button>
                 <button type='button' id='women'>WOMEN</button>
@@ -103,13 +102,12 @@ class NavBar extends React.Component {
       if(this.state.womenDrop === true) {
         return (
           <div id='NavBar'>
-              <div id='logo'>
-              </div>
+              <button id='logo' name='logo' onClick={(e) => this.props.change(e)}></button>
               <button type='button' id='men' onMouseEnter={this.dropMen} onMouseLeave={this.liftMen}>MEN</button>
               <button type='button' id='women' onMouseEnter={this.dropWomen} onMouseLeave={this.liftWomen}>
                   WOMEN
                   <div id='womenSelectionBox'>
-                        <button type='button' id='womenSelection'>BRIDAL</button>
+                        <button type='button' name='bridal' id='womenSelection' onClick={(e) => this.props.change(e)}>BRIDAL</button>
                         <button type='button' id='womenSelection'>SEMI FORMALS</button>
                         <button type='button' id='womenSelection'>FORMALS</button>
                         <button type='button' id='womenSelection'>BRIDESMAIDS</button>
@@ -128,8 +126,7 @@ class NavBar extends React.Component {
     if(this.state.jewelryDrop === true) {
         return (
           <div id='NavBar'>
-              <div id='logo'>
-              </div>
+              <button id='logo' name='logo' onClick={(e) => this.props.change(e)}></button>
               <button type='button' id='men' onMouseEnter={this.dropMen} onMouseLeave={this.liftMen}>MEN</button>
               <button type='button' id='women' onMouseEnter={this.dropWomen} onMouseLeave={this.liftWomen}>WOMEN</button>
               <button type='button' id='jewelry' onMouseEnter={this.dropJewelry} onMouseLeave={this.liftJewelry}>
@@ -151,15 +148,6 @@ class NavBar extends React.Component {
               <button type='button' id='shoppingLogo'></button>
           </div>
         );
-    }
-
-    if(this.state.mensPage === true) {
-      return(
-        // <BrowserRouter>
-        //   <Route path="/men" component={MensPage}/>
-        // </BrowserRouter>
-        <div>Hello</div>
-      );
     }
   }
 }
