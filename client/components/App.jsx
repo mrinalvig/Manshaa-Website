@@ -8,6 +8,7 @@ import Sherwani from './Sherwani.jsx';
 import Shoes from './Shoes.jsx';
 import Kurtas from './Kurtas.jsx';
 import Bridal from './BridalPage.jsx';
+import CurrentProduct from './CurrentProduct.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +18,9 @@ class App extends React.Component {
       sherwaniPage: false,
       shoesPage: false,
       kurtasPage: false,
-      bridalPage: false
+      bridalPage: false,
+      currentPage: false,
+      link: ""
     };
     this.changePage = this.changePage.bind(this);
   }
@@ -29,7 +32,8 @@ class App extends React.Component {
         sherwaniPage: false,
         shoesPage: false,
         kurtasPage: false,
-        bridalPage: false
+        bridalPage: false,
+        currentPage: false
       })
     }
 
@@ -39,7 +43,8 @@ class App extends React.Component {
         mensPage: false,
         shoesPage: false,
         kurtasPage: false,
-        bridalPage: false
+        bridalPage: false,
+        currentPage: false
       })
     }
 
@@ -49,7 +54,8 @@ class App extends React.Component {
         mensPage: false,
         shoesPage: false,
         kurtasPage: false,
-        bridalPage: false
+        bridalPage: false,
+        currentPage: false
       })
     }
 
@@ -59,7 +65,8 @@ class App extends React.Component {
         mensPage: false,
         shoesPage: true,
         kurtasPage: false,
-        bridalPage: false
+        bridalPage: false,
+        currentPage: false
       })
     }
 
@@ -69,7 +76,8 @@ class App extends React.Component {
         mensPage: false,
         shoesPage: false,
         kurtasPage: true,
-        bridalPage: false
+        bridalPage: false,
+        currentPage: false
       })
     }
 
@@ -79,13 +87,26 @@ class App extends React.Component {
         sherwaniPage: false,
         shoesPage: false,
         kurtasPage: false,
-        bridalPage: true
+        bridalPage: true,
+        currentPage: false
+      })
+    }
+
+    if(e.target.name === 'currentPage') {
+      this.setState ({
+        mensPage: false,
+        sherwaniPage: false,
+        shoesPage: false,
+        kurtasPage: false,
+        bridalPage: false,
+        currentPage: true,
+        link: e.target.src
       })
     }
   }
 
   render() {
-    if(this.state.mensPage === false && this.state.sherwaniPage === false && this.state.shoesPage === false && this.state.kurtasPage === false && this.state.bridalPage === false) {
+    if(this.state.mensPage === false && this.state.sherwaniPage === false && this.state.shoesPage === false && this.state.kurtasPage === false && this.state.bridalPage === false && this.state.currentPage === false) {
       return (
         <div id="window">
           <NavBar change={this.changePage}/>
@@ -139,7 +160,17 @@ class App extends React.Component {
       return(
         <div id="window">
           <NavBar change={this.changePage}/>
-          <Bridal />
+          <Bridal change={this.changePage}/>
+          <FooterTwo />
+        </div>
+      );
+    }
+
+    if(this.state.currentPage === true) {
+      return(
+        <div id="window">
+          <NavBar change={this.changePage}/>
+          <CurrentProduct link={this.state.link}/>
           <FooterTwo />
         </div>
       );
