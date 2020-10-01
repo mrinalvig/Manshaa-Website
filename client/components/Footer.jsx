@@ -22,8 +22,15 @@ class Footer extends React.Component {
   render() {
     return(
         <div id='footer'>
-            <h2 id='links'>Links</h2>
-            <h2 id='contacts'>Contact Info</h2>
+            {/* <h2 id='links'>Links</h2>
+            <h2 id='contacts'>Contact Info</h2> */}
+            <div id='circleProfile' />
+            <div id='tailorLogo' />
+            <h2 id='tailoring'>Custom Tailoring</h2>
+            <div id='shippingLogo' />
+            <h2 id='shipping'>World Wide Shipping</h2>
+            <div id='priceLogo' />
+            <h2 id='bestPrice'>Best Prices Guaranteed</h2>
             <button type='button' id='facebookBox' onClick={(e) => this.redirect(e)}/>
             <button type='button' id='instagramBox' onClick={(e) => this.redirect(e)}/>
             <button type='button' id='mailBox' />

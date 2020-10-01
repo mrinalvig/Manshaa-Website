@@ -7,6 +7,7 @@ import {
   Link,
   BrowserRouter
 } from "react-router-dom";
+import logIn from './LogIn.jsx';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class NavBar extends React.Component {
     this.state = {
         menDrop: false,
         womenDrop: false,
-        jewelryDrop: false,
+        jewelryDrop: false
     };
     this.dropMen = this.dropMen.bind(this);
     this.liftMen = this.liftMen.bind(this);
@@ -71,7 +72,7 @@ class NavBar extends React.Component {
                 <button type='button' id='jewelry' onMouseEnter={this.dropJewelry} onMouseLeave={this.liftJewelry}>JEWELRY</button>
                 <div id='searchLogo'></div>
                 <input type='text' id='search'></input>
-                <button type='button' id='profileLogo'></button>
+                <button type='button' name='logIn' id='profileLogo' onClick={(e) => this.props.change(e)}></button>
                 <button type='button' id='shoppingLogo'></button>
             </div>
           );

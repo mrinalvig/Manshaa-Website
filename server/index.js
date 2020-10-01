@@ -43,5 +43,26 @@ app.get('/jewelry', (req, res) => {
         }
     })
 })
+
+app.get('/userId', (req, res) => {
+    db.query('SELECT * FROM user', (err, result) => {
+        if(err) {
+            res.status(404).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
+app.post('/userId', (req, res) => {
+    db.query(`INSERT INTO user(username, password) VALUES ("${req.body.username}", "${req.body.password}")`, (err, result) => {
+        if(err) {
+            res.status(402).send(err);
+        } else{
+            res.status(202).send('ID Posted');
+        }
+
+    })
+})
 // eslint-disable-next-line no-console
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`));

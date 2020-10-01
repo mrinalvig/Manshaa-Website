@@ -21,7 +21,7 @@ class Footer extends React.Component {
 
   render() {
     return(
-      <div id='footer2'>
+      <div id='footer3'>
         {/* <h2 id='links'>Links</h2>
         <h2 id='contacts'>Contact Info</h2> */}
         <div id='circleProfile' />

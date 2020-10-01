@@ -2,6 +2,7 @@ body {
   background-color: rgb(250, 242, 236);
   width: 100vw;
   height: 150vh;
+  display: flexbox;
   /* overflow: hidden auto; */
 }
 
@@ -57,7 +58,7 @@ body {
 }
 #profileLogo:hover {
   background-size: 40px 40px;
-  left: 84.9%;
+  left: 84.85%;
   top: 25%;
 }
 
@@ -76,7 +77,7 @@ body {
 }
 #shoppingLogo:hover {
   background-size: 40px 40px;
-  left: 89.9%;
+  left: 89.85%;
   top: 25%;
 }
 
@@ -407,58 +408,86 @@ body {
   box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.6);
 }
 
+#footer3 {
+  background-color: rgb(238, 222, 197);
+  top: 115vh;
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  margin-left: -10px;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.6);
+}
+
 #facebookBox {
   background-image: url("./images/facebook.png");
-  width: 7%;
-  height: 32%;
+  width: 52px;
+  height: 52px;
   position: absolute;
-  left: 55%;
-  top: 35%;
+  left: 65%;
+  top: 67%;
   background-color: transparent;
   border: solid 1px transparent;
-  background-size: 100px 100px;
+  background-size: 50px 50px;
   background-repeat: no-repeat;
   outline: none;
+}
+#facebookBox:hover{
+  width: 56px;
+  height: 56px;
+  background-size: 54px 54px;
+  transition: .5s;
+  left: 64.8%;
+  top: 66%;
 }
 
 #instagramBox {
   background-image: url("./images/instagram.png");
-  width: 7%;
-  height: 32%;
+  width: 52px;
+  height: 52px;
   position: absolute;
   left: 73%;
-  top: 35%;
+  top:68%;
   background-color: transparent;
   border: solid 1px transparent;
-  background-size: 100px 100px;
+  background-size: 50px 50px;
   background-repeat: no-repeat;
   outline: none;
+}
+#instagramBox:hover{
+  width: 56px;
+  height: 56px;
+  background-size: 54px 54px;
+  transition: .5s;
+  top: 67%;
+  left: 72.8;
 }
 
 #mailBox {
   background-image: url("./images/mail.png");
-  width: 7%;
-  height: 32%;
+  width: 52px;
+  height: 52px;
   position: absolute;
-  left: 20%;
-  top: 35%;
+  left: 82%;
+  top: 67%;
   background-color: transparent;
   border: solid 1px transparent;
-  background-size: 100px 100px;
+  background-size: 50px 50px;
   background-repeat: no-repeat;
   outline: none;
 }
 
 #phoneBox {
   background-image: url("./images/phone.png");
-  width: 7%;
-  height: 32%;
+  width: 52px;
+  height: 52px;
   position: absolute;
-  left: 38%;
-  top: 35%;
+  left: 92.5%;
+  top: 67%;
   background-color: transparent;
   border: solid 1px transparent;
-  background-size: 100px 100px;
+  background-size: 50px 50px;
   background-repeat: no-repeat;
   outline: none;
 }
@@ -487,8 +516,8 @@ body {
   color: gray;
   font-size: 15px;
   position: absolute;
-  left: 18.7%;
-  top: 65%;
+  left: 79%;
+  top: 80%;
   height: 3vh;
 }
 
@@ -498,8 +527,8 @@ body {
   color: gray;
   font-size: 15px;
   position: absolute;
-  left: 37%;
-  top: 65%;
+  left: 90%;
+  top: 80%;
   height: 3vh;
 }
 
@@ -581,6 +610,7 @@ body {
   height: 65vh;
   position: relative;
   box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.6);
+  z-index: 1;
 }
 
 #productTitle{
@@ -630,14 +660,15 @@ body {
 
 #sizeContainer {
   position: absolute;
-  width: 4vw;
+  width: 8vw;
   height: 5vh;
   background-color: rgb(238, 222, 197, 0.4);
-  left: 46.6vw;
+  left: 45vw;
   top: 50vh;
   text-align: center;
   display: flex;
   justify-content: center;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.4);
   align-items: center;
   border: .5px solid black;
   transition: .8s;
@@ -653,6 +684,7 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
   align-items: center;
   border: .5px solid black;
   transition: .6s;
@@ -675,16 +707,17 @@ body {
 
 #exit2 {
   background-image: url("./images/X.png");
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   background-size: 25px 25px;
   background-repeat: no-repeat;
   position: relative;
   background-color: transparent;
   border: none;
   outline: none;
-  top: -15vh;
-  left: -7vw;
+  top: -23vh;
+  left: -0.5vw;
+  z-index: 1;
 }
 
 #armInput {
@@ -697,31 +730,430 @@ body {
 
 #colorContainer {
   position: absolute;
-  width: 4vw;
+  width: 8vw;
   height: 5vh;
   background-color: rgb(238, 222, 197, 0.4);
-  left: 36.3vw;
+  left: 34vw;
   top: 50vh;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   border: .5px solid black;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.4);
   transition: .8s;
 }
 
 #colorContainer2 {
   position: absolute;
-  width: 18vw;
-  height: 38vh;
-  background-color: rgb(238, 222, 197, 0.08);
+  width: 23vw;
+  height: 48vh;
   left: 28vw;
   top: 50vh;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: .5px solid black;
   transition: .6s;
   overflow: hidden;
+}
+
+#colorSelector {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  left: -2vw;
+  top: -22vh;
+  z-index: 0;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
+}
+
+#default{
+  position: relative;
+  top: 20vh;
+  left: -7.2vw;
+  width: 20vw;
+  height: 5vh;
+  background-color: rgb(238, 222, 197, 0.4);
+  outline: none;
+}
+
+#cartButton{
+  position: relative;
+  top: 60vh;
+  left: -88.4vw;
+  height: 5vh;
+  width: 20vw;
+  transition: .6s;
+  border-radius: 10px;
+  border: none;
+  border: .5px solid black;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
+  outline: none;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  background-color: rgb(238, 222, 197, 0.4);
+}
+#cartButton:active {
+  box-shadow: none;
+  transition: .01s;
+}
+
+#cartButton2{
+  position: relative;
+  top: 105vh;
+  left: -88.4vw;
+  height: 5vh;
+  width: 20vw;
+  transition: .6s;
+  border-radius: 10px;
+  border: none;
+  border: .5px solid black;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
+  outline: none;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  background-color: rgb(238, 222, 197, 0.4);
+}
+#cartButton2:active {
+  box-shadow: none;
+  transition: .01s;
+}
+
+#selectedColor {
+  position: relative;
+  top: 8vh;
+  left: 2.2vw;
+  font-size: 18px;
+  width: 20vw;
+  height: 5vh;
+}
+
+#circleProfile{
+  position: absolute;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  left: 5%;
+  top: 10%;
+  background-image: url("https://i.ibb.co/sb7KpyP/Profile-Circle.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#tailorLogo {
+  position: absolute;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  left: 25%;
+  top: 10%;
+  background-image: url('./images/tailor.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* border: 3px solid black; */
+}
+
+#tailoring {
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  color: rgb(0, 0, 0, .7);
+  font-size: 25px;
+  position: absolute;
+  left: 31%;
+  top: 11%;
+  height: 3vh;
+}
+
+#shippingLogo {
+  position: absolute;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  left: 24%;
+  top: 42%;
+  background-image: url('./images/shipping.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#shipping{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  color: rgb(0, 0, 0, .7);
+  font-size: 25px;
+  position: absolute;
+  left: 31%;
+  top: 42%;
+  height: 3vh;
+}
+
+#priceLogo {
+  position: absolute;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  left: 24%;
+  top: 72%;
+  background-image: url('./images/price.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#bestPrice {
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  color: rgb(0, 0, 0, .7);
+  font-size: 25px;
+  position: absolute;
+  left: 31%;
+  top: 72%;
+  height: 3vh;
+}
+
+#imageZoom{
+  position: absolute;
+  z-index: 1;
+}
+
+#logInBox {
+  position: absolute;
+  width: 40vw;
+  height: 40vh;
+  left: 30.5%;
+  top: 35%;
+  background-color: rgb(238, 222, 197);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.6);
+  border: 1px solid black;
+  transition: .6s;
+}
+
+#signUpBox{
+  position: absolute;
+  width: 40vw;
+  height: 60vh;
+  left: 30.5%;
+  top: 35%;
+  background-color: rgb(238, 222, 197);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.6);
+  border: 1px solid black;
+  transition: .6s;
+}
+
+#logInSection{
+  position: relative;
+  top: -5vh;
+  width: 40vw;
+  height: 25vh;
+  background-color: rgb(255, 255, 255, .5);
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  transition: .6s;
+  overflow: hidden;
+}
+
+#signUpSection{
+  position: relative;
+  top: -5vh;
+  width: 40vw;
+  height: 45vh;
+  background-color: rgb(255, 255, 255, .5);
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  transition: .6s;
+  overflow: hidden;
+}
+
+#logInTitle{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  position: relative;
+  left: 40%;
+  top: -3vh;
+  transition: .6s;
+}
+
+#logInTitle2{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  position: relative;
+  left: 39%;
+  top: -3vh;
+  transition: .6s;
+}
+
+#signUp{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  position: relative;
+  left: 25%;
+  top: -5vh;
+  transition: .6s;
+}
+
+#signUp2{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  position: relative;
+  left: 26%;
+  top: -5vh;
+  transition: .6s;
+}
+
+#signUpButton{
+  background-color: transparent;
+  border: none;
+  color: blue;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  outline: none;
+  position: relative;
+  left: 71%;
+  top: -10vh;
+  transition: .6s;
+}
+#signUpButton:hover{
+  font-size: 25px;
+  top: -10.5vh;
+  left: 70%;
+}
+
+#signUpButton2{
+  background-color: transparent;
+  border: none;
+  color: blue;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  outline: none;
+  position: relative;
+  left: 53%;
+  top: -10vh;
+  transition: .6s;
+}
+#signUpButton2:hover{
+  font-size: 25px;
+  top: -10.5vh;
+  left: 52%;
+}
+
+#userName{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: relative;
+  left: 21%;
+  top: 4vh;
+  font-size: 15px;
+  transition: .6s;
+}
+
+#userName2{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: relative;
+  left: 21%;
+  top: 7vh;
+  font-size: 15px;
+  transition: .6s;
+}
+
+#signUpError{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: relative;
+  left: 21%;
+  top: 1.5vh;
+  margin-bottom: -4vh;
+  font-size: 15px;
+  transition: .6s;
+  color: red;
+}
+
+#username{
+  position: relative;
+  left: 37%;
+  top: 0vh;
+  transition: .6s;
+}
+
+#username2{
+  position: relative;
+  left: 37%;
+  top: 3vh;
+  transition: .6s;
+}
+
+
+#passWord{
+  position: relative;
+  left: 21%;
+  top: 5vh;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  transition: .6s;
+}
+
+#passWord2{
+  position: relative;
+  left: 21%;
+  top: 10vh;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  transition: .6s;
+}
+
+#password{
+  position: relative;
+  left: 37%;
+  top: 1vh;
+  transition: .6s;
+}
+
+#password2{
+  position: relative;
+  left: 37%;
+  top: 6vh;
+  transition: .6s;
+}
+
+#loginButton{
+  position: relative;
+  left: 14.5%;
+  top: 7vh;
+  font-size: 16px;
+  width: 90px;
+  transition: .6s;
+}
+
+#loginButton2{
+  position: relative;
+  left: 14.5%;
+  top: 17vh;
+  font-size: 16px;
+  width: 90px;
+  transition: .6s;
+}
+
+#reenter{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: relative;
+  left: 9%;
+  top: 13.5vh;
+  font-size: 15px;
+  transition: .6s;
+}
+
+#reEnter{
+  position: relative;
+  left: 37%;
+  top: 9vh;
+  transition: .6s;
 }
