@@ -984,6 +984,26 @@ body {
   transition: .6s;
 }
 
+#successTitle{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  position: relative;
+  left: 37%;
+  top: -3vh;
+  transition: .6s;
+}
+
+#successMessage{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  font-size: 25px;
+  position: relative;
+  left: 17%;
+  top: 7vh;
+  transition: .6s;
+}
+
 #signUp{
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;

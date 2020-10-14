@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import NavBar from './NavBar.jsx';
 import Banner from './Banner.jsx';
 import MensPage from './MensPage.jsx';
@@ -23,9 +24,22 @@ class App extends React.Component {
       bridalPage: false,
       currentPage: false,
       logIn: false,
-      link: ""
+      link: "",
+      storedUsers: {},
+      loggedIn: false
     };
     this.changePage = this.changePage.bind(this);
+    this.currentUser = this.currentUser.bind(this);
+  }
+
+  componentDidMount() {
+    axios.get('/userId')
+    .then( result => {
+        this.setState ({
+            storedUsers: result.data
+        })
+        // console.log(this.state.storedUsers);
+    })
   }
 
   changePage(e) {
@@ -127,6 +141,10 @@ class App extends React.Component {
     }
   }
 
+  currentUser(id) {
+    console.log(id);
+  }
+
   render() {
     if(this.state.mensPage === false && this.state.sherwaniPage === false && this.state.shoesPage === false && this.state.kurtasPage === false && this.state.bridalPage === false && this.state.currentPage === false && this.state.logIn === false) {
       return (
@@ -202,7 +220,7 @@ class App extends React.Component {
       return(
         <div id="window">
           <NavBar change={this.changePage}/>
-          <LogIn />
+          <LogIn users={this.state.storedUsers} current={this.currentUser}/>
           <FooterThree />
         </div>
       );

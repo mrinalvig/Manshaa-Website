@@ -10,7 +10,9 @@ class LogIn extends React.Component {
         username: "",
         password: "",
         rePassword: "",
-        signUpError: ""
+        signUpError: "",
+        storedUsers: {},
+        signedIn: false
     };
     this.signUp = this.signUp.bind(this);
     this.enterUsername = this.enterUsername.bind(this);
@@ -75,7 +77,13 @@ class LogIn extends React.Component {
     }
     else if(this.state.username != "" && this.state.password != "" && this.state.rePassword != "" && this.state.password === this.state.rePassword) {
         this.setState({
-            signUpError: ""
+            signUpError: "",
+            signedIn: true,
+            signUp: false
+        })
+        axios.post('/userId', {
+            username: this.state.username,
+            password: this.state.password
         })
     }
   }
@@ -90,10 +98,26 @@ class LogIn extends React.Component {
             signUpError: ""
         })
     }
+
+    for(var i = 0; i < this.props.users.length; i++) {
+        if(this.props.users[i].username === this.state.username && this.props.users[i].password === this.state.password) {
+            this.setState({
+                signUpError: "",
+                signedIn: true,
+                signUp: false
+            })
+            this.props.current(i)
+        }
+        else{
+            this.setState({
+                signUpError: "* Your Username or Password is incorrect. Try again."
+            })
+        }
+    }
   }
 
   render() {
-      if(this.state.signUp === false) {
+      if(this.state.signUp === false && this.state.signedIn === false) {
           return (
               <div>
                   <div id='logInBox'>
@@ -111,7 +135,7 @@ class LogIn extends React.Component {
           );
       }
 
-      if(this.state.signUp === true) {
+      if(this.state.signUp === true && this.state.signedIn === false) {
         return (
             <div>
                 <div id='signUpBox'>
@@ -125,6 +149,19 @@ class LogIn extends React.Component {
                     </div>
                     <h2 id='signUp2'>Already a user?</h2>
                     <button id='signUpButton2' name='logIn' onClick={(e) => this.signUp(e)}>Log In!</button>
+                </div>
+            </div>
+        );
+      }
+
+      if(this.state.signUp === false && this.state.signedIn === true) {
+        return (
+            <div>
+                <div id='logInBox'>
+                    <h2 id='successTitle'>Success!</h2>
+                    <div id='logInSection'>
+                        <h2 id='successMessage'>You have successfully logged in!</h2>
+                    </div>
                 </div>
             </div>
         );
