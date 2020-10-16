@@ -2,6 +2,8 @@ import React from "react";
 import { SwatchesPicker } from 'react-color';
 import Magnifier from "react-magnifier";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import NavBar from './NavBar.jsx';
+import FooterThree from "./FooterThree.jsx";
 
 class CurentProduct extends React.Component {
   constructor(props) {
@@ -64,6 +66,8 @@ class CurentProduct extends React.Component {
   render() {
     if(this.state.size === false && this.state.color === false) {
       return(
+        <div>
+          <NavBar />
           <div id='currentProduct'>
               <div id='currentImage'>
                 <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
@@ -81,11 +85,15 @@ class CurentProduct extends React.Component {
               <button id='cartButton'>Add to Cart - ${this.state.price}</button>
               {/* <img id='sizeChart' src="https://i.ibb.co/nC0JMLd/measurement.png"></img> */}
           </div>
+          <FooterThree />
+        </div>
       );
     }
 
     if(this.state.size === true && this.state.color === false) {
       return(
+        <div>
+          <NavBar />
           <div id='currentProduct'>
               <div id='currentImage'>
                 <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
@@ -104,11 +112,15 @@ class CurentProduct extends React.Component {
               </div>
               <button id='cartButton2'>Add to Cart - ${this.state.price}</button>
           </div>
+          <FooterThree />
+        </div>
       );
     }
 
     if(this.state.color === true && this.state.size === false) {
       return(
+        <div>
+          <NavBar />
           <div id='currentProduct'>
               <div id='currentImage'>
                 <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
@@ -135,6 +147,8 @@ class CurentProduct extends React.Component {
               </div>
               <button id='cartButton2'>Add to Cart - ${this.state.price}</button>
           </div>
+          <FooterThree />
+        </div>
       );
     }
   }

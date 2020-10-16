@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import NavBar from './NavBar.jsx';
+import FooterThree from './FooterThree.jsx';
 
 class LogIn extends React.Component {
   constructor(props) {
@@ -85,6 +87,7 @@ class LogIn extends React.Component {
             username: this.state.username,
             password: this.state.password
         })
+        this.props.current(this.state.username);
     }
   }
 
@@ -101,12 +104,14 @@ class LogIn extends React.Component {
 
     for(var i = 0; i < this.props.users.length; i++) {
         if(this.props.users[i].username === this.state.username && this.props.users[i].password === this.state.password) {
-            this.setState({
+            this.setState(
+              {
                 signUpError: "",
                 signedIn: true,
                 signUp: false
-            })
-            this.props.current(i)
+              });
+            this.props.current(this.state.username);
+            // console.log(this.state.signedIn);
         }
         else{
             this.setState({
@@ -120,6 +125,7 @@ class LogIn extends React.Component {
       if(this.state.signUp === false && this.state.signedIn === false) {
           return (
               <div>
+                  <NavBar />
                   <div id='logInBox'>
                       <h2 id='logInTitle'>Log In</h2>
                       <div id='logInSection'>
@@ -131,6 +137,7 @@ class LogIn extends React.Component {
                       <h2 id='signUp'>Don't have an account yet? </h2>
                       <button id='signUpButton' name='signUp' onClick={(e) => this.signUp(e)}>Sign Up!</button>
                   </div>
+                  <FooterThree />
               </div>
           );
       }
@@ -138,6 +145,7 @@ class LogIn extends React.Component {
       if(this.state.signUp === true && this.state.signedIn === false) {
         return (
             <div>
+                <NavBar />
                 <div id='signUpBox'>
                     <h2 id='logInTitle2'>Sign Up</h2>
                     <div id='signUpSection'>
@@ -150,6 +158,7 @@ class LogIn extends React.Component {
                     <h2 id='signUp2'>Already a user?</h2>
                     <button id='signUpButton2' name='logIn' onClick={(e) => this.signUp(e)}>Log In!</button>
                 </div>
+                <FooterThree />
             </div>
         );
       }
@@ -157,12 +166,29 @@ class LogIn extends React.Component {
       if(this.state.signUp === false && this.state.signedIn === true) {
         return (
             <div>
+                <NavBar />
                 <div id='logInBox'>
                     <h2 id='successTitle'>Success!</h2>
                     <div id='logInSection'>
                         <h2 id='successMessage'>You have successfully logged in!</h2>
                     </div>
                 </div>
+                <FooterThree />
+            </div>
+        );
+      }
+
+      if(this.props.name != "") {
+        return (
+            <div>
+                <NavBar />
+                <div id='logInBox'>
+                    <h2 id='successTitle'>Success!</h2>
+                    <div id='logInSection'>
+                        <h2 id='successMessage'>You have successfully logged in!</h2>
+                    </div>
+                </div>
+                <FooterThree />
             </div>
         );
       }

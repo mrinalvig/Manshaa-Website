@@ -1,5 +1,7 @@
 import React from "react";
 import axios from 'axios';
+import NavBar from './NavBar.jsx';
+import FooterTwo from './FooterTwo.jsx';
 
 class MensPage extends React.Component {
   constructor(props) {
@@ -79,6 +81,7 @@ class MensPage extends React.Component {
       if(this.state.pageOne === true) {
           return (
               <div>
+                  <NavBar change={this.props.change} />
                   <div id='mensPage'>
                       {this.state.images.map((image, index) => (
                           <div id='productContainer'>
@@ -89,6 +92,7 @@ class MensPage extends React.Component {
                   <button id='page1' onClick={(e) => this.changePage(e)}>1</button>
                   <button id='page2' onClick={(e) => this.changePage(e)}>2</button>
                   <button id='page3' onClick={(e) => this.changePage(e)}>3</button>
+                  <FooterTwo />
               </div>
           );
       }
@@ -96,6 +100,7 @@ class MensPage extends React.Component {
       if(this.state.pageTwo === true) {
         return (
             <div>
+                <NavBar change={this.props.change} />
                 <div id='mensPage'>
                     {this.state.images2.map((image, index) => (
                         <div id='productContainer'>
@@ -106,6 +111,7 @@ class MensPage extends React.Component {
                 <button id='page1' onClick={(e) => this.changePage(e)}>1</button>
                 <button id='page2' onClick={(e) => this.changePage(e)}>2</button>
                 <button id='page3' onClick={(e) => this.changePage(e)}>3</button>
+                <FooterTwo />
             </div>
         );
       }
@@ -113,6 +119,7 @@ class MensPage extends React.Component {
       if(this.state.pageThree === true) {
         return (
             <div>
+                <NavBar change={this.props.change} />
                 <div id='mensPage'>
                     {this.state.images3.map((image, index) => (
                         <div id='productContainer'>
@@ -123,6 +130,7 @@ class MensPage extends React.Component {
                 <button id='page1' onClick={(e) => this.changePage(e)}>1</button>
                 <button id='page2' onClick={(e) => this.changePage(e)}>2</button>
                 <button id='page3' onClick={(e) => this.changePage(e)}>3</button>
+                <FooterTwo />
             </div>
         );
       }

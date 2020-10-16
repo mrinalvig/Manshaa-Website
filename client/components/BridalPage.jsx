@@ -1,6 +1,9 @@
 import React from "react";
 import axios from 'axios';
 import CurrentProduct from './CurrentProduct.jsx';
+import NavBar from './NavBar.jsx';
+import FooterTwo from './FooterTwo.jsx';
+import { Link } from 'react-router-dom';
 
 class BridalPage extends React.Component {
   constructor(props) {
@@ -26,13 +29,17 @@ class BridalPage extends React.Component {
   render() {
     return (
         <div>
+          <NavBar />
             <div id='mensPage'>
-                {this.state.images.map((image, index) => (
-                    <div id='productContainer'>
-                        <img id='productImage' name='currentPage' src={image} onClick={(e) => this.changePage(e)}></img>
-                    </div>
-                ))}
+              {this.state.images.map((image, index) => (
+                  <div id='productContainer'>
+                    <Link to='/product'>
+                      <img id='productImage' name='currentPage' src={image} onClick={(e) => this.changePage(e)} />
+                    </Link>
+                  </div>
+              ))}
             </div>
+          <FooterTwo />
         </div>
     );
   }

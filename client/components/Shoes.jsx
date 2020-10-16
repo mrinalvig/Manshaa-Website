@@ -1,4 +1,6 @@
 import React from "react";
+import NavBar from './NavBar.jsx';
+import FooterTwo from './FooterTwo.jsx';
 
 class Shoes extends React.Component {
   constructor(props) {
@@ -11,7 +13,8 @@ class Shoes extends React.Component {
   render() {
     return(
         <div>
-            Hello
+            <NavBar />
+            <FooterTwo />
         </div>
     );
   }

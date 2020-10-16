@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import NavBar from './NavBar.jsx';
+import Footer from './Footer.jsx';
 
 class Banner extends React.Component {
   constructor(props) {
@@ -70,6 +72,7 @@ class Banner extends React.Component {
   render() {
     return (
         <div>
+            <NavBar change={this.props.change} />
             <div id='banner'>
                 {
                     this.state.slideDeck.map((item, index) => (
@@ -104,6 +107,7 @@ class Banner extends React.Component {
                 <button type='button' id='leftButton2' onClick={this.goLeft}></button>
                 <button type='button' id='rightButton2' onClick={this.goRight}></button>
             </div>
+            <Footer />
         </div>
     );
   }

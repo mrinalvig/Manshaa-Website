@@ -12,24 +12,25 @@ import Kurtas from './Kurtas.jsx';
 import Bridal from './BridalPage.jsx';
 import CurrentProduct from './CurrentProduct.jsx';
 import LogIn from './LogIn.jsx';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  Switch
+} from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mensPage: false,
-      sherwaniPage: false,
-      shoesPage: false,
-      kurtasPage: false,
-      bridalPage: false,
-      currentPage: false,
-      logIn: false,
       link: "",
       storedUsers: {},
-      loggedIn: false
+      loggedIn: false,
+      username: ""
     };
-    this.changePage = this.changePage.bind(this);
     this.currentUser = this.currentUser.bind(this);
+    this.setLink = this.setLink.bind(this);
   }
 
   componentDidMount() {
@@ -42,189 +43,33 @@ class App extends React.Component {
     })
   }
 
-  changePage(e) {
-    if(e.target.name === 'men') {
-      this.setState ({
-        mensPage: true,
-        sherwaniPage: false,
-        shoesPage: false,
-        kurtasPage: false,
-        bridalPage: false,
-        currentPage: false,
-        logIn: false
-      })
-    }
-
-    if(e.target.name === 'sherwani') {
-      this.setState({
-        sherwaniPage: true,
-        mensPage: false,
-        shoesPage: false,
-        kurtasPage: false,
-        bridalPage: false,
-        currentPage: false,
-        logIn: false
-      })
-    }
-
-    if(e.target.name === 'logo') {
-      this.setState({
-        sherwaniPage: false,
-        mensPage: false,
-        shoesPage: false,
-        kurtasPage: false,
-        bridalPage: false,
-        currentPage: false,
-        logIn: false
-      })
-    }
-
-    if(e.target.name === 'shoes') {
-      this.setState({
-        sherwaniPage: false,
-        mensPage: false,
-        shoesPage: true,
-        kurtasPage: false,
-        bridalPage: false,
-        currentPage: false,
-        logIn: false
-      })
-    }
-
-    if(e.target.name === 'kurtas') {
-      this.setState({
-        sherwaniPage: false,
-        mensPage: false,
-        shoesPage: false,
-        kurtasPage: true,
-        bridalPage: false,
-        currentPage: false,
-        logIn: false
-      })
-    }
-
-    if(e.target.name === 'bridal') {
-      this.setState ({
-        mensPage: false,
-        sherwaniPage: false,
-        shoesPage: false,
-        kurtasPage: false,
-        bridalPage: true,
-        currentPage: false,
-        logIn: false
-      })
-    }
-
-    if(e.target.name === 'currentPage') {
-      this.setState ({
-        mensPage: false,
-        sherwaniPage: false,
-        shoesPage: false,
-        kurtasPage: false,
-        bridalPage: false,
-        currentPage: true,
-        link: e.target.src,
-        logIn: false
-      })
-    }
-
-    if(e.target.name === 'logIn') {
-      this.setState ({
-        mensPage: false,
-        sherwaniPage: false,
-        shoesPage: false,
-        kurtasPage: false,
-        bridalPage: false,
-        currentPage: false,
-        logIn: true
-      })
-    }
+  currentUser(name) {
+    this.setState({
+      username: name
+    })
   }
 
-  currentUser(id) {
-    console.log(id);
+  setLink(e) {
+    this.setState({
+      link: e.target.src
+    })
   }
 
   render() {
-    if(this.state.mensPage === false && this.state.sherwaniPage === false && this.state.shoesPage === false && this.state.kurtasPage === false && this.state.bridalPage === false && this.state.currentPage === false && this.state.logIn === false) {
       return (
-        <div id="window">
-          <NavBar change={this.changePage}/>
-          <Banner />
-          <Footer />
-        </div>
+        <Router>
+          <Switch>
+            <Route path="/logIn" component={() => <LogIn users={this.state.storedUsers} current={this.currentUser} name={this.state.username}/>} />
+            <Route path="/product" component={() => <CurrentProduct link={this.state.link}/>} />
+            <Route path="/kurtas" component={() => <Kurtas />} />
+            <Route path="/shoes" component={() => <Shoes />} />
+            <Route path="/sherwani" component={() => <Sherwani />} />
+            <Route path="/bridal" component={() => <Bridal change={(e) => this.setLink(e)}/>} />
+            <Route path="/men" component={() => <MensPage />} />
+            <Route exact path="/" component={() => <Banner />} />
+          </Switch>
+        </Router>
       );
-    }
-
-    if(this.state.mensPage === true) {
-      return (
-        <div id="window">
-          <NavBar change={this.changePage}/>
-          <MensPage />
-          <FooterTwo />
-        </div>
-      );
-    }
-
-    if(this.state.sherwaniPage === true) {
-      return(
-        <div id="window">
-          <NavBar change={this.changePage}/>
-          <Sherwani />
-          <FooterTwo />
-        </div>
-      );
-    }
-
-    if(this.state.shoesPage === true) {
-      return(
-        <div id="window">
-          <NavBar change={this.changePage}/>
-          <Shoes />
-          <FooterTwo />
-        </div>
-      );
-    }
-
-    if(this.state.kurtasPage === true) {
-      return(
-        <div id="window">
-          <NavBar change={this.changePage}/>
-          <Kurtas />
-          <FooterTwo />
-        </div>
-      );
-    }
-
-    if(this.state.bridalPage === true) {
-      return(
-        <div id="window">
-          <NavBar change={this.changePage}/>
-          <Bridal change={this.changePage}/>
-          <FooterTwo />
-        </div>
-      );
-    }
-
-    if(this.state.currentPage === true) {
-      return(
-        <div id="window">
-          <NavBar change={this.changePage}/>
-          <CurrentProduct link={this.state.link}/>
-          <Footer />
-        </div>
-      );
-    }
-
-    if(this.state.logIn === true) {
-      return(
-        <div id="window">
-          <NavBar change={this.changePage}/>
-          <LogIn users={this.state.storedUsers} current={this.currentUser}/>
-          <FooterThree />
-        </div>
-      );
-    }
   }
 }
 

@@ -552,6 +552,15 @@ body {
   position: relative;
 }
 
+/* #productImageButton {
+  width: 65%;
+  height: 88%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+} */
+
 #productContainer {
   position: relative;
 }
