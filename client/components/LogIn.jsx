@@ -104,14 +104,13 @@ class LogIn extends React.Component {
 
     for(var i = 0; i < this.props.users.length; i++) {
         if(this.props.users[i].username === this.state.username && this.props.users[i].password === this.state.password) {
-            this.setState(
-              {
+            this.props.current(this.state.username);
+            this.setState({
                 signUpError: "",
                 signedIn: true,
                 signUp: false
-              });
-            this.props.current(this.state.username);
-            // console.log(this.state.signedIn);
+            })
+            console.log(this.state.signedIn);
         }
         else{
             this.setState({
@@ -119,6 +118,16 @@ class LogIn extends React.Component {
             })
         }
     }
+  }
+
+  changeState() {
+    console.log('working?');
+    this.setState(
+      {
+        signUpError: "",
+        signedIn: true,
+        signUp: false
+      });
   }
 
   render() {
