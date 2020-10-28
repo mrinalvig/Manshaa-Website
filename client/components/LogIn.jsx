@@ -14,7 +14,8 @@ class LogIn extends React.Component {
         rePassword: "",
         signUpError: "",
         storedUsers: {},
-        signedIn: false
+        signedIn: false,
+        loggedInUser: this.props.name
     };
     this.signUp = this.signUp.bind(this);
     this.enterUsername = this.enterUsername.bind(this);
@@ -22,6 +23,11 @@ class LogIn extends React.Component {
     this.enterRePassword = this.enterRePassword.bind(this);
     this.signUpClick = this.signUpClick.bind(this);
     this.logInClick = this.logInClick.bind(this);
+    this.changeState = this.changeState.bind(this);
+  }
+
+  componentDidMount() {
+
   }
 
   signUp(e) {
@@ -104,13 +110,14 @@ class LogIn extends React.Component {
 
     for(var i = 0; i < this.props.users.length; i++) {
         if(this.props.users[i].username === this.state.username && this.props.users[i].password === this.state.password) {
-            this.props.current(this.state.username);
             this.setState({
                 signUpError: "",
                 signedIn: true,
                 signUp: false
-            })
-            console.log(this.state.signedIn);
+            });
+            //this.changeState();
+            //this.props.current(this.state.username);
+            //console.log(this.state.loggedInUser);
         }
         else{
             this.setState({
@@ -121,13 +128,8 @@ class LogIn extends React.Component {
   }
 
   changeState() {
-    console.log('working?');
-    this.setState(
-      {
-        signUpError: "",
-        signedIn: true,
-        signUp: false
-      });
+    this.props.current(this.state.username);
+    console.log(this.state.loggedInUser);
   }
 
   render() {
@@ -179,7 +181,7 @@ class LogIn extends React.Component {
                 <div id='logInBox'>
                     <h2 id='successTitle'>Success!</h2>
                     <div id='logInSection'>
-                        <h2 id='successMessage'>You have successfully logged in!</h2>
+                        <h2 id='successMessage'>You have successfully logged in! <br /> Welcome {this.state.username}!</h2>
                     </div>
                 </div>
                 <FooterThree />
@@ -187,14 +189,14 @@ class LogIn extends React.Component {
         );
       }
 
-      if(this.props.name != "") {
+      if(this.state.loggedInUser != "") {
         return (
             <div>
                 <NavBar />
                 <div id='logInBox'>
                     <h2 id='successTitle'>Success!</h2>
                     <div id='logInSection'>
-                        <h2 id='successMessage'>You have successfully logged in!</h2>
+                        <h2 id='successMessage'>You have successfully logged in! <br /> Welcome {this.state.username}!</h2>
                     </div>
                 </div>
                 <FooterThree />

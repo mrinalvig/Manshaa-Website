@@ -1008,9 +1008,9 @@ body {
   Helvetica, Arial, sans-serif;
   font-size: 25px;
   position: relative;
-  left: 17%;
   top: 7vh;
   transition: .6s;
+  text-align: center;
 }
 
 #signUp{
