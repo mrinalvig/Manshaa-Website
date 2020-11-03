@@ -9,13 +9,13 @@ class LogIn extends React.Component {
     this.state = {
         images: [],
         signUp: false,
+        signedInUser: "",
         username: "",
         password: "",
         rePassword: "",
         signUpError: "",
         storedUsers: {},
-        signedIn: false,
-        loggedInUser: this.props.name
+        signedIn: false
     };
     this.signUp = this.signUp.bind(this);
     this.enterUsername = this.enterUsername.bind(this);
@@ -23,11 +23,17 @@ class LogIn extends React.Component {
     this.enterRePassword = this.enterRePassword.bind(this);
     this.signUpClick = this.signUpClick.bind(this);
     this.logInClick = this.logInClick.bind(this);
+    this.logOutClick = this.logOutClick.bind(this);
     this.changeState = this.changeState.bind(this);
   }
 
   componentDidMount() {
-
+    axios.get('/logged')
+    .then( result => {
+        this.setState ({
+            signedInUser: result.data[0].username
+        })
+    })
   }
 
   signUp(e) {
@@ -87,11 +93,13 @@ class LogIn extends React.Component {
         this.setState({
             signUpError: "",
             signedIn: true,
-            signUp: false
+            signUp: false,
+            signedInUser: this.state.username
         })
         axios.post('/userId', {
             username: this.state.username,
-            password: this.state.password
+            password: this.state.password,
+            logged: "yes"
         })
         this.props.current(this.state.username);
     }
@@ -115,9 +123,10 @@ class LogIn extends React.Component {
                 signedIn: true,
                 signUp: false
             });
-            //this.changeState();
-            //this.props.current(this.state.username);
-            //console.log(this.state.loggedInUser);
+            axios.put('/userId', {
+                username: this.state.username,
+                logged: "yes"
+            })
         }
         else{
             this.setState({
@@ -127,13 +136,26 @@ class LogIn extends React.Component {
     }
   }
 
+  logOutClick() {
+    axios.put('/userId', {
+        username: this.state.signedInUser,
+        logged: "no"
+    })
+    .then( result => {
+        this.setState ({
+            signedInUser: "",
+            signedIn: false
+        })
+    })
+  }
+
   changeState() {
     this.props.current(this.state.username);
     console.log(this.state.loggedInUser);
   }
 
   render() {
-      if(this.state.signUp === false && this.state.signedIn === false) {
+      if(this.state.signedInUser === "" && this.state.signUp === false && this.state.signedIn === false) {
           return (
               <div>
                   <NavBar />
@@ -183,21 +205,23 @@ class LogIn extends React.Component {
                     <div id='logInSection'>
                         <h2 id='successMessage'>You have successfully logged in! <br /> Welcome {this.state.username}!</h2>
                     </div>
+                    <button id='signUpButton3' name='logOut' onClick={this.logOutClick}>Log Out!</button>
                 </div>
                 <FooterThree />
             </div>
         );
       }
 
-      if(this.state.loggedInUser != "") {
+      if(this.state.signedInUser != "" && this.state.signUp === false && this.state.signedIn === false) {
         return (
             <div>
                 <NavBar />
                 <div id='logInBox'>
                     <h2 id='successTitle'>Success!</h2>
                     <div id='logInSection'>
-                        <h2 id='successMessage'>You have successfully logged in! <br /> Welcome {this.state.username}!</h2>
+                        <h2 id='successMessage'>You are logged in! <br /> Welcome {this.state.signedInUser}!</h2>
                     </div>
+                    <button id='signUpButton3' name='logOut' onClick={this.logOutClick}>Log Out!</button>
                 </div>
                 <FooterThree />
             </div>

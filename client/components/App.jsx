@@ -41,6 +41,7 @@ class App extends React.Component {
         })
         // console.log(this.state.storedUsers);
     })
+    axios.put('/logOut');
   }
 
   currentUser(name) {
