@@ -278,8 +278,14 @@ body {
 
 #mensPage {
   position: fixed;
-  top: 400px;
-  transition: 3s;
+  top: 20vh;
+  opacity: 1;
+  animation: fade .7s linear;
+}
+
+@keyframes fade {
+  0% { opacity: 0; left:50vw; top:22vh;}
+  100% { opacity: 1; left:8vw; top:22vh;}
 }
 
 #types {
@@ -407,11 +413,12 @@ body {
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.4);
   position: absolute;
   box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.6);
+  transition: 1s;
 }
 
 #footer3 {
   background-color: rgb(238, 222, 197);
-  top: 115vh;
+  top: 125vh;
   width: 100vw;
   height: 40vh;
   display: flex;
@@ -419,6 +426,7 @@ body {
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.4);
   position: absolute;
   box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.6);
+  transition: 1s;
 }
 
 #facebookBox {
@@ -613,6 +621,13 @@ body {
   top: 20vh;
   left: 22vw;
   display: flex;
+  opacity: 1;
+  animation: fade2 .7s linear;
+}
+
+@keyframes fade2 {
+  0% { opacity: 0; left:60vw; top:20vh;}
+  100% { opacity: 1; left:22vw; top:20vh;}
 }
 
 #currentImage{
@@ -627,9 +642,9 @@ body {
   position: relative;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 35px;
+  font-size: 30px;
   left: 9.5vw;
-  width: 15vw;
+  width: 20vw;
   top: -4vh;
 }
 
@@ -637,7 +652,7 @@ body {
   width: 25vw;
   height: 10vh;
   position: relative;
-  left: -11.1vw;
+  left: -14.6vw;
   top: 3vh;
 }
 
@@ -645,7 +660,7 @@ body {
   width: 25vw;
   height: 10vh;
   position: relative;
-  left: -66.1vw;
+  left: -69.6vw;
   top: 36vh;
 }
 
@@ -653,7 +668,7 @@ body {
   position: relative;
   top: 12vh;
   width: 30vw;
-  left: -38.5vw;
+  left: -42vw;
   text-align: center;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
@@ -673,7 +688,7 @@ body {
   width: 8vw;
   height: 5vh;
   background-color: rgb(238, 222, 197, 0.4);
-  left: 45vw;
+  left: 47vw;
   top: 50vh;
   text-align: center;
   display: flex;
@@ -689,7 +704,7 @@ body {
   width: 18vw;
   height: 52vh;
   background-color: rgb(238, 222, 197, 0.08);
-  left: 44vw;
+  left: 46vw;
   top: 50vh;
   text-align: center;
   display: flex;
@@ -726,7 +741,7 @@ body {
   border: none;
   outline: none;
   top: -23vh;
-  left: -0.5vw;
+  left: 1.5vw;
   z-index: 1;
 }
 
@@ -734,7 +749,7 @@ body {
   width: 3vw;
   height: 2vh;
   position: relative;
-  left: -4vw;
+  left: -2vw;
   top: -15.5vh;
 }
 
@@ -743,7 +758,7 @@ body {
   width: 8vw;
   height: 5vh;
   background-color: rgb(238, 222, 197, 0.4);
-  left: 34vw;
+  left: 35vw;
   top: 50vh;
   text-align: center;
   display: flex;
@@ -758,7 +773,7 @@ body {
   position: absolute;
   width: 23vw;
   height: 48vh;
-  left: 28vw;
+  left: 30vw;
   top: 50vh;
   text-align: center;
   display: flex;
@@ -772,7 +787,7 @@ body {
   position: relative;
   width: 30px;
   height: 30px;
-  left: -2vw;
+  left: 0vw;
   top: -22vh;
   z-index: 0;
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
@@ -791,7 +806,7 @@ body {
 #cartButton{
   position: relative;
   top: 60vh;
-  left: -88.4vw;
+  left: -91.8vw;
   height: 5vh;
   width: 20vw;
   transition: .6s;
@@ -935,7 +950,12 @@ body {
   background-color: rgb(238, 222, 197);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.6);
   border: 1px solid black;
-  transition: 1s;
+  animation: fade3 .7s linear;
+}
+
+@keyframes fade3 {
+  0% { opacity: 0; left:100%; top:35%;}
+  100% { opacity: 1; left:30.5%; top:35%;}
 }
 
 #signUpBox{
@@ -1206,3 +1226,71 @@ body {
   top: 9vh;
   transition: .6s;
 }
+
+.switch-wrapper {
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
+}
+
+#shoppingLog {
+  position: absolute;
+  width: 40vw;
+  height: 40vh;
+  left: 30.5%;
+  top: 35%;
+  background-color: rgb(238, 222, 197);
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.6);
+  border: 1px solid black;
+  transition: 1s;
+  animation: fade4 .7s linear;
+}
+
+@keyframes fade4 {
+  0% { opacity: 0; left:100%; top:35%;}
+  100% { opacity: 1; left:30.5%; top:35%;}
+}
+
+#shoppingMessage {
+  position: relative;
+  top: 7vh;
+  width: 40vw;
+  height: 25vh;
+  background-color: rgb(255, 255, 255, .5);
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  transition: .6s;
+  overflow: hidden;
+}
+
+#shoppingLine {
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  text-align: center;
+  margin-top: 10vh;
+}
+
+#homePage {
+  animation: fade .7s linear;
+}
+
+@keyframes fade {
+  0% { opacity: 0; left:50vw; top:22vh;}
+  100% { opacity: 1; left:8vw; top:22vh;}
+}
+
+#shoppingTitle {
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: 13vh;
+  width: 100%;
+  text-align:center;
+  font-size: 40px;
+}
+
+/* #shoppingContainer {
+  text-align: center;
+} */

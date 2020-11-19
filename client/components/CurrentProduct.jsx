@@ -1,9 +1,11 @@
 import React from "react";
+import axios from "axios";
 import { SwatchesPicker } from 'react-color';
 import Magnifier from "react-magnifier";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './NavBar.jsx';
 import FooterThree from "./FooterThree.jsx";
+import FooterTwo from "./FooterTwo.jsx";
 
 class CurentProduct extends React.Component {
   constructor(props) {
@@ -13,7 +15,8 @@ class CurentProduct extends React.Component {
       color: false,
       price: Math.floor((Math.random() * 100) + 20),
       selectedColor: 'Default',
-      props: {width: 390, height: 515, offset: {horizontal: 70}, zoomWidth: 390, img: this.props.link}
+      props: {width: 390, height: 515, offset: {horizontal: 70}, zoomWidth: 390, img: this.props.link},
+      userInfo: []
     };
     this.expandSize = this.expandSize.bind(this);
     this.closeSize = this.closeSize.bind(this);
@@ -21,6 +24,16 @@ class CurentProduct extends React.Component {
     this.closeColor = this.closeColor.bind(this);
     this.colorSelect = this.colorSelect.bind(this);
     this.defaultColor = this.defaultColor.bind(this);
+    this.purchaseAlert = this.purchaseAlert.bind(this);
+  }
+
+  componentDidMount() {
+    axios.get('/loggedUser')
+    .then(result => {
+        this.setState ({
+            userInfo: result.data
+        })
+    })
   }
 
   expandColor() {
@@ -63,6 +76,12 @@ class CurentProduct extends React.Component {
     })
   }
 
+  purchaseAlert() {
+    if(this.state.userInfo.length === 0) {
+      window.alert("You must log in to add products to your shopping cart");
+    }
+  }
+
   render() {
     if(this.state.size === false && this.state.color === false) {
       return(
@@ -72,9 +91,9 @@ class CurentProduct extends React.Component {
               <div id='currentImage'>
                 <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
               </div>
-              <h2 id='productTitle'>Product Title</h2>
+              <h2 id='productTitle'>{this.props.product[0]}</h2>
               <img id='underline' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
-              <h3 id='description'>The bride wears a wedding sari or a lehenga according to the region. Red is considered to be the most auspicious color among Hindus. While the saree is preferred as the bridal dress in South India, West, East India, most brides of other parts of India prefer Lehenga, Gagra Choli and Odni as bridal dresses.</h3>
+              <h3 id='description'>{this.props.product[1]}</h3>
               <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
               <div id='sizeContainer' name='closed' onClick={this.expandSize}>
                 <h3>select size</h3>
@@ -82,7 +101,7 @@ class CurentProduct extends React.Component {
               <div id='colorContainer' name='closed' onClick={this.expandColor}>
                 <h3>select color</h3>
               </div>
-              <button id='cartButton'>Add to Cart - ${this.state.price}</button>
+              <button id='cartButton' onClick={this.purchaseAlert}>Add to Cart - ${this.props.product[2]}</button>
               {/* <img id='sizeChart' src="https://i.ibb.co/nC0JMLd/measurement.png"></img> */}
           </div>
           <FooterThree />
@@ -98,9 +117,9 @@ class CurentProduct extends React.Component {
               <div id='currentImage'>
                 <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
               </div>
-              <h2 id='productTitle'>Product Title</h2>
+              <h2 id='productTitle'>{this.props.product[0]}</h2>
               <img id='underline' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
-              <h3 id='description'>The bride wears a wedding sari or a lehenga according to the region. Red is considered to be the most auspicious color among Hindus. While the saree is preferred as the bridal dress in South India, West, East India, most brides of other parts of India prefer Lehenga, Gagra Choli and Odni as bridal dresses.</h3>
+              <h3 id='description'>{this.props.product[1]}</h3>
               <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
               <div id='sizeContainer2'>
                 <img id='sizeChart' src="https://i.ibb.co/nC0JMLd/measurement.png"></img>
@@ -110,7 +129,7 @@ class CurentProduct extends React.Component {
               <div id='colorContainer' name='closed' onClick={this.expandcolor}>
                 <h3>select color</h3>
               </div>
-              <button id='cartButton2'>Add to Cart - ${this.state.price}</button>
+              <button id='cartButton2' onClick={this.purchaseAlert}>Add to Cart - ${this.props.product[2]}</button>
           </div>
           <FooterThree />
         </div>
@@ -125,9 +144,9 @@ class CurentProduct extends React.Component {
               <div id='currentImage'>
                 <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
               </div>
-              <h2 id='productTitle'>Product Title</h2>
+              <h2 id='productTitle'>{this.props.product[0]}</h2>
               <img id='underline' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
-              <h3 id='description'>The bride wears a wedding sari or a lehenga according to the region. Red is considered to be the most auspicious color among Hindus. While the saree is preferred as the bridal dress in South India, West, East India, most brides of other parts of India prefer Lehenga, Gagra Choli and Odni as bridal dresses.</h3>
+              <h3 id='description'>{this.props.product[1]}</h3>
               <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
               <div id='sizeContainer' name='closed'>
                 <h3>select size</h3>
@@ -145,7 +164,7 @@ class CurentProduct extends React.Component {
                 </div>
                 <button id='default' onClick={this.defaultColor}>Default Color</button>
               </div>
-              <button id='cartButton2'>Add to Cart - ${this.state.price}</button>
+              <button id='cartButton2' onClick={this.purchaseAlert}>Add to Cart - ${this.props.product[2]}</button>
           </div>
           <FooterThree />
         </div>

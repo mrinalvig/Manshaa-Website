@@ -12,6 +12,7 @@ import Kurtas from './Kurtas.jsx';
 import Bridal from './BridalPage.jsx';
 import CurrentProduct from './CurrentProduct.jsx';
 import LogIn from './LogIn.jsx';
+import Shopping from './Shopping.jsx';
 import {
   BrowserRouter as Router,
   Route,
@@ -27,10 +28,12 @@ class App extends React.Component {
       link: "",
       storedUsers: {},
       loggedIn: false,
-      username: ""
+      username: "",
+      productInfo: []
     };
     this.currentUser = this.currentUser.bind(this);
     this.setLink = this.setLink.bind(this);
+    this.productContent = this.productContent.bind(this);
   }
 
   componentDidMount() {
@@ -56,18 +59,25 @@ class App extends React.Component {
     })
   }
 
+  productContent(array) {
+    this.setState({
+      productInfo: array
+    })
+  }
+
   render() {
       return (
         <Router>
           <Switch>
             <Route path="/logIn" component={() => <LogIn users={this.state.storedUsers} current={this.currentUser} name={this.state.username}/>} />
-            <Route path="/product" component={() => <CurrentProduct link={this.state.link}/>} />
+            <Route path="/product" component={() => <CurrentProduct product={this.state.productInfo} link={this.state.link}/>} />
             <Route path="/kurtas" component={() => <Kurtas />} />
             <Route path="/shoes" component={() => <Shoes />} />
             <Route path="/sherwani" component={() => <Sherwani />} />
-            <Route path="/bridal" component={() => <Bridal change={(e) => this.setLink(e)}/>} />
+            <Route path="/bridal" component={() => <Bridal change={(e) => this.setLink(e)} content={this.productContent}/>} />
             <Route path="/men" component={() => <MensPage />} />
             <Route exact path="/" component={() => <Banner />} />
+            <Route path="/shoppingCart" component={() => <Shopping />} />
           </Switch>
         </Router>
       );

@@ -80,7 +80,7 @@ class MensPage extends React.Component {
   render() {
       if(this.state.pageOne === true) {
           return (
-              <div>
+              <div id='mensTransition'>
                   <NavBar change={this.props.change} />
                   <div id='mensPage'>
                       {this.state.images.map((image, index) => (

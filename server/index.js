@@ -34,6 +34,26 @@ app.get('/women', (req, res) => {
     })
 })
 
+app.get('/bridal', (req, res) => {
+    db.query(`SELECT * FROM women WHERE category='bridal'`, (err, result) => {
+        if(err) {
+            res.status(405).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
+app.delete('/bridal', (req, res) => {
+    db.query(`DELETE FROM women WHERE category='bridal'`, (err, result) => {
+        if(err) {
+            res.status(405).send(err);
+        } else {
+            res.status(205).send(result);
+        }
+    })
+})
+
 app.get('/jewelry', (req, res) => {
     db.query(`SELECT * FROM jewelry`, (err, result) => {
         if(err) {
@@ -46,6 +66,16 @@ app.get('/jewelry', (req, res) => {
 
 app.get('/userId', (req, res) => {
     db.query('SELECT * FROM user', (err, result) => {
+        if(err) {
+            res.status(404).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
+app.get('/loggedUser', (req, res) => {
+    db.query(`SELECT * FROM user WHERE logged = "yes"`, (err, result) => {
         if(err) {
             res.status(404).send(err);
         } else {

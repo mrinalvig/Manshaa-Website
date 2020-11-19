@@ -76,7 +76,9 @@ class NavBar extends React.Component {
                 <Link to='/logIn'>
                   <button type='button' name='logIn' id='profileLogo' />
                 </Link>
-                <button type='button' id='shoppingLogo' />
+                <Link to='/shoppingCart'>
+                  <button type='button' id='shoppingLogo' />
+                </Link>
             </div>
           );
       }
