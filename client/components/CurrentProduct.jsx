@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './NavBar.jsx';
 import FooterThree from "./FooterThree.jsx";
 import FooterTwo from "./FooterTwo.jsx";
+import Picker from 'react-mobile-picker';
+
 
 class CurentProduct extends React.Component {
   constructor(props) {
@@ -16,7 +18,23 @@ class CurentProduct extends React.Component {
       price: Math.floor((Math.random() * 100) + 20),
       selectedColor: 'Default',
       props: {width: 390, height: 515, offset: {horizontal: 70}, zoomWidth: 390, img: this.props.link},
-      userInfo: []
+      userInfo: [],
+      shoulder: "",
+      armHole: "",
+      upperBust: "",
+      across: "",
+      bust: "",
+      underBust: "",
+      waist: "",
+      lowWaist: "",
+      hip: "",
+      thigh: "",
+      midThigh: "",
+      knee: "",
+      calf: "",
+      ankle: "",
+      measurements: [],
+      statement: "Please enter your measurements!"
     };
     this.expandSize = this.expandSize.bind(this);
     this.closeSize = this.closeSize.bind(this);
@@ -25,6 +43,21 @@ class CurentProduct extends React.Component {
     this.colorSelect = this.colorSelect.bind(this);
     this.defaultColor = this.defaultColor.bind(this);
     this.purchaseAlert = this.purchaseAlert.bind(this);
+    this.changeShoulder = this.changeShoulder.bind(this);
+    this.changeArmhole = this.changeArmhole.bind(this);
+    this.changeUpperBust = this.changeUpperBust.bind(this);
+    this.changeAcross = this.changeAcross.bind(this);
+    this.changeBust = this.changeBust.bind(this);
+    this.changeUnderBust = this.changeUnderBust.bind(this);
+    this.changeWaist = this.changeWaist.bind(this);
+    this.changeLowWaist = this.changeLowWaist.bind(this);
+    this.changeHip = this.changeHip.bind(this);
+    this.changeThigh = this.changeThigh.bind(this);
+    this.changeMidThigh = this.changeMidThigh.bind(this);
+    this.changeKnee = this.changeKnee.bind(this);
+    this.changeCalf = this.changeCalf.bind(this);
+    this.changeAnkle = this.changeAnkle.bind(this);
+    this.savingSize = this.savingSize.bind(this);
   }
 
   componentDidMount() {
@@ -82,6 +115,163 @@ class CurentProduct extends React.Component {
     }
   }
 
+  changeShoulder(e) {
+    this.setState({
+      shoulder: e.target.value
+    })
+  }
+
+  changeArmhole(e) {
+    this.setState({
+      armHole: e.target.value
+    })
+  }
+
+  changeUpperBust(e) {
+    this.setState({
+      upperBust: e.target.value
+    })
+  }
+
+  changeAcross(e) {
+    this.setState({
+      across: e.target.value
+    })
+  }
+
+  changeBust(e) {
+    this.setState({
+      bust: e.target.value
+    })
+  }
+
+  changeUnderBust(e) {
+    this.setState({
+      underBust: e.target.value
+    })
+  }
+
+  changeWaist(e) {
+    this.setState({
+      waist: e.target.value
+    })
+  }
+
+  changeLowWaist(e) {
+    this.setState({
+      lowWaist: e.target.value
+    })
+  }
+
+  changeHip(e) {
+    this.setState({
+      hip: e.target.value
+    })
+  }
+
+  changeThigh(e) {
+    this.setState({
+      thigh: e.target.value
+    })
+  }
+
+  changeMidThigh(e) {
+    this.setState({
+      midThigh: e.target.value
+    })
+  }
+
+  changeKnee(e) {
+    this.setState({
+      knee: e.target.value
+    })
+  }
+
+  changeCalf(e){
+    this.setState({
+      calf: e.target.value
+    })
+  }
+
+  changeAnkle(e) {
+    this.setState({
+      ankle: e.target.value
+    })
+  }
+
+  savingSize() {
+    let array = [];
+
+    if(isNaN(this.state.shoulder) === false && this.state.shoulder != "") {
+      array.push(this.state.shoulder);
+
+      if(isNaN(this.state.armHole) === false && this.state.armHole != "") {
+        array.push(this.state.armHole);
+
+        if(isNaN(this.state.upperBust) === false && this.state.upperBust != "") {
+          array.push(this.state.upperBust);
+
+          if(isNaN(this.state.across) === false && this.state.across != "") {
+            array.push(this.state.across);
+
+            if(isNaN(this.state.bust) === false && this.state.bust != "") {
+              array.push(this.state.bust);
+
+              if(isNaN(this.state.underBust) === false && this.state.underBust != "") {
+                array.push(this.state.underBust);
+
+                if(isNaN(this.state.waist) === false && this.state.waist != "") {
+                  array.push(this.state.waist);
+
+                  if(isNaN(this.state.lowWaist) === false && this.state.lowWaist != "") {
+                    array.push(this.state.lowWaist);
+
+                    if(isNaN(this.state.hip) === false && this.state.hip != "") {
+                      array.push(this.state.hip);
+
+                      if(isNaN(this.state.thigh) === false && this.state.thigh != "") {
+                        array.push(this.state.thigh);
+
+                        if(isNaN(this.state.midThigh) === false && this.state.midThigh != "") {
+                          array.push(this.state.midThigh);
+
+                          if(isNaN(this.state.knee) === false && this.state.knee != "") {
+                            array.push(this.state.knee);
+
+                            if(isNaN(this.state.calf) === false && this.state.calf != "") {
+                              array.push(this.state.calf);
+
+                              if(isNaN(this.state.ankle) === false && this.state.ankle != "") {
+                                array.push(this.state.ankle);
+                                this.setState({
+                                  measurements: array,
+                                  size: false,
+                                  color: false
+                                })
+
+                                window.alert("Your measurements have been saved!");
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    else{
+      window.alert("Not all measurements have been filled");
+    }
+
+
+  }
+
   render() {
     if(this.state.size === false && this.state.color === false) {
       return(
@@ -122,9 +312,26 @@ class CurentProduct extends React.Component {
               <h3 id='description'>{this.props.product[1]}</h3>
               <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
               <div id='sizeContainer2'>
-                <img id='sizeChart' src="https://i.ibb.co/nC0JMLd/measurement.png"></img>
+                <img id='sizeChart' src="https://rb.gy/pvf9n2"></img>
                 <button id='exit' name='open' onClick={this.closeSize}></button>
-                <input id='armInput' type="text"></input>
+              </div>
+              <div id='measurementBox'>
+                <h2 id='measurementMessage'>{this.state.statement}</h2>
+                <h2 id='shoulderTag' onChange={(e) => this.changeShoulder(e)}>Shoulder: <input id='shoulderInput' /> in.</h2>
+                <h2 id='armholeTag' onChange={(e) => this.changeArmhole(e)}>Armhole: <input id='shoulderInput' /> in.</h2>
+                <h2 id='upperBustTag' onChange={(e) => this.changeUpperBust(e)}>Upper Bust Round: <input id='shoulderInput' /> in.</h2>
+                <h2 id='acrossTag' onChange={(e) => this.changeAcross(e)}>Across Front: <input id='shoulderInput' /> in.</h2>
+                <h2 id='bustTag' onChange={(e) => this.changeBust(e)}>Bust Round: <input id='shoulderInput' /> in.</h2>
+                <h2 id='underBustTag' onChange={(e) => this.changeUnderBust(e)}>Under Bust Round: <input id='shoulderInput' /> in.</h2>
+                <h2 id='waistTag' onChange={(e) => this.changeWaist(e)}>Waist Round: <input id='shoulderInput' /> in.</h2>
+                <h2 id='lowWaistTag' onChange={(e) => this.changeLowWaist(e)}>Low Waist Round: <input id='shoulderInput' /> in.</h2>
+                <h2 id='hipTag' onChange={(e) => this.changeHip(e)}>Hip Round: <input id='shoulderInput' /> in.</h2>
+                <h2 id='thighTag' onChange={(e) => this.changeThigh(e)}>Thigh Round: <input id='shoulderInput' /> in.</h2>
+                <h2 id='midThighTag' onChange={(e) => this.changeMidThigh(e)}>Mid Thigh Round: <input id='shoulderInput' /> in.</h2>
+                <h2 id='kneeTag' onChange={(e) => this.changeKnee(e)}>Knee Round: <input id='shoulderInput' /> in.</h2>
+                <h2 id='calfTag' onChange={(e) => this.changeCalf(e)}>Calf Round: <input id='shoulderInput' /> in.</h2>
+                <h2 id='ankleTag' onChange={(e) => this.changeAnkle(e)}>Ankle Round: <input id='shoulderInput' /> in.</h2>
+                <button id='logMeasure' onClick={this.savingSize}>Save Measurements</button>
               </div>
               <div id='colorContainer' name='closed' onClick={this.expandcolor}>
                 <h3>select color</h3>
