@@ -115,6 +115,16 @@ app.put('/logOut', (req, res) => {
     })
 })
 
+app.put('/cart', (req, res) => {
+    db.query(`UPDATE user SET cart = '${req.body.cart}' WHERE username = "${req.body.username}";`, (err, result) => {
+        if(err) {
+            res.status(403).send(err);
+        } else{
+            res.status(202).send('Cart Changed');
+        }
+    })
+})
+
 app.get('/logged', (req, res) => {
     db.query(`SELECT username FROM user WHERE logged = "yes"`, (err, result) => {
         if(err) {

@@ -113,6 +113,22 @@ class CurentProduct extends React.Component {
     if(this.state.userInfo.length === 0) {
       window.alert("You must log in to add products to your shopping cart");
     }
+    if(this.state.measurements.length === 0) {
+      window.alert("You must fill in measurements before adding product to cart");
+    }
+    else {
+      let array = [this.props.link, this.props.product, this.state.measurements, this.state.selectedColor];
+      array = (JSON.stringify(array));
+      let previous = JSON.stringify(this.state.userInfo[0].cart);
+      let concat = (previous + ', ' + array);
+
+      console.log(concat);
+
+      axios.put('/cart', { cart:array, username:this.state.userInfo[0].username })
+      .then(() => {
+        window.alert("You have successfully added this item to your cart");
+      })
+    }
   }
 
   changeShoulder(e) {
