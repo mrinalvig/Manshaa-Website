@@ -23,6 +23,7 @@ class LogIn extends React.Component {
     this.enterRePassword = this.enterRePassword.bind(this);
     this.signUpClick = this.signUpClick.bind(this);
     this.logInClick = this.logInClick.bind(this);
+    this.logOutClick2 = this.logOutClick2.bind(this);
     this.logOutClick = this.logOutClick.bind(this);
     this.changeState = this.changeState.bind(this);
   }
@@ -138,6 +139,19 @@ class LogIn extends React.Component {
 
   logOutClick() {
     axios.put('/userId', {
+        username: this.state.username,
+        logged: "no"
+    })
+    .then( result => {
+        this.setState ({
+            signedInUser: "",
+            signedIn: false
+        })
+    })
+  }
+
+  logOutClick2(){
+    axios.put('/userId', {
         username: this.state.signedInUser,
         logged: "no"
     })
@@ -221,7 +235,7 @@ class LogIn extends React.Component {
                     <div id='logInSection'>
                         <h2 id='successMessage'>You are logged in! <br /> Welcome {this.state.signedInUser}!</h2>
                     </div>
-                    <button id='signUpButton3' name='logOut' onClick={this.logOutClick}>Log Out!</button>
+                    <button id='signUpButton3' name='logOut' onClick={this.logOutClick2}>Log Out!</button>
                 </div>
                 <FooterThree />
             </div>

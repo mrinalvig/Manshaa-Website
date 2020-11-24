@@ -135,6 +135,15 @@ app.get('/logged', (req, res) => {
     })
 })
 
+app.put('/emptyCart', (req, res) => {
+    db.query(`UPDATE user SET cart = "" WHERE logged = "yes"`, (err, result) => {
+        if(err) {
+            res.status(404).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
 
 // eslint-disable-next-line no-console
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`));

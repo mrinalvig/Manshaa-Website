@@ -67,6 +67,8 @@ class CurentProduct extends React.Component {
             userInfo: result.data
         })
     })
+
+
   }
 
   expandColor() {
@@ -118,16 +120,46 @@ class CurentProduct extends React.Component {
     }
     else {
       let array = [this.props.link, this.props.product, this.state.measurements, this.state.selectedColor];
-      array = (JSON.stringify(array));
-      let previous = JSON.stringify(this.state.userInfo[0].cart);
-      let concat = (previous + ', ' + array);
+      let previous = this.state.userInfo[0].cart;
+      if(previous != "") {
+        previous = JSON.parse(previous);
+      }
 
-      console.log(concat);
+      if(previous.length === 0) {
+        var container = [];
+        container.push(array);
+        container = JSON.stringify(container);
 
-      axios.put('/cart', { cart:array, username:this.state.userInfo[0].username })
-      .then(() => {
-        window.alert("You have successfully added this item to your cart");
-      })
+        axios.put('/cart', { cart:container, username:this.state.userInfo[0].username })
+        .then(() => {
+          window.alert("You have successfully added this item to your cart");
+          axios.get('/loggedUser')
+          .then(result => {
+            console.log(JSON.parse(result.data[0].cart));
+          })
+        })
+      }
+      if(previous.length === 4 && previous[0].length != 4) {
+        var container = [];
+        container.push(previous);
+        container.push(array);
+        container = JSON.stringify(container);
+
+        axios.put('/cart', { cart:container, username:this.state.userInfo[0].username })
+        .then(() => {
+          window.alert("You have successfully added this item to your cart");
+        })
+      }
+      else {
+        previous.push(array);
+        previous = JSON.stringify(previous);
+
+        axios.put('/cart', { cart:previous, username:this.state.userInfo[0].username })
+        .then(() => {
+          window.alert("You have successfully added this item to your cart");
+        })
+      }
+
     }
   }
 
