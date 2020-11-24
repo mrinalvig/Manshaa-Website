@@ -3,6 +3,7 @@ import axios from "axios";
 import NavBar from './NavBar.jsx';
 import FooterThree from './FooterThree.jsx';
 import FooterTwo from './FooterTwo.jsx';
+import { Link } from 'react-router-dom';
 
 class Shopping extends React.Component {
   constructor(props) {
@@ -12,26 +13,40 @@ class Shopping extends React.Component {
         cart: [],
         measurementBox: false,
         measurements: [],
-        currentIndex: 0
+        currentIndex: 0,
+        totalValue: 0,
+        tax: 0,
+        totalPrice: 0,
+        username: ""
     };
     this.changeMeasure = this.changeMeasure.bind(this);
+    this.removeItem = this.removeItem.bind(this);
   }
 
   componentDidMount() {
     var array = [];
+    var price = 0;
     axios.get('/loggedUser')
     .then(result => {
         this.setState ({
             userInfo: result.data,
-            cart: JSON.parse(result.data[0].cart)
+            cart: JSON.parse(result.data[0].cart),
+            username: result.data[0].username
         })
     })
     .then(() => {
       this.state.cart.map((image, index) => {
         array.push(image);
+        price += image[1][2];
       })
       this.setState({
-        measurements: array
+        measurements: array,
+        totalValue: price,
+        tax: ((price * 9.5) * .01).toFixed(2),
+      }, () => {
+        this.setState({
+          totalPrice: ((price + (price * 9.5) * .01)).toFixed(2)
+        })
       })
     })
   }
@@ -48,6 +63,25 @@ class Shopping extends React.Component {
         measurementBox: false
       })
     }
+  }
+
+  removeItem(e) {
+    let array1 = this.state.cart;
+    let array2 = [];
+
+    for(var i = 0; i < array1.length; i++) {
+      if(i != e.target.name){
+        array2.push(array1[i]);
+      }
+    }
+
+    array2 = JSON.stringify(array2);
+
+    axios.put('/cart', {cart: array2, username: this.state.username})
+    .then(() => {
+      window.alert("You have successfully removed this item from your Cart!");
+      this.componentDidMount();
+    });
   }
 
   render() {
@@ -78,10 +112,23 @@ class Shopping extends React.Component {
                       <h2 id='shoppingTitle'>{image[1][0]}</h2>
                       <h2 id='shoppingPrice'>$ {image[1][2]}.00</h2>
                       <h2 id='shoppingColor'>Color: {image[3]} <div id='colorSquare' style={{backgroundColor: image[3]}} /></h2>
-                      <button id='shoppingRemove' value="button">✖</button>
+                      <button id='shoppingRemove' name={index} onClick={e => this.removeItem(e)} >✖</button>
                       <h2 id='shoppingMeasure'>Measurements: <button onClick={this.changeMeasure} id='measureDescription' name={index} value="button"></button> </h2>
                   </div>
                   ))}
+                  <div id='measureDescription3' value='button' />
+                  <div id='couponBox'>
+                    <h2 id='discountCode'>ADD A DISCOUNT CODE</h2>
+                    <input id='discountInput' />
+                    <button id='discountButton'>ADD</button>
+                    <h2 id='orderValue'>Order Value <h2 id='valueNumber'>${this.state.totalValue}.00</h2></h2>
+                    <h2 id='orderTax'> Tax <h2 id='taxNumber'>${this.state.tax}</h2></h2>
+                    <h2 id='bar'>_________________________________________________</h2>
+                    <h2 id='orderTotal'> Total <h2 id='totalNumber'>${this.state.totalPrice}</h2></h2>
+                    <Link to='/checkout'>
+                      <button id='checkoutProceed'>CONTINUE TO CHECKOUT</button>
+                    </Link>
+                  </div>
               </div>
               <FooterTwo />
           </div>
@@ -99,7 +146,7 @@ class Shopping extends React.Component {
                       <h2 id='shoppingTitle'>{image[1][0]}</h2>
                       <h2 id='shoppingPrice'>$ {image[1][2]}.00</h2>
                       <h2 id='shoppingColor'>Color: {image[3]} <div id='colorSquare' style={{backgroundColor: image[3]}} /></h2>
-                      <button id='shoppingRemove' value="button">✖</button>
+                      <button id='shoppingRemove' value="button" onClick={e => this.removeItem(e)} >✖</button>
                       <h2 id='shoppingMeasure'>Measurements: <button onClick={e => this.changeMeasure(e)} id='measureDescription' name={index} value="button"></button> </h2>
                   </div>
                   ))}
@@ -121,6 +168,18 @@ class Shopping extends React.Component {
                       <h2 id='calfTag'>Calf Round: {this.state.measurements[this.state.currentIndex][2][12]} in.</h2>
                       <h2 id='ankleTag'>Ankle Round: {this.state.measurements[this.state.currentIndex][2][13]} in.</h2>
                     </div>
+                  </div>
+                  <div id='couponBox'>
+                    <h2 id='discountCode'>ADD A DISCOUNT CODE</h2>
+                    <input id='discountInput' />
+                    <button id='discountButton'>ADD</button>
+                    <h2 id='orderValue'>Order Value <h2 id='valueNumber'>${this.state.totalValue}.00</h2></h2>
+                    <h2 id='orderTax'> Tax <h2 id='taxNumber'>${this.state.tax}</h2></h2>
+                    <h2 id='bar'>_________________________________________________</h2>
+                    <h2 id='orderTotal'> Total <h2 id='totalNumber'>${this.state.totalPrice}</h2></h2>
+                    <Link to='/checkout'>
+                      <button id='checkoutProceed'>CONTINUE TO CHECKOUT</button>
+                    </Link>
                   </div>
               </div>
               <FooterTwo />

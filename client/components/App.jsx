@@ -6,6 +6,7 @@ import MensPage from './MensPage.jsx';
 import Footer from './Footer.jsx';
 import FooterTwo from './FooterTwo.jsx';
 import FooterThree from './FooterThree.jsx';
+import Checkout from './Checkout.jsx';
 import Sherwani from './Sherwani.jsx';
 import Shoes from './Shoes.jsx';
 import Kurtas from './Kurtas.jsx';
@@ -69,6 +70,7 @@ class App extends React.Component {
       return (
         <Router>
           <Switch>
+            <Route path="/checkout" component={() => <Checkout />} />
             <Route path="/logIn" component={() => <LogIn users={this.state.storedUsers} current={this.currentUser} name={this.state.username}/>} />
             <Route path="/product" component={() => <CurrentProduct product={this.state.productInfo} link={this.state.link}/>} />
             <Route path="/kurtas" component={() => <Kurtas />} />

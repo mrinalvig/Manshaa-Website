@@ -1477,7 +1477,7 @@ body {
   position: relative;
   left: 12vw;
   top: -24vh;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 #shoppingPrice {
@@ -1486,7 +1486,7 @@ body {
   position: relative;
   left: 12vw;
   top: -24vh;
-  font-size: 17px;
+  font-size: 21px;
   font-weight: lighter;
 }
 
@@ -1495,15 +1495,15 @@ body {
   Helvetica, Arial, sans-serif;
   position: relative;
   left: 12vw;
-  top: -15vh;
-  font-size: 14px;
+  top: -17vh;
+  font-size: 15px;
   display: flex;
   font-weight: normal;
 }
 
 #colorSquare {
-  height: 2vh;
-  width: 1vw;
+  height: 3vh;
+  width: 1.6vw;
   position: relative;
   left: 1.2vw;
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.05);
@@ -1514,13 +1514,16 @@ body {
   width: 3vw;
   position: relative;
   left: 46vw;
-  top: -38vh;
+  top: -41vh;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   background-color: transparent;
   border: none;
   outline: none;
   font-size: 17px;
+}
+#shoppingRemove:active{
+  transform: translateY(2px);
 }
 
 #measureRemove {
@@ -1542,7 +1545,7 @@ body {
   Helvetica, Arial, sans-serif;
   position: relative;
   left: 12vw;
-  top: -30vh;
+  top: -32.5vh;
   font-size: 14px;
   display: flex;
   font-weight: normal;
@@ -1550,28 +1553,187 @@ body {
 
 #measureDescription {
   position: relative;
-  width: 1.7vw;
+  width: 1.6vw;
   height: 3vh;
   background-color: transparent;
   margin-left: .5vw;
   margin-top: -.5vh;
   border-radius: 5px;
   transition: .6s;
+  border: .5px solid black;
+}
+#measureDescription:active{
+  box-shadow: 0 1px #666;
+  transform: translateY(2px);
 }
 
 #measureDescription2 {
-  position: relative;
+  position: absolute;
   width: 30vw;
   height: 60vh;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(238, 222, 197);
   margin-left: .5vw;
-  margin-top: -50vh;
   border-radius: 5px;
   transition: .6s;
   left: 35vw;
-  top: 5vh;
+  top: 15vh;
 }
 
+#measureDescription3 {
+  position: absolute;
+  width: 0vw;
+  height: 0vh;
+  left: 50%;
+  top: 50%;
+  background-color: transparent;
+  transition: 1s;
+}
+
+#showMeasurements{
+  position: relative;
+  left: 8vw;
+}
+
+#couponBox {
+  position: absolute;
+  width: 30vw;
+  height: 55vh;
+  background-color: rgba(238, 222, 197, 0.212);
+  border-radius: 5px;
+  transition: .6s;
+  left: 65vw;
+  top: 27vh;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.438);
+}
+
+#discountCode{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: relative;
+  top: 3vh;
+  left: 2vw;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#orderValue{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: relative;
+  top: 7vh;
+  left: 5vw;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+#orderTax{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: relative;
+  top: 4vh;
+  left: 5vw;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+#orderTotal{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: relative;
+  top: 4vh;
+  left: 5vw;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+#bar{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: relative;
+  top: 2vh;
+  left: 5vw;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+#valueNumber{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: relative;
+  top: -3.6vh;
+  left: 16vw;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+#taxNumber{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: relative;
+  top: -3.6vh;
+  left: 16vw;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+#totalNumber{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: relative;
+  top: -3.6vh;
+  left: 16vw;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+#discountInput{
+  position: relative;
+  height: 5vh;
+  width: 17vw;
+  top: 4vh;
+  left: 2vw;
+  border: .5px solid black;
+  outline: none;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#discountButton{
+  position: relative;
+  height: 5vh;
+  width: 5vw;
+  top: 4vh;
+  left: 5vw;
+  border: .5px solid black;
+  outline: none;
+}
+#discountButton:active{
+  box-shadow: 0 1px #666;
+  transform: translateY(2px);
+}
+
+#checkoutProceed{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
+  position: relative;
+  height: 5vh;
+  width: 26vw;
+  top: 4vh;
+  left: 2vw;
+  border: .5px solid black;
+  outline: none;
+}
+#checkoutProceed:active{
+  box-shadow: 0 1px #666;
+  transform: translateY(2px);
+}
+
+#checkoutPage {
+  height: 100vh;
+  width: 100vw;
+}
 /* #shoppingContainer {
   text-align: center;
 } */
