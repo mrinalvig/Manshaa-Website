@@ -159,7 +159,7 @@ class NavBar extends React.Component {
                   </div>
               </button>
               <div id='searchLogo'></div>
-                <input type='text' id='search'></input>
+              <input type='text' id='search'></input>
               <button type='button' id='profileLogo'></button>
               <button type='button' id='shoppingLogo'></button>
           </div>
