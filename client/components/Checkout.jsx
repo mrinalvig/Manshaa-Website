@@ -187,7 +187,7 @@ class Checkout extends React.Component {
                             <h2 id='myInfo'>MY INFORMATION</h2>
                             <button id='myInfoCollapse' name='minus' onClick={e => this.changeBox(e)}>-</button>
                             <h2 id='enterEmail'>Email*</h2>
-                            <input id='emailEntry' onChange={e => this.myInfoContent(e)}></input>
+                            <input id='emailEntry' onChange={e => this.myInfoContent(e)} value={this.state.email} ></input>
                         </div>
                         <div id='shippingBox' >
                             <h2 id='shippingInfo'>SHIPPING</h2>
@@ -226,18 +226,18 @@ class Checkout extends React.Component {
                             <button id='shippingCollapse' name='minus' onClick={e => this.changeBox(e)}>-</button>
                             <h2 id='shippingFirstname'>First name*</h2>
                             <h2 id='shippingLastname'>Last name*</h2>
-                            <input id='FirstnameEntry' onChange={e => this.shippingContent(e)}></input>
-                            <input id='LastnameEntry' onChange={e => this.shippingContent(e)}></input>
+                            <input id='FirstnameEntry' onChange={e => this.shippingContent(e)} value={this.state.FirstnameEntry}></input>
+                            <input id='LastnameEntry' onChange={e => this.shippingContent(e)} value={this.state.LastnameEntry}></input>
                             <h2 id='addressLine1'>Address line 1*</h2>
-                            <input id='line1Entry' onChange={e => this.shippingContent(e)}></input>
+                            <input id='line1Entry' onChange={e => this.shippingContent(e)} value={this.state.line1Entry}></input>
                             <h2 id='addressLine2'>Address line 2</h2>
-                            <input id='line2Entry' onChange={e => this.shippingContent(e)}></input>
+                            <input id='line2Entry' onChange={e => this.shippingContent(e)} value={this.state.line2Entry}></input>
                             <h2 id='shippingCity'>City*</h2>
-                            <input id='cityEntry' onChange={e => this.shippingContent(e)}></input>
+                            <input id='cityEntry' onChange={e => this.shippingContent(e)} value={this.state.cityEntry}></input>
                             <h2 id='shippingState'>State*</h2>
-                            <input id='stateEntry' onChange={e => this.shippingContent(e)}></input>
+                            <input id='stateEntry' onChange={e => this.shippingContent(e)} value={this.state.stateEntry}></input>
                             <h2 id='shippingZip'>Zip code*</h2>
-                            <input id='zipEntry' onChange={e => this.shippingContent(e)}></input>
+                            <input id='zipEntry' onChange={e => this.shippingContent(e)} value={this.state.zipEntry}></input>
                         </div>
                         <div id='paymentBox' >
                             <h2 id='paymentInfo'>PAYMENT</h2>
@@ -276,14 +276,15 @@ class Checkout extends React.Component {
                             <button id='paymentCollapse' name='minus'onClick={e => this.changeBox(e)}>-</button>
                             <h2 id='shippingFirstname'>First name*</h2>
                             <h2 id='shippingLastname'>Last name*</h2>
-                            <input id='FirstnameEntry'></input>
-                            <input id='LastnameEntry'></input>
+                            <input id='FirstnameEntry' value={this.state.FirstnameEntry}></input>
+                            <input id='LastnameEntry' value={this.state.LastnameEntry}></input>
                             <h2 id='addressLine1'>Card number*</h2>
-                            <input id='line1Entry' name='cardNumber' onChange={e => this.paymentContent(e)}></input>
+                            <input id='line1Entry' name='cardNumber' value={this.state.cardNumber} onChange={e => this.paymentContent(e)}></input>
                             <h2 id='addressLine2'>Expiration date*</h2>
                             <h2 id='shoppingCvv'>CVV*</h2>
-                            <input id='expireEntry' name='expireEntry' onChange={e => this.paymentContent(e)}></input>
-                            <input id='cvvEntry' name='cvvEntry' onChange={e => this.paymentContent(e)}></input>
+                            <input id='expireEntry' value={this.state.expireEntry} name='expireEntry' onChange={e => this.paymentContent(e)}></input>
+                            <input id='cvvEntry' value={this.state.cvvEntry} name='cvvEntry' onChange={e => this.paymentContent(e)}></input>
+                            <img id='paymentImage' src="https://i.ibb.co/WD2vkzB/payment.png"></img>
                         </div>
                         <div id='purchaseBox'>
                             <h2 id='discountCode'>YOUR ORDER</h2>

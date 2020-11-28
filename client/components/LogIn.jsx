@@ -12,6 +12,7 @@ class LogIn extends React.Component {
         signedInUser: "",
         username: "",
         password: "",
+        hiddenPassword: "",
         rePassword: "",
         signUpError: "",
         storedUsers: {},
@@ -62,9 +63,18 @@ class LogIn extends React.Component {
   }
 
   enterPassword(e) {
+    var num = e.target.value.length;
+
+    let newValue = "";
+
+    for(var i = 0; i < num; i++) {
+        newValue += "*";
+    }
+
     this.setState({
-        password: e.target.value
-    })
+        password: this.state.password + e.target.value.slice(-1),
+        hiddenPassword: newValue
+    },() => console.log(this.state.password))
   }
 
   enterRePassword(e) {
@@ -145,7 +155,9 @@ class LogIn extends React.Component {
     .then( result => {
         this.setState ({
             signedInUser: "",
-            signedIn: false
+            signedIn: false,
+            password: "",
+            hiddenPassword: ""
         })
     })
   }
@@ -178,7 +190,7 @@ class LogIn extends React.Component {
                       <div id='logInSection'>
                           <h2 id='signUpError'>{this.state.signUpError}</h2>
                           <h2 id='userName'>Username</h2><input type="text" id='username' onChange={(e) => this.enterUsername(e)}></input>
-                          <h2 id='passWord'>Password</h2><input type="text" id='password' onChange={(e) => this.enterPassword(e)}></input>
+                          <h2 id='passWord'>Password</h2><input value={this.state.hiddenPassword} type="text" id='password' onChange={(e) => this.enterPassword(e)}></input>
                           <button id='loginButton' onClick={this.logInClick}>Log In!</button>
                       </div>
                       <h2 id='signUp'>Don't have an account yet? </h2>

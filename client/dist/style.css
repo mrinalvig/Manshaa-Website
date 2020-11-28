@@ -1458,10 +1458,11 @@ body {
   top: 26vh;
   left: 10vw;
   margin-bottom: 5vh;
-  background-color: rgba(238, 222, 197, 0.212);
+  background-color: rgba(238, 222, 197, 0.5);
   height: 25vh;
   width: 50vw;
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.438);
+  border: 2px solid rgba(206, 180, 31, 0.719);
 }
 
 #shoppingImage {
@@ -1507,6 +1508,7 @@ body {
   position: relative;
   left: 1.2vw;
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid black;
 }
 
 #shoppingRemove {
@@ -1577,6 +1579,8 @@ body {
   transition: .6s;
   left: 35vw;
   top: 15vh;
+  border: 1px solid black;
+  z-index: 2;
 }
 
 #measureDescription3 {
@@ -1595,19 +1599,20 @@ body {
 }
 
 #couponBox {
-  position: absolute;
+  position: fixed;
   width: 30vw;
   height: 55vh;
-  background-color: rgba(238, 222, 197, 0.212);
+  background-color: rgba(238, 222, 197, 0.5);
   border-radius: 5px;
   transition: .6s;
   left: 65vw;
   top: 27vh;
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.438);
+  border: 2px solid rgba(206, 180, 31, 0.719);
 }
 
 #purchaseBox{
-  position: absolute;
+  position: fixed;
   width: 30vw;
   height: 50vh;
   background-color: rgba(238, 222, 197, 0.5);
@@ -1616,6 +1621,7 @@ body {
   left: 65vw;
   top: 22vh;
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.438);
+  border: 2px solid rgba(206, 180, 31, 0.719);
 }
 
 #discountCode{
@@ -2064,6 +2070,7 @@ body {
   width: 50vw;
   background-color: rgba(238, 222, 197, 0.5);
   transition: .5s;
+  border: 2px solid rgba(206, 180, 31, 0.719);
 }
 
 #myInfoBox2{
@@ -2075,6 +2082,7 @@ body {
   background-color: rgb(235, 222, 202);
   transition: .5s;
   z-index: 2;
+  border: 2px solid rgba(206, 180, 31, 0.719);
 }
 
 #shippingBox{
@@ -2085,6 +2093,7 @@ body {
   width: 50vw;
   background-color: rgba(238, 222, 197, 0.5);
   transition: .5s;
+  border: 2px solid rgba(206, 180, 31, 0.719);
 }
 
 #shippingBox2{
@@ -2095,6 +2104,7 @@ body {
   width: 50vw;
   background-color: rgb(235, 222, 202);
   transition: .5s;
+  border: 2px solid rgba(206, 180, 31, 0.719);
   z-index: 2;
 }
 
@@ -2106,6 +2116,7 @@ body {
   width: 50vw;
   background-color: rgba(238, 222, 197, 0.5);
   transition: .5s;
+  border: 2px solid rgba(206, 180, 31, 0.719);
 }
 
 #paymentBox2{
@@ -2117,12 +2128,15 @@ body {
   background-color: rgb(235, 222, 202);
   transition: .5s;
   z-index: 2;
+  border: 2px solid rgba(206, 180, 31, 0.719);
 }
 
 #paymentImage{
   position: absolute;
-  height: 5vh;
-  width: 15vw;
+  height: 6.5vh;
+  width: 18.5vw;
+  top: 43vh;
+  left: 8vw;
   /* left: 10vw;
   top: 60vh; */
 }
