@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const path = require("path");
+const stripe = require("stripe")("sk_test_51HsJ7VDg5ZnilIdliqnch6RiA1hZp7gxVDeovnpX04TwABhpQuPa5uQ9Zhi4Bmg44OzOIBPicdc5Hvx0WmT8UTBW00bOI9pPHL");
 // const cors = require('cors');
 //const db = require("../db/index.js");
 
@@ -144,6 +145,16 @@ app.put('/emptyCart', (req, res) => {
         }
     })
 })
+
+app.post('/purchase', (req, res) => {
+    const paymentIntent = stripe.paymentIntent.create({
+        amount: req.body.amount,
+        currency: 'usd',
+        metadata: {integration_check: 'accept_a_payment'},
+        recepient_email: req.body.email
+    })
+    res.json({'client_secret': paymentIntent['client_secret']})
+});
 
 // eslint-disable-next-line no-console
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
