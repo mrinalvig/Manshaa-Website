@@ -4,6 +4,13 @@ import NavBar from './NavBar.jsx';
 import FooterThree from './FooterThree.jsx';
 import FooterTwo from './FooterTwo.jsx';
 import { Link } from 'react-router-dom';
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from '@stripe/react-stripe-js';
+import StripeCheckout from 'react-stripe-checkout';
+import { toast } from "react-toastify";
+const stripePromise = loadStripe("pk_test_51HsJ7VDg5ZnilIdl9bQedkfG4aJzkutg2bHf6I9uO2oxVtWLIA5WfbUimXKPPqR2EhcIWiNb5ZZeUP0VMXFbggx100DHcuPban");
+
+toast.configure();
 
 class Shopping extends React.Component {
   constructor(props) {
@@ -21,6 +28,7 @@ class Shopping extends React.Component {
     };
     this.changeMeasure = this.changeMeasure.bind(this);
     this.removeItem = this.removeItem.bind(this);
+    this.handleToken = this.handleToken.bind(this);
   }
 
   componentDidMount() {
@@ -84,6 +92,22 @@ class Shopping extends React.Component {
     });
   }
 
+  handleToken(token, name) {
+    //console.log({ token, addresses });
+    var product = {price: this.state.totalPrice * 100, name: "Manshaa Outfits"};
+
+    console.log(product);
+
+    const response = axios.post("/checkout", { token, product } );
+    const { status } = response.data;
+    console.log("Response:", response.data);
+    if (status === "success") {
+      toast("Success! Check email for details", { type: "success" });
+    } else {
+      toast("Something went wrong", { type: "error" });
+    }
+  }
+
   render() {
     if(this.state.userInfo.length === 0) {
         return (
@@ -125,9 +149,21 @@ class Shopping extends React.Component {
                     <h2 id='orderTax'> Tax <h2 id='taxNumber'>${this.state.tax}</h2></h2>
                     <h2 id='bar'>_________________________________________________</h2>
                     <h2 id='orderTotal'> Total <h2 id='totalNumber'>${this.state.totalPrice}</h2></h2>
-                    <Link to='/checkout'>
+                    {/* <Link to='/checkout'>
                       <button id='checkoutProceed'>CONTINUE TO CHECKOUT</button>
-                    </Link>
+                    </Link> */}
+                    <div id='stripeCheckout'>
+                    <StripeCheckout
+                      stripeKey="pk_test_51HsJ7VDg5ZnilIdl9bQedkfG4aJzkutg2bHf6I9uO2oxVtWLIA5WfbUimXKPPqR2EhcIWiNb5ZZeUP0VMXFbggx100DHcuPban"
+                      token={this.handleToken}
+                      billingAddress
+                      shippingAddress
+                      amount={this.state.totalPrice * 100}
+                      name="Manshaa Checkout"
+                    >
+                      <button id='checkoutProceed'>CONFIRM PURCHASE</button>
+                    </StripeCheckout>
+                    </div>
                   </div>
               </div>
               <FooterTwo />
@@ -177,9 +213,19 @@ class Shopping extends React.Component {
                     <h2 id='orderTax'> Tax <h2 id='taxNumber'>${this.state.tax}</h2></h2>
                     <h2 id='bar'>_________________________________________________</h2>
                     <h2 id='orderTotal'> Total <h2 id='totalNumber'>${this.state.totalPrice}</h2></h2>
-                    <Link to='/checkout'>
+                    {/* <Link to='/checkout'>
                       <button id='checkoutProceed'>CONTINUE TO CHECKOUT</button>
-                    </Link>
+                    </Link> */}
+                    <StripeCheckout
+                      stripeKey="pk_test_51HsJ7VDg5ZnilIdl9bQedkfG4aJzkutg2bHf6I9uO2oxVtWLIA5WfbUimXKPPqR2EhcIWiNb5ZZeUP0VMXFbggx100DHcuPban"
+                      token={this.handleToken}
+                      billingAddress
+                      shippingAddress
+                      amount={this.state.totalPrice * 100}
+                      name="Manshaa Checkout"
+                    >
+                      <button id='checkoutProceed'>CONFIRM PURCHASE</button>
+                    </StripeCheckout>
                   </div>
               </div>
               <FooterTwo />

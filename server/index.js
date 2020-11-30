@@ -4,6 +4,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const path = require("path");
+const { v4: uuidv4 } = require('uuid');
+const { privateEncrypt } = require("crypto");
 const stripe = require("stripe")("sk_test_51HsJ7VDg5ZnilIdliqnch6RiA1hZp7gxVDeovnpX04TwABhpQuPa5uQ9Zhi4Bmg44OzOIBPicdc5Hvx0WmT8UTBW00bOI9pPHL");
 // const cors = require('cors');
 //const db = require("../db/index.js");
@@ -146,15 +148,51 @@ app.put('/emptyCart', (req, res) => {
     })
 })
 
-app.post('/purchase', (req, res) => {
-    const paymentIntent = stripe.paymentIntent.create({
-        amount: req.body.amount,
-        currency: 'usd',
-        metadata: {integration_check: 'accept_a_payment'},
-        recepient_email: req.body.email
-    })
-    res.json({'client_secret': paymentIntent['client_secret']})
-});
+app.post("/checkout", async (req, res) => {
+    console.log("Request:", req.body);
+
+    let error;
+    let status;
+    try {
+      const { product, token } = req.body;
+
+      const customer = await stripe.customers.create({
+        email: token.email,
+        source: token.id
+      });
+
+      const idempotency_key = uuidv4();
+      const charge = await stripe.charges.create(
+        {
+          amount: product.price,
+          currency: "usd",
+          customer: customer.id,
+          receipt_email: token.email,
+          description: `Purchased the ${product.name}`,
+          shipping: {
+            name: token.card.name,
+            address: {
+              line1: token.card.address_line1,
+              line2: token.card.address_line2,
+              city: token.card.address_city,
+              country: token.card.address_country,
+              postal_code: token.card.address_zip
+            }
+          }
+        },
+        {
+          idempotency_key
+        }
+      );
+      console.log("Charge:", { charge });
+      status = "success";
+    } catch (error) {
+      console.error("Error:", error);
+      status = "failure";
+    }
+
+    res.json({ error, status });
+  });
 
 // eslint-disable-next-line no-console
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`));

@@ -3,7 +3,7 @@ body {
   width: 100vw;
   height: 150vh;
   display: flexbox;
-  /* overflow: hidden auto; */
+  overflow: hidden auto;
 }
 
 #NavBar {
@@ -97,47 +97,68 @@ body {
 
 #men {
   position: absolute;
-  left: 13%;
+  left: 9.5%;
   top: 38%;
+  width: 10vw;
+  height: 3vh;
   font-size: 15px;
   background-color: transparent;
   border: none;
   outline: none;
+  overflow: hidden;
+  transition: .5s;
 }
 #men:hover {
   font-size: 20px;
   left: 9.5%;
   top: 38%;
+  width: 10vw;
+  height: 17vh;
+  transition: .5s;
 }
 
 #women {
   position: absolute;
-  left: 20%;
-  top: 37%;
+  left: 17.5%;
+  top: 38%;
+  width: 10vw;
+  height: 3vh;
   font-size: 15px;
   background-color: transparent;
-  border: solid 1px transparent;
+  border: none;
   outline: none;
+  overflow: hidden;
+  transition: .4s;
 }
 #women:hover {
   font-size: 20px;
-  left: 16%;
-  top: 38%;
+  left: 17.5%;
+  top: 32%;
+  width: 10vw;
+  height: 29vh;
+  transition: .4s;
 }
 
 #jewelry {
   position: absolute;
-  left: 28%;
-  top: 36%;
+  left: 25.5%;
+  top: 38%;
+  width: 10vw;
+  height: 3vh;
   font-size: 15px;
   background-color: transparent;
-  border: solid 1px transparent;
+  border: none;
   outline: none;
+  overflow: hidden;
+  transition: .4s;
 }
 #jewelry:hover {
   font-size: 20px;
-  left: 24.5%;
-  top: 38%;
+  left: 25.5%;
+  top: 36%;
+  width: 10vw;
+  height: 45vh;
+  transition: .4s;
 }
 
 #menSelectionBox {
@@ -155,8 +176,10 @@ body {
 }
 
 #womenSelectionBox {
+  position: relative;
+  left: -1vw;
   height: 200px;
-  width: 170px;
+  width: 160px;
   outline: none;
   background-color: rgb(238, 222, 197, .8);
 }
@@ -169,8 +192,10 @@ body {
 }
 
 #jewelrySelectionBox {
+  position: relative;
+  left: -1vw;
   height: 325px;
-  width: 170px;
+  width: 160px;
   outline: none;
   background-color: rgb(238, 222, 197, .8);
 }
@@ -1735,11 +1760,11 @@ body {
 #checkoutProceed{
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  position: relative;
+  position: fixed;
   height: 5vh;
   width: 26vw;
-  top: 4vh;
-  left: 2vw;
+  /* top: 1vh; */
+  left: 67.3vw;
   border: .5px solid black;
   outline: none;
 }
@@ -2140,6 +2165,22 @@ body {
   /* left: 10vw;
   top: 60vh; */
 }
-/* #shoppingContainer {
+
+#stripeCheckout{
+  position: relative;
+  left: 11vw;
+  top: 6vh;
+}
+
+#shoppingBadge{
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 91.8vw;
+  top: 2.3vh;
+  border-radius: 50%;
+  background-color: rgb(253, 72, 72);
   text-align: center;
-} */
+  transition: .5s;
+  color: white;
+}

@@ -14,6 +14,9 @@ import Bridal from './BridalPage.jsx';
 import CurrentProduct from './CurrentProduct.jsx';
 import LogIn from './LogIn.jsx';
 import Shopping from './Shopping.jsx';
+import SemiFormals from './SemiFormals.jsx';
+import Formals from './Formals.jsx';
+import Tunics from './Tunics.jsx';
 import {
   BrowserRouter as Router,
   Route,
@@ -21,6 +24,7 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom';
+import BridesMaids from "./BridesMaids.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -70,7 +74,12 @@ class App extends React.Component {
       return (
         <Router>
           <Switch>
+            <Route path="/tunics" component={() => <Tunics />} />
+            <Route path="/bridesMaids" component={() => <BridesMaids />} />
+            <Route path="/formals" component={() => <Formals />} />
+            <Route path="/semiFormals" component={() => <SemiFormals />} />
             <Route path="/checkout" component={() => <Checkout />} />
+            <Route path="/shoppingCart" component={() => <Shopping />} />
             <Route path="/logIn" component={() => <LogIn users={this.state.storedUsers} current={this.currentUser} name={this.state.username}/>} />
             <Route path="/product" component={() => <CurrentProduct product={this.state.productInfo} link={this.state.link}/>} />
             <Route path="/kurtas" component={() => <Kurtas />} />
@@ -79,7 +88,6 @@ class App extends React.Component {
             <Route path="/bridal" component={() => <Bridal change={(e) => this.setLink(e)} content={this.productContent}/>} />
             <Route path="/men" component={() => <MensPage />} />
             <Route exact path="/" component={() => <Banner />} />
-            <Route path="/shoppingCart" component={() => <Shopping />} />
           </Switch>
         </Router>
       );

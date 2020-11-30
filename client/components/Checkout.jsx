@@ -2,8 +2,6 @@ import React from "react";
 import axios from "axios";
 import NavBar from './NavBar.jsx';
 import FooterThree from './FooterThree.jsx';
-import StripeCheckout from 'react-stripe-checkout';
-
 //toast.configure();
 
 class Checkout extends React.Component {
@@ -37,7 +35,6 @@ class Checkout extends React.Component {
         this.shippingContent = this.shippingContent.bind(this);
         this.paymentContent = this.paymentContent.bind(this);
         this.confirmPurchase = this.confirmPurchase.bind(this);
-        this.handleToken = this.handleToken.bind(this);
       }
 
     componentDidMount() {
@@ -148,12 +145,6 @@ class Checkout extends React.Component {
         } else{
             window.alert("It seems that not all entries have been made");
         }
-    }
-
-    handleToken(token) {
-        //console.log({token, addresses});
-        //axios.post('/purchase', {})
-
     }
 
     render() {
@@ -282,7 +273,7 @@ class Checkout extends React.Component {
                             <button id='shippingCollapse' onClick={e => this.changeBox(e)}>+</button>
                         </div>
                         <div id='paymentBox2' >
-                            {/* <h2 id='paymentInfo'>PAYMENT</h2>
+                            <h2 id='paymentInfo'>PAYMENT</h2>
                             <button id='paymentCollapse' name='minus'onClick={e => this.changeBox(e)}>-</button>
                             <h2 id='shippingFirstname'>First name*</h2>
                             <h2 id='shippingLastname'>Last name*</h2>
@@ -294,15 +285,7 @@ class Checkout extends React.Component {
                             <h2 id='shoppingCvv'>CVV*</h2>
                             <input id='expireEntry' value={this.state.expireEntry} name='expireEntry' onChange={e => this.paymentContent(e)}></input>
                             <input id='cvvEntry' value={this.state.cvvEntry} name='cvvEntry' onChange={e => this.paymentContent(e)}></input>
-                            <img id='paymentImage' src="https://i.ibb.co/WD2vkzB/payment.png"></img> */}
-                            <StripeCheckout
-                                stripeKey="pk_test_51HsJ7VDg5ZnilIdl9bQedkfG4aJzkutg2bHf6I9uO2oxVtWLIA5WfbUimXKPPqR2EhcIWiNb5ZZeUP0VMXFbggx100DHcuPban"
-                                token={this.handleToken}
-                                billingAddress
-                                shippingAddress
-                                amount={this.state.totalPrice * 100}
-                                name={"Manshaa Dress"}
-                            />
+                            <img id='paymentImage' src="https://i.ibb.co/WD2vkzB/payment.png"></img>
                         </div>
                         <div id='purchaseBox'>
                             <h2 id='discountCode'>YOUR ORDER</h2>
