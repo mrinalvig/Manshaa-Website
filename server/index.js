@@ -168,7 +168,7 @@ app.post("/checkout", async (req, res) => {
           currency: "usd",
           customer: customer.id,
           receipt_email: token.email,
-          description: `Purchased the ${product.name}`,
+          description: `Purchased ${product.name}`,
           shipping: {
             name: token.card.name,
             address: {

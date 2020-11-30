@@ -12,11 +12,19 @@ import Shoes from './Shoes.jsx';
 import Kurtas from './Kurtas.jsx';
 import Bridal from './BridalPage.jsx';
 import CurrentProduct from './CurrentProduct.jsx';
+import MathaPatti from './MathaPatti.jsx';
 import LogIn from './LogIn.jsx';
 import Shopping from './Shopping.jsx';
+import Jhumar from './Jhumar.jsx';
 import SemiFormals from './SemiFormals.jsx';
 import Formals from './Formals.jsx';
 import Tunics from './Tunics.jsx';
+import Chokers from './Chokers.jsx';
+import Bangles from './Bangles.jsx';
+import Necklace from './Necklace.jsx';
+import Earings from './Earings.jsx';
+import Rings from './Rings.jsx';
+import Anklet from './Anklet.jsx';
 import {
   BrowserRouter as Router,
   Route,
@@ -74,6 +82,14 @@ class App extends React.Component {
       return (
         <Router>
           <Switch>
+            <Route path="/jhumar" component={() => <Jhumar />} />
+            <Route path="/mathaPatti" component={() => <MathaPatti />} />
+            <Route path="/rings" component={() => <Rings />} />
+            <Route path="/bangles" component={() => <Bangles />} />
+            <Route path="/anklet" component={() => <Anklet />} />
+            <Route path="/earings" component={() => <Earings />} />
+            <Route path="/necklace" component={() => <Necklace />} />
+            <Route path="/chokers" component={() => <Chokers />} />
             <Route path="/tunics" component={() => <Tunics />} />
             <Route path="/bridesMaids" component={() => <BridesMaids />} />
             <Route path="/formals" component={() => <Formals />} />

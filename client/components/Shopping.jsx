@@ -93,19 +93,17 @@ class Shopping extends React.Component {
   }
 
   handleToken(token, name) {
-    //console.log({ token, addresses });
     var product = {price: this.state.totalPrice * 100, name: "Manshaa Outfits"};
 
-    console.log(product);
-
-    const response = axios.post("/checkout", { token, product } );
-    const { status } = response.data;
-    console.log("Response:", response.data);
-    if (status === "success") {
-      toast("Success! Check email for details", { type: "success" });
-    } else {
-      toast("Something went wrong", { type: "error" });
-    }
+    axios.post("/checkout", { token, product } )
+    .then(result => {
+      console.log(result.data.status);
+      if(result.data.status === "success"){
+        window.alert("Your payment was successful! Check your email for details");
+      }else {
+        window.alert("Sorry, something went wrong on our end");
+      }
+    })
   }
 
   render() {

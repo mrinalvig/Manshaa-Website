@@ -139,14 +139,30 @@ class NavBar extends React.Component {
           <button type='button' id='jewelry' onMouseEnter={this.dropJewelry} onMouseLeave={this.liftJewelry}>
               JEWELRY
               <div id='jewelrySelectionBox'>
-                <button type='button' id='jewelrySelection'>CHOKERS</button>
-                <button type='button' id='jewelrySelection'>NECKLACE</button>
-                <button type='button' id='jewelrySelection'>EARINGS</button>
-                <button type='button' id='jewelrySelection'>ANKLET</button>
-                <button type='button' id='jewelrySelection'>BANGLES</button>
-                <button type='button' id='jewelrySelection'>RINGS</button>
-                <button type='button' id='jewelrySelection'>MATHA PATTI & MANGTIKKA</button>
-                <button type='button' id='jewelrySelection'>JHUMAR</button>
+                <Link to="/chokers">
+                  <button type='button' id='jewelrySelection'>CHOKERS</button>
+                </Link>
+                <Link to="/necklace">
+                  <button type='button' id='jewelrySelection'>NECKLACE</button>
+                </Link>
+                <Link to="/earings">
+                  <button type='button' id='jewelrySelection'>EARINGS</button>
+                </Link>
+                <Link to="/anklet">
+                  <button type='button' id='jewelrySelection'>ANKLET</button>
+                </Link>
+                <Link to="/bangles">
+                  <button type='button' id='jewelrySelection'>BANGLES</button>
+                </Link>
+                <Link to="/rings">
+                  <button type='button' id='jewelrySelection'>RINGS</button>
+                </Link>
+                <Link to="/mathaPatti">
+                  <button type='button' id='jewelrySelection'>MATHA PATTI & MANGTIKKA</button>
+                </Link>
+                <Link to="/jhumar">
+                  <button type='button' id='jewelrySelection'>JHUMAR</button>
+                </Link>
               </div>
           </button>
           <div id='searchLogo'></div>
