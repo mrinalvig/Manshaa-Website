@@ -1,5 +1,10 @@
 body {
   background-color: rgb(241, 232, 226);
+  /* background: url("https://i.ibb.co/zZgFntn/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
   width: 100vw;
   height: 150vh;
   display: flexbox;
@@ -135,7 +140,7 @@ body {
   left: 17.5%;
   top: 32%;
   width: 10vw;
-  height: 29vh;
+  height: 33vh;
   transition: .4s;
 }
 
@@ -157,7 +162,7 @@ body {
   left: 25.5%;
   top: 36%;
   width: 10vw;
-  height: 45vh;
+  height: 53vh;
   transition: .4s;
 }
 
@@ -177,9 +182,9 @@ body {
 
 #womenSelectionBox {
   position: relative;
-  left: -1vw;
-  height: 200px;
-  width: 160px;
+  left: -.5vw;
+  height: 220px;
+  width: 150px;
   outline: none;
   background-color: rgb(238, 222, 197, .8);
 }
@@ -194,7 +199,7 @@ body {
 #jewelrySelectionBox {
   position: relative;
   left: -1vw;
-  height: 325px;
+  height: 36opx;
   width: 160px;
   outline: none;
   background-color: rgb(238, 222, 197, .8);
@@ -327,7 +332,7 @@ body {
   width: 23vw;
   height: 50vh;
   left: 7.9%;
-  background-image: url("https://rb.gy/d7o7lq");
+  background-image: url("https://i.ibb.co/T0HGrtd/1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.7);

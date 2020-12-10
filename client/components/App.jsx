@@ -42,11 +42,13 @@ class App extends React.Component {
       storedUsers: {},
       loggedIn: false,
       username: "",
-      productInfo: []
+      productInfo: [],
+      currentUser: ""
     };
     this.currentUser = this.currentUser.bind(this);
     this.setLink = this.setLink.bind(this);
     this.productContent = this.productContent.bind(this);
+    this.returnName = this.returnName.bind(this);
   }
 
   componentDidMount() {
@@ -58,6 +60,10 @@ class App extends React.Component {
         // console.log(this.state.storedUsers);
     })
     axios.put('/logOut');
+  }
+
+  returnName(){
+    return (this.state.username);
   }
 
   currentUser(name) {
@@ -82,28 +88,28 @@ class App extends React.Component {
       return (
         <Router>
           <Switch>
-            <Route path="/jhumar" component={() => <Jhumar />} />
-            <Route path="/mathaPatti" component={() => <MathaPatti />} />
-            <Route path="/rings" component={() => <Rings />} />
-            <Route path="/bangles" component={() => <Bangles />} />
-            <Route path="/anklet" component={() => <Anklet />} />
-            <Route path="/earings" component={() => <Earings />} />
-            <Route path="/necklace" component={() => <Necklace />} />
-            <Route path="/chokers" component={() => <Chokers />} />
-            <Route path="/tunics" component={() => <Tunics />} />
-            <Route path="/bridesMaids" component={() => <BridesMaids />} />
-            <Route path="/formals" component={() => <Formals />} />
-            <Route path="/semiFormals" component={() => <SemiFormals />} />
-            <Route path="/checkout" component={() => <Checkout />} />
-            <Route path="/shoppingCart" component={() => <Shopping />} />
-            <Route path="/logIn" component={() => <LogIn users={this.state.storedUsers} current={this.currentUser} name={this.state.username}/>} />
-            <Route path="/product" component={() => <CurrentProduct product={this.state.productInfo} link={this.state.link}/>} />
-            <Route path="/kurtas" component={() => <Kurtas />} />
-            <Route path="/shoes" component={() => <Shoes />} />
-            <Route path="/sherwani" component={() => <Sherwani />} />
-            <Route path="/bridal" component={() => <Bridal change={(e) => this.setLink(e)} content={this.productContent}/>} />
-            <Route path="/men" component={() => <MensPage />} />
-            <Route exact path="/" component={() => <Banner />} />
+            <Route path="/jhumar" component={() => <Jhumar name={this.state.username} />} />
+            <Route path="/mathaPatti" component={() => <MathaPatti name={this.state.username} />} />
+            <Route path="/rings" component={() => <Rings name={this.state.username} />} />
+            <Route path="/bangles" component={() => <Bangles name={this.state.username} />} />
+            <Route path="/anklet" component={() => <Anklet name={this.state.username} />} />
+            <Route path="/earings" component={() => <Earings name={this.state.username} />} />
+            <Route path="/necklace" component={() => <Necklace name={this.state.username} change={(e) => this.setLink(e)} content={this.productContent}/>} />
+            <Route path="/chokers" component={() => <Chokers name={this.state.username} />} />
+            <Route path="/tunics" component={() => <Tunics name={this.state.username} />} />
+            <Route path="/bridesMaids" component={() => <BridesMaids name={this.state.username} />} />
+            <Route path="/lehangas" component={() => <Formals name={this.state.username} />} />
+            <Route path="/suits" component={() => <SemiFormals name={this.state.username} />} />
+            <Route path="/checkout" component={() => <Checkout name={this.state.username} />} />
+            <Route path="/shoppingCart" component={() => <Shopping name={this.state.username} />} />
+            <Route path="/logIn" component={() => <LogIn users={this.state.storedUsers} currentUser={this.state.currentUser} current={this.currentUser} name={this.state.username}/>} />
+            <Route path="/product" component={() => <CurrentProduct name={this.state.username} product={this.state.productInfo} link={this.state.link}/>} />
+            <Route path="/kurtas" component={() => <Kurtas name={this.state.username} />} />
+            <Route path="/shoes" component={() => <Shoes name={this.state.username} />} />
+            <Route path="/sherwani" component={() => <Sherwani name={this.state.username} />} />
+            <Route path="/bridal" component={() => <Bridal name={this.state.username} change={(e) => this.setLink(e)} content={this.productContent}/>} />
+            <Route path="/men" component={() => <MensPage name={this.state.username} />} />
+            <Route exact path="/" component={() => <Banner name={this.state.username}/>} />
           </Switch>
         </Router>
       );

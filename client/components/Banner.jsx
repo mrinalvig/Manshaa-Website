@@ -7,7 +7,8 @@ class Banner extends React.Component {
     super(props);
     this.state = {
         slideDeck: ['','','','',''],
-        images: ['https://rb.gy/oixi4f', 'https://rb.gy/eef1ol', 'https://rb.gy/oixi4f', 'https://rb.gy/eef1ol', 'https://rb.gy/oixi4f'],
+        pic: "./dist/images/banner.jpg",
+        images: ['https://rb.gy/vibmst', 'https://rb.gy/lmvymo', 'https://rb.gy/vibmst', 'https://rb.gy/lmvymo', 'https://rb.gy/vibmst'],
         reviews: ['https://i.ibb.co/4S0Stp5/review1.png', 'https://i.ibb.co/G97pWvr/review2.png', 'https://i.ibb.co/LpygKPs/review3.png', 'https://i.ibb.co/jZ1VY43/review4.png', 'https://i.ibb.co/n8yDzp7/review5.png'],
         x: 0,
         x2: 0
@@ -72,12 +73,12 @@ class Banner extends React.Component {
   render() {
     return (
         <div>
-            <NavBar change={this.props.change} />
+            <NavBar name={this.props.name} change={this.props.change} />
             <div id='homePage'>
                 <div id='banner'>
                     {
                         this.state.slideDeck.map((item, index) => (
-                            <div key={index} id="slide"  style={{backgroundImage: `url(${this.state.images[index]})`, transform: `translateX(${this.state.x}%)`,}}>
+                            <div key={index} id="slide"  style={{backgroundImage: `url("${this.state.images[index]}")`, transform: `translateX(${this.state.x}%)`,}}>
                                 {item}
                             </div>
                         ))

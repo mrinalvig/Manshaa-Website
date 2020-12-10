@@ -61,14 +61,13 @@ class CurentProduct extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/loggedUser')
+    axios.post('/loggedIn', {username: this.props.name})
     .then(result => {
+      console.log(result.data);
         this.setState ({
             userInfo: result.data
         })
     })
-
-
   }
 
   expandColor() {
@@ -324,7 +323,7 @@ class CurentProduct extends React.Component {
     if(this.state.size === false && this.state.color === false) {
       return(
         <div>
-          <NavBar />
+          <NavBar name={this.props.name}/>
           <div id='currentProduct'>
               <div id='currentImage'>
                 <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
@@ -350,7 +349,7 @@ class CurentProduct extends React.Component {
     if(this.state.size === true && this.state.color === false) {
       return(
         <div>
-          <NavBar />
+          <NavBar name={this.props.name}/>
           <div id='currentProduct'>
               <div id='currentImage'>
                 <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
@@ -394,7 +393,7 @@ class CurentProduct extends React.Component {
     if(this.state.color === true && this.state.size === false) {
       return(
         <div>
-          <NavBar />
+          <NavBar name={this.props.name}/>
           <div id='currentProduct'>
               <div id='currentImage'>
                 <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>

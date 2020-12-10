@@ -34,7 +34,7 @@ class Shopping extends React.Component {
   componentDidMount() {
     var array = [];
     var price = 0;
-    axios.get('/loggedUser')
+    axios.post('/loggedIn', {username: this.props.name})
     .then(result => {
         this.setState ({
             userInfo: result.data,
@@ -110,7 +110,7 @@ class Shopping extends React.Component {
     if(this.state.userInfo.length === 0) {
         return (
         <div>
-            <NavBar />
+            <NavBar name={this.props.name}/>
             <div id='shoppingLog'>
                 <div id='shoppingMessage'>
                     <h2 id='shoppingLine'>You must log in to view your shopping cart</h2>
@@ -125,7 +125,7 @@ class Shopping extends React.Component {
       if(this.state.measurementBox === false) {
         return (
           <div>
-              <NavBar />
+              <NavBar name={this.props.name}/>
               <div id='shoppingContainer'>
                   <h2 id='shoppingHeader'>Shopping Cart</h2>
                   {this.state.cart.map((image, index) => (
@@ -171,7 +171,7 @@ class Shopping extends React.Component {
       else {
         return (
           <div>
-              <NavBar />
+              <NavBar name={this.props.name}/>
               <div id='shoppingContainer'>
                   <h2 id='shoppingHeader'>Shopping Cart</h2>
                   {this.state.cart.map((image, index) => (

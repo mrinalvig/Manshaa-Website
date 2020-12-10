@@ -81,7 +81,7 @@ class MensPage extends React.Component {
       if(this.state.pageOne === true) {
           return (
               <div id='mensTransition'>
-                  <NavBar change={this.props.change} />
+                  <NavBar name={this.props.name} change={this.props.change} />
                   <div id='mensPage'>
                       {this.state.images.map((image, index) => (
                           <div id='productContainer'>
@@ -100,7 +100,7 @@ class MensPage extends React.Component {
       if(this.state.pageTwo === true) {
         return (
             <div>
-                <NavBar change={this.props.change} />
+                <NavBar name={this.props.name} change={this.props.change} />
                 <div id='mensPage'>
                     {this.state.images2.map((image, index) => (
                         <div id='productContainer'>
@@ -119,7 +119,7 @@ class MensPage extends React.Component {
       if(this.state.pageThree === true) {
         return (
             <div>
-                <NavBar change={this.props.change} />
+                <NavBar name={this.props.name} change={this.props.change} />
                 <div id='mensPage'>
                     {this.state.images3.map((image, index) => (
                         <div id='productContainer'>

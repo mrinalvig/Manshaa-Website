@@ -151,7 +151,7 @@ class Checkout extends React.Component {
         if(this.state.myInfo === false && this.state.shipping === false && this.state.payment === false) {
             return (
                 <div>
-                    <NavBar />
+                    <NavBar name={this.props.name} />
                     <div id='checkoutPage'>
                         <div id='myInfoBox'>
                             <h2 id='myInfo'>MY INFORMATION</h2>
@@ -182,7 +182,7 @@ class Checkout extends React.Component {
         if(this.state.myInfo === true) {
             return (
                 <div>
-                    <NavBar />
+                    <NavBar name={this.props.name} />
                     <div id='checkoutPage'>
                         <div id='myInfoBox2'>
                             <h2 id='myInfo'>MY INFORMATION</h2>
@@ -216,7 +216,7 @@ class Checkout extends React.Component {
         if(this.state.shipping === true) {
             return (
                 <div>
-                    <NavBar />
+                    <NavBar name={this.props.name} />
                     <div id='checkoutPage'>
                         <div id='myInfoBox'>
                             <h2 id='myInfo'>MY INFORMATION</h2>
@@ -262,7 +262,7 @@ class Checkout extends React.Component {
         if(this.state.payment === true) {
             return (
                 <div>
-                    <NavBar />
+                    <NavBar name={this.props.name}/>
                     <div id='checkoutPage'>
                         <div id='myInfoBox'>
                             <h2 id='myInfo'>MY INFORMATION</h2>

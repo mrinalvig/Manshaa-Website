@@ -67,6 +67,16 @@ app.get('/jewelry', (req, res) => {
     })
 })
 
+app.get('/necklace', (req, res) => {
+    db.query(`SELECT * FROM jewelry WHERE category='necklace'`, (err, result) => {
+        if(err) {
+            res.status(404).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
 app.get('/userId', (req, res) => {
     db.query('SELECT * FROM user', (err, result) => {
         if(err) {
@@ -87,6 +97,16 @@ app.get('/loggedUser', (req, res) => {
     })
 })
 
+app.post('/loggedIn', (req, res) => {
+    db.query(`SELECT * FROM user WHERE username = '${req.body.username}'`, (err, result) => {
+        if(err) {
+            res.status(404).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
 app.post('/userId', (req, res) => {
     db.query(`INSERT INTO user(username, password, logged) VALUES ("${req.body.username}", "${req.body.password}", "${req.body.logged}")`, (err, result) => {
         if(err) {
@@ -94,7 +114,6 @@ app.post('/userId', (req, res) => {
         } else{
             res.status(202).send('ID Posted');
         }
-
     })
 })
 

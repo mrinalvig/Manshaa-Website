@@ -62,7 +62,7 @@ class BridalPage extends React.Component {
   render() {
     return (
         <div>
-          <NavBar />
+          <NavBar name={this.props.name} />
             <div id='mensPage'>
               {this.state.images.map((image, index) => (
                   <div id='productContainer'>

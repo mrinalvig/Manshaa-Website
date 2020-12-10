@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import App from './App.jsx';
 import MensPage from './MensPage.jsx';
 import {
   BrowserRouter as Router,
@@ -18,7 +19,8 @@ class NavBar extends React.Component {
         jewelryDrop: false,
         cart: [],
         shoppingBadge: "shoppingBadge",
-        shoppingBadge2: "shoppingBadge2"
+        shoppingBadge2: "shoppingBadge2",
+        username: "parker"
     };
     this.dropMen = this.dropMen.bind(this);
     this.liftMen = this.liftMen.bind(this);
@@ -33,7 +35,7 @@ class NavBar extends React.Component {
 
   componentDidMount() {
     // setInterval(() => {
-      axios.get('/loggedUser')
+      axios.post('/loggedIn', {username: this.props.name})
       .then(result => {
           this.setState ({
               cart: JSON.parse(result.data[0].cart),
@@ -122,12 +124,13 @@ class NavBar extends React.Component {
               <Link to="/bridal">
                 <button type='button' name='bridal' id='womenSelection' >BRIDAL</button>
               </Link>
-              <Link to="/semiFormals">
-                <button type='button' id='womenSelection'>SEMI FORMALS</button>
+              <Link to="/suits">
+                <button type='button' id='womenSelection'>SUITS</button>
               </Link>
-              <Link to="/formals">
-                <button type='button' id='womenSelection'>FORMALS</button>
+              <Link to="/lehangas">
+                <button type='button' id='womenSelection'>LEHANGAS</button>
               </Link>
+                <button type='button' id='womenSelection'>SHARARAS</button>
               <Link to="/bridesMaids">
                 <button type='button' id='womenSelection'>BRIDESMAIDS</button>
               </Link>
@@ -163,6 +166,7 @@ class NavBar extends React.Component {
                 <Link to="/jhumar">
                   <button type='button' id='jewelrySelection'>JHUMAR</button>
                 </Link>
+                  <button type='button' id='jewelrySelection'>HAND SETS</button>
               </div>
           </button>
           <div id='searchLogo'></div>

@@ -13,7 +13,7 @@ class Shoes extends React.Component {
   render() {
     return(
         <div>
-            <NavBar />
+            <NavBar name={this.props.name}/>
             <FooterTwo />
         </div>
     );
