@@ -18,6 +18,7 @@ class Shopping extends React.Component {
     this.state = {
         userInfo: [],
         cart: [],
+        purchased: [],
         measurementBox: false,
         measurements: [],
         currentIndex: 0,
@@ -39,8 +40,9 @@ class Shopping extends React.Component {
         this.setState ({
             userInfo: result.data,
             cart: JSON.parse(result.data[0].cart),
+            purchased: JSON.parse(result.data[0].purchased),
             username: result.data[0].username
-        })
+        }, () => console.log(this.state.userInfo))
     })
     .then(() => {
       this.state.cart.map((image, index) => {
@@ -97,12 +99,36 @@ class Shopping extends React.Component {
 
     axios.post("/checkout", { token, product } )
     .then(result => {
-      console.log(result.data.status);
+      //console.log(result.data.status);
       if(result.data.status === "success"){
-        window.alert("Your payment was successful! Check your email for details");
-      }else {
-        window.alert("Sorry, something went wrong on our end");
+        var today = new Date();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        let purchases = this.state.purchased;
+        let previous = this.state.cart;
+        previous.push(date);
+
+        if(previous.length === 5 && previous[0].length != 5) {
+          var container = [];
+          container.push(purchases);
+          container.push(previous);
+          container = JSON.stringify(container);
+
+          //console.log(container);
+          axios.put('/purchased', { purchased:container, username:this.state.username });
+        }
+        else {
+          previous.push(purchases);
+          previous = JSON.stringify(previous);
+
+          //console.log(previous);
+          axios.put('/purchased', { purchased:previous, username:this.state.username });
+        }
       }
+
+      axios.put('/cartEmpty', {username: this.state.username})
+
+      window.alert("Your payment was successful! Check your email for details");
+      this.componentDidMount();
     })
   }
 

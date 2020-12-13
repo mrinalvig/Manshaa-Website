@@ -132,10 +132,10 @@ class CurentProduct extends React.Component {
         axios.put('/cart', { cart:container, username:this.state.userInfo[0].username })
         .then(() => {
           window.alert("You have successfully added this item to your cart");
-          axios.get('/loggedUser')
-          .then(result => {
-            console.log(JSON.parse(result.data[0].cart));
-          })
+          // axios.get('/loggedUser')
+          // .then(result => {
+          //   console.log(JSON.parse(result.data[0].cart));
+          // })
         })
       }
       if(previous.length === 4 && previous[0].length != 4) {

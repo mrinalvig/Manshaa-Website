@@ -147,6 +147,26 @@ app.put('/cart', (req, res) => {
     })
 })
 
+app.put('/purchased', (req, res) => {
+    db.query(`UPDATE user SET purchased = '${req.body.purchased}' WHERE username = "${req.body.username}";`, (err, result) => {
+        if(err) {
+            res.status(403).send(err);
+        } else{
+            res.status(202).send('Purchase Made');
+        }
+    })
+})
+
+app.post('/getPurchases', (req, res) => {
+    db.query(`SELECT purchased FROM user WHERE username = "${req.body.username}";`, (err, result) => {
+        if(err) {
+            res.status(403).send(err);
+        } else{
+            res.status(202).send(result);
+        }
+    })
+})
+
 app.get('/logged', (req, res) => {
     db.query(`SELECT username FROM user WHERE logged = "yes"`, (err, result) => {
         if(err) {
@@ -159,6 +179,16 @@ app.get('/logged', (req, res) => {
 
 app.put('/emptyCart', (req, res) => {
     db.query(`UPDATE user SET cart = "" WHERE logged = "yes"`, (err, result) => {
+        if(err) {
+            res.status(404).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
+app.put('/cartEmpty', (req, res) => {
+    db.query(`UPDATE user SET cart = "[]" WHERE username = "${req.body.username}"`, (err, result) => {
         if(err) {
             res.status(404).send(err);
         } else {
