@@ -16,7 +16,7 @@ import MathaPatti from './MathaPatti.jsx';
 import LogIn from './LogIn.jsx';
 import Shopping from './Shopping.jsx';
 import Jhumar from './Jhumar.jsx';
-import SemiFormals from './SemiFormals.jsx';
+import Suits from './Suits.jsx';
 import Formals from './Formals.jsx';
 import Tunics from './Tunics.jsx';
 import Chokers from './Chokers.jsx';
@@ -25,6 +25,7 @@ import Necklace from './Necklace.jsx';
 import Earings from './Earings.jsx';
 import Rings from './Rings.jsx';
 import Anklet from './Anklet.jsx';
+import Lehenga from './Lehenga.jsx';
 import {
   BrowserRouter as Router,
   Route,
@@ -93,13 +94,14 @@ class App extends React.Component {
             <Route path="/rings" component={() => <Rings name={this.state.username} />} />
             <Route path="/bangles" component={() => <Bangles name={this.state.username} />} />
             <Route path="/anklet" component={() => <Anklet name={this.state.username} />} />
-            <Route path="/earings" component={() => <Earings name={this.state.username} />} />
+            <Route path="/earings" component={() => <Earings name={this.state.username} change={(e) => this.setLink(e)} content={this.productContent}/>} />
             <Route path="/necklace" component={() => <Necklace name={this.state.username} change={(e) => this.setLink(e)} content={this.productContent}/>} />
             <Route path="/chokers" component={() => <Chokers name={this.state.username} />} />
             <Route path="/tunics" component={() => <Tunics name={this.state.username} />} />
             <Route path="/bridesMaids" component={() => <BridesMaids name={this.state.username} />} />
-            <Route path="/lehangas" component={() => <Formals name={this.state.username} />} />
-            <Route path="/suits" component={() => <SemiFormals name={this.state.username} />} />
+            {/* <Route path="/lehangas" component={() => <Formals name={this.state.username} />} /> */}
+            <Route path="/suits" component={() => <Suits name={this.state.username} change={(e) => this.setLink(e)} content={this.productContent}/>} />
+            <Route path="/lehenga" component={() => <Lehenga name={this.state.username} change={(e) => this.setLink(e)} content={this.productContent}/>} />
             <Route path="/checkout" component={() => <Checkout name={this.state.username} />} />
             <Route path="/shoppingCart" component={() => <Shopping name={this.state.username} />} />
             <Route path="/logIn" component={() => <LogIn users={this.state.storedUsers} currentUser={this.state.currentUser} current={this.currentUser} name={this.state.username}/>} />

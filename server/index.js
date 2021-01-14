@@ -47,8 +47,48 @@ app.get('/bridal', (req, res) => {
     })
 })
 
+app.get('/suits', (req, res) => {
+    db.query(`SELECT * FROM women WHERE category='suits'`, (err, result) => {
+        if(err) {
+            res.status(405).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
+app.get('/lehenga', (req, res) => {
+    db.query(`SELECT * FROM women WHERE category='lahenga'`, (err, result) => {
+        if(err) {
+            res.status(405).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
+app.get('/earings', (req, res) => {
+    db.query(`SELECT * FROM jewelry WHERE category='earings'`, (err, result) => {
+        if(err) {
+            res.status(405).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
 app.delete('/bridal', (req, res) => {
     db.query(`DELETE FROM women WHERE category='bridal'`, (err, result) => {
+        if(err) {
+            res.status(405).send(err);
+        } else {
+            res.status(205).send(result);
+        }
+    })
+})
+
+app.delete('/suits', (req, res) => {
+    db.query(`DELETE FROM women WHERE category='suits'`, (err, result) => {
         if(err) {
             res.status(405).send(err);
         } else {

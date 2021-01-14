@@ -127,7 +127,7 @@ class NavBar extends React.Component {
               <Link to="/suits">
                 <button type='button' id='womenSelection'>SUITS</button>
               </Link>
-              <Link to="/lehangas">
+              <Link to="/lehenga">
                 <button type='button' id='womenSelection'>LEHANGAS</button>
               </Link>
                 <button type='button' id='womenSelection'>SHARARAS</button>

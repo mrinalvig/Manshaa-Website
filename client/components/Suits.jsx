@@ -4,7 +4,7 @@ import axios from 'axios';
 import FooterTwo from './FooterTwo.jsx';
 import { Link } from 'react-router-dom';
 
-class Earings extends React.Component {
+class Suits extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +23,7 @@ class Earings extends React.Component {
     let description = [];
     let price = [];
 
-    axios.get('/earings')
+    axios.get('/suits')
     .then( result => {
       this.setState ({
         bridal: result.data
@@ -77,4 +77,4 @@ class Earings extends React.Component {
   }
 }
 
-export default Earings;
+export default Suits;
