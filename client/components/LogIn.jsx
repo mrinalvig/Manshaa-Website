@@ -180,15 +180,18 @@ class LogIn extends React.Component {
               <div>
                   <NavBar name={this.props.name}/>
                   <div id='logInBox'>
-                      <h2 id='logInTitle'>Log In</h2>
+                      <div id='titleBox'> <h2 id='logInTitle'>Log In</h2> </ div>
                       <div id='logInSection'>
                           <h2 id='signUpError'>{this.state.signUpError}</h2>
                           <h2 id='userName'>Username</h2><input type="text" id='username' onChange={(e) => this.enterUsername(e)}></input>
                           <h2 id='passWord'>Password</h2><input type="password" id='password' onChange={(e) => this.enterPassword(e)}></input>
                           <button id='loginButton' onClick={this.logInClick}>Log In!</button>
                       </div>
-                      <h2 id='signUp'>Don't have an account yet? </h2>
-                      <button id='signUpButton' name='signUp' onClick={(e) => this.signUp(e)}>Sign Up!</button>
+                      <div id='accountMessage'>
+                        <h2 id='signUp'>Don't have an account yet?
+                            <button id='signUpButton' name='signUp' onClick={(e) => this.signUp(e)}>Sign Up!</button>
+                        </h2>
+                      </div>
                   </div>
                   <FooterThree />
               </div>
@@ -200,16 +203,26 @@ class LogIn extends React.Component {
             <div>
                 <NavBar name={this.props.name}/>
                 <div id='signUpBox'>
-                    <h2 id='logInTitle2'>Sign Up</h2>
+                    <div id='titleBox'> <h2 id='logInTitle2'>Sign Up</h2> </ div>
                     <div id='signUpSection'>
                         <h2 id='signUpError'>{this.state.signUpError}</h2>
-                        <h2 id='userName2'>Username</h2><input type="text" id='username2' onChange={(e) => this.enterUsername(e)}></input>
-                        <h2 id='passWord2'>Password</h2><input type="text" id='password2' onChange={(e) => this.enterPassword(e)}></input>
-                        <h2 id='reenter'>Re-enter Password</h2><input type="text" id='reEnter' onChange={(e) => this.enterRePassword(e)}></input>
+                        <div id='userColumn'>
+                            <h2 id='userName2'>Username</h2>
+                            <h2 id='passWord2'>Password</h2>
+                            <h2 id='reenter'>Re-enter Password</h2>
+                        </div>
+                        <div id='userColumn2'>
+                            <input type="text" id='username2' onChange={(e) => this.enterUsername(e)}></input>
+                            <input type="text" id='password2' onChange={(e) => this.enterPassword(e)}></input>
+                            <input type="text" id='reEnter' onChange={(e) => this.enterRePassword(e)}></input>
+                        </div>
                         <button id='loginButton2' onClick={this.signUpClick}>Sign Up!</button>
                     </div>
-                    <h2 id='signUp2'>Already a user?</h2>
-                    <button id='signUpButton2' name='logIn' onClick={(e) => this.signUp(e)}>Log In!</button>
+                    <div id='accountMessage2'>
+                        <h2 id='signUp2'>Already a user?
+                            <button id='signUpButton2' name='logIn' onClick={(e) => this.signUp(e)}>Log In!</button>
+                        </h2>
+                    </div>
                 </div>
                 <FooterThree />
             </div>
@@ -221,11 +234,13 @@ class LogIn extends React.Component {
             <div>
                 <NavBar name={this.props.name}/>
                 <div id='logInBox'>
-                    <h2 id='successTitle'>Success!</h2>
+                    <div id='titleBox'> <h2 id='successTitle'>Success!</h2> </ div>
                     <div id='logInSection'>
                         <h2 id='successMessage'>You have successfully logged in! <br /> Welcome {this.state.username}!</h2>
                     </div>
-                    <button id='signUpButton3' name='logOut' onClick={this.logOutClick}>Log Out!</button>
+                    <div id='accountMessage'>
+                        <button id='signUpButton3' name='logOut' onClick={this.logOutClick}>Log Out!</button>
+                    </ div>
                 </div>
                 <FooterThree />
             </div>
@@ -237,11 +252,13 @@ class LogIn extends React.Component {
             <div>
                 <NavBar name={this.props.name}/>
                 <div id='logInBox'>
-                    <h2 id='successTitle'>Success!</h2>
+                    <div id='titleBox'> <h2 id='successTitle'>Success!</h2> </ div>
                     <div id='logInSection'>
                         <h2 id='successMessage'>You are logged in! <br /> Welcome {this.state.signedInUser}!</h2>
                     </div>
-                    <button id='signUpButton3' name='logOut' onClick={this.logOutClick2}>Log Out!</button>
+                    <div id='accountMessage'>
+                        <button id='signUpButton3' name='logOut' onClick={this.logOutClick2}>Log Out!</button>
+                    </ div>
                 </div>
                 <FooterThree />
             </div>

@@ -1,12 +1,7 @@
 body {
   background-color: rgb(241, 232, 226);
-  /* background: url("https://i.ibb.co/zZgFntn/background.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
-  width: 100vw;
-  height: 150vh;
+  width: 100%;
+  height: 100%;
   display: flexbox;
   overflow: hidden auto;
 }
@@ -15,7 +10,7 @@ body {
   background-color: rgb(238, 222, 197);
   margin-top: -10px;
   margin-left: -10px;
-  width: 100vw;
+  width: 101vw;
   height: 85px;
   display: flex;
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
@@ -102,8 +97,8 @@ body {
 
 #men {
   position: absolute;
-  left: 9.5%;
-  top: 38%;
+  left: 9.5vw;
+  top: 3.5vh;
   width: 10vw;
   height: 3vh;
   font-size: 15px;
@@ -115,8 +110,9 @@ body {
 }
 #men:hover {
   font-size: 20px;
-  left: 9.5%;
-  top: 38%;
+  /* left: 9.5vw;
+  top: 4vh; */
+  margin: 0 auto;
   width: 10vw;
   height: 17vh;
   transition: .5s;
@@ -125,7 +121,7 @@ body {
 #women {
   position: absolute;
   left: 17.5%;
-  top: 38%;
+  top: 3.5vh;
   width: 10vw;
   height: 3vh;
   font-size: 15px;
@@ -138,7 +134,7 @@ body {
 #women:hover {
   font-size: 20px;
   left: 17.5%;
-  top: 32%;
+  top: 1vh;
   width: 10vw;
   height: 33vh;
   transition: .4s;
@@ -147,7 +143,7 @@ body {
 #jewelry {
   position: absolute;
   left: 25.5%;
-  top: 38%;
+  top: 3.5vh;
   width: 10vw;
   height: 3vh;
   font-size: 15px;
@@ -160,7 +156,7 @@ body {
 #jewelry:hover {
   font-size: 20px;
   left: 25.5%;
-  top: 36%;
+  top: -2vh;
   width: 10vw;
   height: 53vh;
   transition: .4s;
@@ -171,6 +167,8 @@ body {
   width: 130px;
   outline: none;
   background-color: rgb(238, 222, 197, .8);
+  position: relative;
+  left: 1.2vw;
 }
 #menSelection {
   background-color: transparent;
@@ -182,7 +180,7 @@ body {
 
 #womenSelectionBox {
   position: relative;
-  left: -.5vw;
+  left: .7vw;
   height: 220px;
   width: 150px;
   outline: none;
@@ -198,8 +196,8 @@ body {
 
 #jewelrySelectionBox {
   position: relative;
-  left: -1vw;
-  height: 36opx;
+  left: .6vw;
+  height: 36px;
   width: 160px;
   outline: none;
   background-color: rgb(238, 222, 197, .8);
@@ -214,9 +212,9 @@ body {
 
 #slide {
   background-image: url("https://rb.gy/oixi4f");
-  background-size: 101.5% 375px;
+  background-size: 101.5% 55vh;
   min-width: 102.4%;
-  height: 375px;
+  height: 55vh;
   margin-top: 40px;
   margin-left: -10px;
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
@@ -741,7 +739,7 @@ body {
   justify-content: center;
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
   align-items: center;
-  border: .5px solid black;
+  border: transparent;
   transition: .6s;
   overflow: hidden;
   z-index: 2;
@@ -1163,8 +1161,7 @@ body {
 }
 
 #logInSection{
-  position: relative;
-  top: -5vh;
+  position: absolute;
   width: 40vw;
   height: 25vh;
   background-color: rgb(255, 255, 255, .5);
@@ -1172,11 +1169,26 @@ body {
   border-bottom: 2px solid black;
   transition: .6s;
   overflow: hidden;
+  margin: auto;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#accountMessage{
+  position: absolute;
+  width: 40vw;
+  height: 7vh;
+  top: 33vh;
+}
+
+#accountMessage2{
+  position: absolute;
+  width: 40vw;
+  height: 7vh;
+  top: 53vh;
 }
 
 #signUpSection{
-  position: relative;
-  top: -5vh;
+  position: absolute;
   width: 40vw;
   height: 45vh;
   background-color: rgb(255, 255, 255, .5);
@@ -1184,6 +1196,14 @@ body {
   border-bottom: 2px solid black;
   transition: .6s;
   overflow: hidden;
+  margin: auto;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#titleBox{
+  position: absolute;
+  width: 40vw;
+  height: 7vh;
 }
 
 #logInTitle{
@@ -1191,8 +1211,8 @@ body {
   Helvetica, Arial, sans-serif;
   font-size: 35px;
   position: relative;
-  left: 40%;
-  top: -3vh;
+  margin: auto;
+  text-align: center;
   transition: .6s;
 }
 
@@ -1201,8 +1221,8 @@ body {
   Helvetica, Arial, sans-serif;
   font-size: 35px;
   position: relative;
-  left: 39%;
-  top: -3vh;
+  margin: auto;
+  text-align: center;
   transition: .6s;
 }
 
@@ -1211,8 +1231,8 @@ body {
   Helvetica, Arial, sans-serif;
   font-size: 35px;
   position: relative;
-  left: 37%;
-  top: -3vh;
+  margin: auto;
+  text-align: center;
   transition: .6s;
 }
 
@@ -1231,8 +1251,8 @@ body {
   Helvetica, Arial, sans-serif;
   font-size: 20px;
   position: relative;
-  left: 25%;
-  top: -5vh;
+  top: 0vh;
+  text-align: center;
   transition: .6s;
 }
 
@@ -1241,8 +1261,8 @@ body {
   Helvetica, Arial, sans-serif;
   font-size: 20px;
   position: relative;
-  left: 26%;
-  top: -5vh;
+  top: 0vh;
+  text-align: center;
   transition: .6s;
 }
 
@@ -1254,15 +1274,13 @@ body {
   Helvetica, Arial, sans-serif;
   font-size: 20px;
   outline: none;
-  position: relative;
-  left: 71%;
-  top: -10vh;
+  position: absolute;
   transition: .6s;
+  top: 0vh;
 }
 #signUpButton:hover{
   font-size: 25px;
-  top: -10.5vh;
-  left: 70%;
+  top: -.5vh;
 }
 
 #signUpButton2{
@@ -1273,15 +1291,13 @@ body {
   Helvetica, Arial, sans-serif;
   font-size: 20px;
   outline: none;
-  position: relative;
-  left: 53%;
-  top: -10vh;
+  position: absolute;
   transition: .6s;
+  top: 0vh;
 }
 #signUpButton2:hover{
   font-size: 25px;
-  top: -10.5vh;
-  left: 52%;
+  top: -.5vh;
 }
 
 #signUpButton3{
@@ -1292,23 +1308,40 @@ body {
   Helvetica, Arial, sans-serif;
   font-size: 20px;
   outline: none;
-  position: relative;
-  left: 42%;
-  top: -3vh;
+  position: absolute;
+  margin: auto;
   transition: .6s;
+  top: 0; bottom: 0; left: 0; right: 0;
 }
 #signUpButton3:hover{
   font-size: 25px;
-  top: -3.5vh;
-  left: 40%;
+}
+
+#userColumn{
+  position: absolute;
+  width: 10vw;
+  height: 30vh;
+  border: none;
+  text-align: right;
+  left: 6vw;
+  top: 7vh;
+}
+
+#userColumn2{
+  position: absolute;
+  width: 13vw;
+  height: 25vh;
+  border: none;
+  top: 8.5vh;
+  left: 17vw;
 }
 
 #userName{
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   position: relative;
-  left: 21%;
-  top: 4vh;
+  left: 9vw;
+  top: 6.5vh;
   font-size: 15px;
   transition: .6s;
 }
@@ -1317,8 +1350,8 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   position: relative;
-  left: 21%;
-  top: 7vh;
+  left: 0vw;
+  top: 0vh;
   font-size: 15px;
   transition: .6s;
 }
@@ -1337,23 +1370,23 @@ body {
 
 #username{
   position: relative;
-  left: 37%;
-  top: 0vh;
+  margin:0 auto;
+  display:block;
+  top: 3vh;
   transition: .6s;
 }
 
 #username2{
   position: relative;
-  left: 37%;
-  top: 3vh;
+  top: 0vh;
   transition: .6s;
 }
 
 
 #passWord{
   position: relative;
-  left: 21%;
-  top: 5vh;
+  left: 9vw;
+  top: 7.4vh;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -1362,8 +1395,8 @@ body {
 
 #passWord2{
   position: relative;
-  left: 21%;
-  top: 10vh;
+  left: 0vw;
+  top: 6vh;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -1372,21 +1405,23 @@ body {
 
 #password{
   position: relative;
-  left: 37%;
-  top: 1vh;
+  margin:0 auto;
+  display:block;
+  top: 4vh;
   transition: .6s;
 }
 
 #password2{
   position: relative;
-  left: 37%;
-  top: 6vh;
+  top: 7vh;
   transition: .6s;
 }
 
 #loginButton{
   position: relative;
-  left: 14.5%;
+  width: 50%;
+  margin:0 auto;
+  display:block;
   top: 7vh;
   font-size: 16px;
   width: 90px;
@@ -1395,8 +1430,10 @@ body {
 
 #loginButton2{
   position: relative;
-  left: 14.5%;
-  top: 17vh;
+  width: 50%;
+  margin:0 auto;
+  display:block;
+  top: 40vh;
   font-size: 16px;
   width: 90px;
   transition: .6s;
@@ -1406,16 +1443,15 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   position: relative;
-  left: 9%;
-  top: 13.5vh;
+  left: 0vw;
+  top: 12vh;
   font-size: 15px;
   transition: .6s;
 }
 
 #reEnter{
   position: relative;
-  left: 37%;
-  top: 9vh;
+  top: 14vh;
   transition: .6s;
 }
 
