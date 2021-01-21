@@ -359,7 +359,7 @@ class CurentProduct extends React.Component {
               <h3 id='description'>{this.props.product[1]}</h3>
               <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
               <div id='sizeContainer2'>
-                <img id='sizeChart' src="https://rb.gy/pvf9n2"></img>
+                {/* <img id='sizeChart' src="https://rb.gy/pvf9n2"></img> */}
                 <button id='exit' name='open' onClick={this.closeSize}></button>
               </div>
               <div id='measurementBox'>

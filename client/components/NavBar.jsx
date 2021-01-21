@@ -102,10 +102,11 @@ class NavBar extends React.Component {
           <Link to="/">
             <button id='logo' name='logo' onClick={(e) => this.props.change(e)}></button>
           </Link>
-          <Link to="/men">
-            <button type='button' name ='men' id='men' onMouseEnter={this.dropMen} onMouseLeave={this.liftMen} >
-              MEN
+            <div id='categoryBox'>
               <div id='menSelectionBox'>
+                <Link to="/men">
+                  <button type='button' name ='men' id='men'> MEN </button>
+                </Link>
                 <Link to='/sherwani'>
                   <button type='button' name='sherwani' id='menSelection' >SHERWANI</button>
                 </Link>
@@ -116,32 +117,27 @@ class NavBar extends React.Component {
                   <button type='button' name='kurtas' id='menSelection' >KURTAS</button>
                 </Link>
               </div>
-            </button>
-          </Link>
-          <button type='button' id='women' onMouseEnter={this.dropWomen} onMouseLeave={this.liftWomen}>
-            WOMEN
-            <div id='womenSelectionBox'>
-              <Link to="/bridal">
-                <button type='button' name='bridal' id='womenSelection' >BRIDAL</button>
-              </Link>
-              <Link to="/suits">
-                <button type='button' id='womenSelection'>SUITS</button>
-              </Link>
-              <Link to="/lehenga">
-                <button type='button' id='womenSelection'>LEHANGAS</button>
-              </Link>
-                <button type='button' id='womenSelection'>SHARARAS</button>
-              <Link to="/bridesMaids">
-                <button type='button' id='womenSelection'>BRIDESMAIDS</button>
-              </Link>
-              <Link to="/tunics">
-                <button type='button' id='womenSelection'>TUNICS</button>
-              </Link>
-            </div>
-          </button>
-          <button type='button' id='jewelry' onMouseEnter={this.dropJewelry} onMouseLeave={this.liftJewelry}>
-              JEWELRY
+              <div id='womenSelectionBox'>
+                <button type='button' id='women' onMouseEnter={this.dropWomen} onMouseLeave={this.liftWomen}> WOMEN </button>
+                <Link to="/bridal">
+                  <button type='button' name='bridal' id='womenSelection' >BRIDAL</button>
+                </Link>
+                <Link to="/suits">
+                  <button type='button' id='womenSelection'>SUITS</button>
+                </Link>
+                <Link to="/lehenga">
+                  <button type='button' id='womenSelection'>LEHANGAS</button>
+                </Link>
+                  <button type='button' id='womenSelection'>SHARARAS</button>
+                <Link to="/bridesMaids">
+                  <button type='button' id='womenSelection'>BRIDESMAIDS</button>
+                </Link>
+                <Link to="/tunics">
+                  <button type='button' id='womenSelection'>TUNICS</button>
+                </Link>
+              </div>
               <div id='jewelrySelectionBox'>
+                <button type='button' id='jewelry' onMouseEnter={this.dropJewelry} onMouseLeave={this.liftJewelry}>JEWELRY </button>
                 <Link to="/chokers">
                   <button type='button' id='jewelrySelection'>CHOKERS</button>
                 </Link>
@@ -168,9 +164,10 @@ class NavBar extends React.Component {
                 </Link>
                   <button type='button' id='jewelrySelection'>HAND SETS</button>
               </div>
-          </button>
+            </div>
           <div id='searchLogo'></div>
           <input type='text' id='search' onChange={(e) => this.findSearch(e)}></input>
+          <div></div>
           <Link to='/logIn'>
             <button type='button' name='logIn' id='profileLogo' />
           </Link>

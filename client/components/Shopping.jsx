@@ -25,7 +25,8 @@ class Shopping extends React.Component {
         totalValue: 0,
         tax: 0,
         totalPrice: 0,
-        username: ""
+        username: "",
+        receipt: {}
     };
     this.changeMeasure = this.changeMeasure.bind(this);
     this.removeItem = this.removeItem.bind(this);
@@ -42,7 +43,7 @@ class Shopping extends React.Component {
             cart: JSON.parse(result.data[0].cart),
             purchased: JSON.parse(result.data[0].purchased),
             username: result.data[0].username
-        }, () => console.log(this.state.userInfo))
+        })
     })
     .then(() => {
       this.state.cart.map((image, index) => {
@@ -73,6 +74,7 @@ class Shopping extends React.Component {
         measurementBox: false
       })
     }
+    console.log(this.state.measurements);
   }
 
   removeItem(e) {
@@ -95,7 +97,18 @@ class Shopping extends React.Component {
   }
 
   handleToken(token, name) {
-    var product = {price: this.state.totalPrice * 100, name: "Manshaa Outfits"};
+    let details = [];
+
+    this.state.measurements.map((item, index) => {
+      details.push([
+        item[1][0],
+        `$${item[1][2]}.00`,
+        `Color: ${item[3]}`,
+        `Measurements: ${item[2]}\n`
+      ]);
+    })
+
+    var product = {price: this.state.totalPrice * 100, name: `Manshaa Outfits: \n ${details}`};
 
     axios.post("/checkout", { token, product } )
     .then(result => {

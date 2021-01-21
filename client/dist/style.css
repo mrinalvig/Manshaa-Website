@@ -55,11 +55,13 @@ body {
   background-size: 35px 35px;
   background-repeat: no-repeat;
   outline: none;
+  transition: .3s;
 }
 #profileLogo:hover {
   background-size: 40px 40px;
   left: 84.85%;
   top: 25%;
+  transition: .3s;
 }
 
 #shoppingLogo {
@@ -74,11 +76,13 @@ body {
   background-size: 35px 35px;
   background-repeat: no-repeat;
   outline: none;
+  transition: .3s;
 }
 #shoppingLogo:hover {
   background-size: 40px 40px;
   left: 89.85%;
   top: 25%;
+  transition: .3s;
 }
 
 #searchLogo {
@@ -96,112 +100,139 @@ body {
 }
 
 #men {
-  position: absolute;
-  left: 9.5vw;
-  top: 3.5vh;
-  width: 10vw;
-  height: 3vh;
-  font-size: 15px;
   background-color: transparent;
-  border: none;
-  outline: none;
-  overflow: hidden;
-  transition: .5s;
-}
-#men:hover {
+  border: solid 1px transparent;
   font-size: 20px;
-  /* left: 9.5vw;
-  top: 4vh; */
-  margin: 0 auto;
-  width: 10vw;
-  height: 17vh;
-  transition: .5s;
+  margin-top: 10px;
+  outline: none;
+  position: relative;
 }
 
 #women {
-  position: absolute;
-  left: 17.5%;
-  top: 3.5vh;
-  width: 10vw;
-  height: 3vh;
-  font-size: 15px;
   background-color: transparent;
-  border: none;
-  outline: none;
-  overflow: hidden;
-  transition: .4s;
-}
-#women:hover {
+  border: solid 1px transparent;
   font-size: 20px;
-  left: 17.5%;
-  top: 1vh;
-  width: 10vw;
-  height: 33vh;
-  transition: .4s;
+  margin-top: 10px;
+  outline: none;
+  position: relative;
+  margin-left: -.5vw;
 }
 
 #jewelry {
+  background-color: transparent;
+  border: solid 1px transparent;
+  font-size: 20px;
+  margin-top: 10px;
+  outline: none;
+  position: relative;
+}
+
+#categoryBox{
   position: absolute;
-  left: 25.5%;
-  top: 3.5vh;
-  width: 10vw;
-  height: 3vh;
-  font-size: 15px;
+  height: 6vh;
+  width: 30vw;
   background-color: transparent;
   border: none;
-  outline: none;
-  overflow: hidden;
-  transition: .4s;
-}
-#jewelry:hover {
-  font-size: 20px;
-  left: 25.5%;
-  top: -2vh;
-  width: 10vw;
-  height: 53vh;
-  transition: .4s;
+  display: flex;
+  margin: auto;
+  top: 0; bottom: 0; right: 0; left: -50vw;
 }
 
 #menSelectionBox {
-  height: 110px;
-  width: 130px;
+  height: 4vh;
+  width: 5vw;
   outline: none;
   background-color: rgb(238, 222, 197, .8);
   position: relative;
-  left: 1.2vw;
+  border: none;
+  text-align: center;
+  overflow: hidden;
+  margin: auto;
+  top: -.5vh; bottom: 0; right: 0; left: 0;
+  transition: .6s;
+  display: inline-block;
 }
+#menSelectionBox:hover{
+  background-color: rgb(238, 222, 197, .8);
+  height: 20vh;
+  width: 8vw;
+  transition: .6s;
+  display: flex;
+  flex-direction: column;
+  top: .35vh;
+  left: -1vw;
+  border-top: .5px solid black;
+  border-bottom: .5px solid black;
+}
+
 #menSelection {
   background-color: transparent;
   border: solid 1px transparent;
   font-size: 20px;
   margin-top: 10px;
   outline: none;
+  position: relative;
 }
 
 #womenSelectionBox {
-  position: relative;
-  left: .7vw;
-  height: 220px;
-  width: 150px;
+  height: 5vh;
+  width: 9vw;
   outline: none;
   background-color: rgb(238, 222, 197, .8);
+  position: relative;
+  border: none;
+  text-align: center;
+  overflow: hidden;
+  margin: auto;
+  top: 0; bottom: 0; right: 0; left: 1vw;
+  transition: .6s;
+  display: inline-grid;
 }
+#womenSelectionBox:hover{
+  background-color: rgb(238, 222, 197, .8);
+  height: 33vh;
+  width: 10.5vw;
+  transition: .6s;
+  top: .5vh;
+  border-top: .5px solid black;
+  border-bottom: .5px solid black;
+}
+
 #womenSelection {
   background-color: transparent;
   border: solid 1px transparent;
   font-size: 20px;
   margin-top: 10px;
   outline: none;
+  margin-left: -.5vw;
 }
 
 #jewelrySelectionBox {
-  position: relative;
-  left: .6vw;
-  height: 36px;
-  width: 160px;
+  height: 5vh;
+  width: 10vw;
   outline: none;
   background-color: rgb(238, 222, 197, .8);
+  position: relative;
+  border: none;
+  text-align: center;
+  overflow: hidden;
+  margin: auto;
+  top: 0; bottom: 0; right: 0; left: 0;
+  transition: .6s;
 }
+#jewelrySelectionBox:hover{
+  background-color: rgb(238, 222, 197, .8);
+  height: 50vh;
+  width: 12vw;
+  transition: .6s;
+  display: flex;
+  flex-direction: column;
+  left: .6vw;
+  top: .5vh;
+  border-top: .5px solid black;
+  border-bottom: .5px solid black;
+}
+
 #jewelrySelection {
   background-color: transparent;
   border: solid 1px transparent;
@@ -241,7 +272,6 @@ body {
   top: 20%;
   position: absolute;
   z-index: 1;
-  /* box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6); */
 }
 
 #leftButton {
@@ -469,6 +499,7 @@ body {
   background-size: 50px 50px;
   background-repeat: no-repeat;
   outline: none;
+  transition: .5s;
 }
 #facebookBox:hover{
   width: 56px;
@@ -491,6 +522,7 @@ body {
   background-size: 50px 50px;
   background-repeat: no-repeat;
   outline: none;
+  transition: .5s;
 }
 #instagramBox:hover{
   width: 56px;
@@ -732,6 +764,9 @@ body {
   width: 25vw;
   height: 65vh;
   background-color: rgb(238, 222, 197, 0.08);
+  background-image: url("https://rb.gy/pvf9n2");
+  background-size: 25vw 65vh;
+  background-repeat: no-repeat;
   left: 31vw;
   top: 0vh;
   text-align: center;
@@ -757,7 +792,7 @@ body {
   border: none;
   outline: none;
   top: -30vh;
-  left: -2vw;
+  left: 12vw;
 }
 
 #exit2 {
@@ -770,24 +805,26 @@ body {
   background-color: transparent;
   border: none;
   outline: none;
-  top: -23vh;
-  left: 1.5vw;
+  top: -22.5vh;
+  left: 1vw;
   z-index: 1;
 }
 
 #measurementBox {
   position: relative;
   top: 4vh;
-  left: -69.5vw;
+  left: -72vw;
   width: 20vw;
   height: 25vh;
   transition: .6s;
+  align-content: flex-end;
 }
 
 #measurementMessage {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
   font-size: 16px;
+  text-align: right;
 }
 
 #shoulderInput {
@@ -803,8 +840,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  left: 4.1vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #armholeTag {
@@ -812,8 +850,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  left: 4.35vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #acrossTag {
@@ -821,8 +860,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  left: 2.4vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #bustTag {
@@ -830,8 +870,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  left: 3vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #underBustTag {
@@ -839,8 +880,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  width: 15vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #upperBustTag {
@@ -848,8 +890,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  width: 15vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #waistTag {
@@ -857,8 +900,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  left: 2.5vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #lowWaistTag {
@@ -866,8 +910,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  left: .5vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #hipTag {
@@ -875,8 +920,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  left: 3.5vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #thighTag {
@@ -884,8 +930,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  left: 2.5vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #midThighTag {
@@ -893,8 +940,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  left: .6vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #kneeTag {
@@ -902,8 +950,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  left: 2.8vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #calfTag {
@@ -911,8 +960,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  left: 3.2vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #ankleTag {
@@ -920,8 +970,9 @@ body {
     Helvetica, Arial, sans-serif;
   font-size: 13px;
   position: relative;
-  left: 2.5vw;
   top: 1vh;
+  left: -3.5vw;
+  text-align: right;
 }
 
 #logMeasure {
@@ -934,7 +985,7 @@ body {
   background-color: rgb(238, 222, 197, 0.4);
   position: relative;
   top: 2vh;
-  left: 4vw;
+  left: 9vw;
 }
 #logMeasure:active {
   box-shadow: none;
@@ -1598,8 +1649,8 @@ body {
   height: 5vh;
   width: 3vw;
   position: relative;
-  left: 26vw;
-  top: 1vh;
+  left: 20vw;
+  top: 0vh;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   background-color: transparent;
@@ -1637,8 +1688,8 @@ body {
 
 #measureDescription2 {
   position: absolute;
-  width: 30vw;
-  height: 60vh;
+  width: 25vw;
+  height: 50vh;
   background-color: rgb(238, 222, 197);
   margin-left: .5vw;
   border-radius: 5px;
@@ -1661,7 +1712,10 @@ body {
 
 #showMeasurements{
   position: relative;
-  left: 8vw;
+  border: none;
+  height: 45vh; width: 15vw;
+  margin: auto;
+  top: -5vh; bottom: 0; right: 0; left: 0;
 }
 
 #couponBox {
@@ -2217,7 +2271,7 @@ body {
   position: absolute;
   height: 18px;
   width: 18px;
-  left: 91.8vw;
+  left: 92.4vw;
   top: 2.3vh;
   border-radius: 50%;
   background-color: rgb(253, 72, 72);

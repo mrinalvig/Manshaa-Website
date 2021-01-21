@@ -20,8 +20,8 @@ class Banner extends React.Component {
 
   componentDidMount() {
       setInterval (() => {
-        this.goRight();2
-      }, 3000);
+        this.goRight();
+      }, 5000);
   }
 
   goLeft() {
