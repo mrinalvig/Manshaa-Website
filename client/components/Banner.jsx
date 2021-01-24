@@ -8,7 +8,7 @@ class Banner extends React.Component {
     this.state = {
         slideDeck: ['','','','',''],
         pic: "./dist/images/banner.jpg",
-        images: ['https://rb.gy/vibmst', 'https://rb.gy/pcerf2', 'https://rb.gy/vibmst', 'https://rb.gy/pcerf2', 'https://rb.gy/vibmst'],
+        images: ['https://rb.gy/zwcumt', 'https://rb.gy/dwa3ue', 'https://rb.gy/vibmst', 'https://rb.gy/pcerf2', 'https://rb.gy/vibmst'],
         reviews: ['https://i.ibb.co/4S0Stp5/review1.png', 'https://i.ibb.co/G97pWvr/review2.png', 'https://i.ibb.co/LpygKPs/review3.png', 'https://i.ibb.co/jZ1VY43/review4.png', 'https://i.ibb.co/n8yDzp7/review5.png'],
         x: 0,
         x2: 0

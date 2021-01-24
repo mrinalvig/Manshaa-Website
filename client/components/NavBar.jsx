@@ -93,7 +93,7 @@ class NavBar extends React.Component {
   }
 
   findSearch(e) {
-    console.log(e.target.value);
+
   }
 
   render() {
@@ -165,9 +165,10 @@ class NavBar extends React.Component {
                   <button type='button' id='jewelrySelection'>HAND SETS</button>
               </div>
             </div>
-          <div id='searchLogo'></div>
-          <input type='text' id='search' onChange={(e) => this.findSearch(e)}></input>
-          <div></div>
+          {/* <div id='searchContainer'>
+            <div id='searchLogo' />
+            <input type='text' id='search' onChange={(e) => this.findSearch(e)} />
+          </div> */}
           <Link to='/logIn'>
             <button type='button' name='logIn' id='profileLogo' />
           </Link>
