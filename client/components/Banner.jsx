@@ -8,7 +8,7 @@ class Banner extends React.Component {
     this.state = {
         slideDeck: ['','','','',''],
         pic: "./dist/images/banner.jpg",
-        images: ['https://rb.gy/zwcumt', 'https://rb.gy/dwa3ue', 'https://rb.gy/vibmst', 'https://rb.gy/pcerf2', 'https://rb.gy/vibmst'],
+        images: ['https://rb.gy/zwcumt', 'https://rb.gy/dwa3ue', 'https://rb.gy/zwcumt', 'https://rb.gy/dwa3ue', 'https://rb.gy/zwcumt'],
         reviews: ['https://i.ibb.co/4S0Stp5/review1.png', 'https://i.ibb.co/G97pWvr/review2.png', 'https://i.ibb.co/LpygKPs/review3.png', 'https://i.ibb.co/jZ1VY43/review4.png', 'https://i.ibb.co/n8yDzp7/review5.png'],
         x: 0,
         x2: 0
@@ -88,16 +88,10 @@ class Banner extends React.Component {
                 </div>
                 {/* <h2 id='styles'>Check Out Our Styles</h2> */}
                 <div id='types'>
-                    <div id='leftBox' />
-                    <div id='middleBox' />
-                    <div id='rightBox' />
+                    <div id='leftBox'><h2 id='traditional'>Traditional</h2></ div>
+                    <div id='middleBox'><h2 id='fusion'>Fusion</h2></div>
+                    <div id='rightBox'><h2 id='western'>Western</h2></div>
                 </div>
-                <div id='yourOwn'>
-                    <h2 id='traditional'>Traditional</h2>
-                    <h2 id='fusion'>Fusion</h2>
-                    <h2 id='western'>Western</h2>
-                </div>
-                {/* <h2 id='reviewTitle'>Reviews</h2> */}
                 <div id='reviews'>
                     {
                         this.state.slideDeck.map((item, index) => (
