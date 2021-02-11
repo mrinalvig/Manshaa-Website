@@ -21,8 +21,11 @@
 body {
   /* background-color: rgb(134, 119, 95); */
   background-color: rgb(165, 154, 136);
+  /* min-height: 1080px;
+  min-width: 1920px; */
   width: 100%;
-  height: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
   overflow: hidden auto;
   position: absolute;
   margin: auto;
@@ -42,6 +45,7 @@ body {
   display: flex;
   box-shadow: 0 10px 10px -2px rgba(0, 0, 0, 0.3);
   position: fixed;
+  top: 0;
   z-index: 3;
 }
 
@@ -167,7 +171,7 @@ body {
 }
 
 #menSelectionBox {
-  height: 4vh;
+  height: 3.9vh;
   width: 5vw;
   outline: none;
   background-color: rgb(134, 119, 95);
@@ -179,6 +183,8 @@ body {
   top: 0vh; bottom: 0; right: 0; left: 0;
   transition: .6s;
   display: inline-block;
+  display: flex;
+  flex-direction: column;
 }
 #menSelectionBox:hover{
   background-color: rgb(238, 222, 197, .8);
@@ -203,7 +209,7 @@ body {
 }
 
 #womenSelectionBox {
-  height: 5vh;
+  height: 3.9vh;
   width: 9vw;
   outline: none;
   background-color: rgb(134, 119, 95);
@@ -236,7 +242,7 @@ body {
 }
 
 #jewelrySelectionBox {
-  height: 5vh;
+  height: 3.9vh;
   width: 10vw;
   outline: none;
   background-color: rgb(134, 119, 95);
@@ -247,6 +253,8 @@ body {
   margin: auto;
   top: .5vh; bottom: 0; right: 0; left: 0;
   transition: .6s;
+  display: flex;
+  flex-direction: column;
 }
 #jewelrySelectionBox:hover{
   background-color: rgb(238, 222, 197, .8);
@@ -282,16 +290,16 @@ body {
 
 #slide2 {
   background-image: url("https://rb.gy/oixi4f");
-  background-size: 50% 350px;
-  min-width: 100%;
-  min-height: 20%;
-  height: 375px;
-  top: 160vh;
-  left: 25vw;
-  padding: 20px;
-  transition: 1s;
+  background-size: 55vw 35vh;
   background-repeat: no-repeat;
+  min-width: 55vw;
+  min-height: 35vh;
+  margin-left: 24vw;
+  margin-right: 24vw;
+  top: 170vh; bottom: 0; left: 0; right: 0;
+  transition: 1s;
   position: relative;
+  box-shadow: 0 5px 18px 15px rgba(0, 0, 0, 0.3);
 }
 
 #banner {
@@ -327,7 +335,8 @@ body {
   transform: rotate(180deg);
   height: 35px;
   width: 35px;
-  top: 180%;
+  margin: auto;
+  top: 263vh; bottom: 0; right: 60vw; left: 0;
   background-color: transparent;
   border: none;
   outline: none;
@@ -357,8 +366,8 @@ body {
   background-repeat: no-repeat;
   height: 35px;
   width: 35px;
-  top: 181%;
-  left: 97%;
+  margin: auto;
+  top: 265vh; bottom: 0; left: 65vw; right: 0;
   background-color: transparent;
   border: none;
   outline: none;
@@ -1130,10 +1139,10 @@ body {
 #circleProfile{
   position: absolute;
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
-  left: 5%;
-  top: 10%;
+  width: 16.2vw;
+  height: 30vh;
+  margin: auto;
+  left: 0; top: 0; bottom: 0; right: 80vw;
   background-image: url("https://i.ibb.co/sb7KpyP/Profile-Circle.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
@@ -1665,7 +1674,7 @@ body {
   width: 3vw;
   position: relative;
   left: 46vw;
-  top: -41vh;
+  top: -37vh;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   background-color: transparent;

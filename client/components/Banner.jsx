@@ -51,13 +51,13 @@ class Banner extends React.Component {
         })
       }
 
-      if(this.state.x2 >= -400) {
+      if(this.state.x2 >= -748) {
         this.setState ({
-            x2: this.state.x2 - 100
+            x2: this.state.x2 - 187
         })
       }
 
-      if(this.state.x2 < -400) {
+      if(this.state.x2 < -748) {
         this.setState ({
             x2: 0
         })
