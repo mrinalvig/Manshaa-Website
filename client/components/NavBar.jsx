@@ -107,7 +107,7 @@ class NavBar extends React.Component {
                 <Link to="/men">
                   <button type='button' name ='men' id='men'> MEN </button>
                 </Link>
-                <Link to='/sherwani'>
+                {/* <Link to='/sherwani'>
                   <button type='button' name='sherwani' id='menSelection' >SHERWANI</button>
                 </Link>
                 <Link to='/shoes'>
@@ -115,7 +115,7 @@ class NavBar extends React.Component {
                 </Link>
                 <Link to='/kurtas'>
                   <button type='button' name='kurtas' id='menSelection' >KURTAS</button>
-                </Link>
+                </Link> */}
               </div>
               <div id='womenSelectionBox'>
                 <button type='button' id='women' onMouseEnter={this.dropWomen} onMouseLeave={this.liftWomen}> WOMEN </button>
@@ -128,13 +128,15 @@ class NavBar extends React.Component {
                 <Link to="/lehenga">
                   <button type='button' id='womenSelection'>LEHANGAS</button>
                 </Link>
-                  <button type='button' id='womenSelection'>SHARARAS</button>
+                <Link to="/ghararas">
+                  <button type='button' id='womenSelection'>GHARARAS</button>
+                </Link>
                 <Link to="/bridesMaids">
                   <button type='button' id='womenSelection'>BRIDESMAIDS</button>
                 </Link>
-                <Link to="/tunics">
+                {/* <Link to="/tunics">
                   <button type='button' id='womenSelection'>TUNICS</button>
-                </Link>
+                </Link> */}
               </div>
               <div id='jewelrySelectionBox'>
                 <button type='button' id='jewelry' onMouseEnter={this.dropJewelry} onMouseLeave={this.liftJewelry}>JEWELRY </button>
@@ -147,9 +149,9 @@ class NavBar extends React.Component {
                 <Link to="/earings">
                   <button type='button' id='jewelrySelection'>EARINGS</button>
                 </Link>
-                <Link to="/anklet">
+                {/* <Link to="/anklet">
                   <button type='button' id='jewelrySelection'>ANKLET</button>
-                </Link>
+                </Link> */}
                 <Link to="/bangles">
                   <button type='button' id='jewelrySelection'>BANGLES</button>
                 </Link>
@@ -159,10 +161,10 @@ class NavBar extends React.Component {
                 <Link to="/mathaPatti">
                   <button type='button' id='jewelrySelection'>MATHA PATTI & MANGTIKKA</button>
                 </Link>
-                <Link to="/jhumar">
+                {/* <Link to="/jhumar">
                   <button type='button' id='jewelrySelection'>JHUMAR</button>
                 </Link>
-                  <button type='button' id='jewelrySelection'>HAND SETS</button>
+                  <button type='button' id='jewelrySelection'>HAND SETS</button> */}
               </div>
             </div>
           {/* <div id='searchContainer'>

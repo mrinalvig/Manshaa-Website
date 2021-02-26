@@ -47,6 +47,16 @@ app.get('/bridal', (req, res) => {
     })
 })
 
+app.get('/bridesMaides', (req, res) => {
+    db.query(`SELECT * FROM women WHERE category='bridesmaids'`, (err, result) => {
+        if(err) {
+            res.status(405).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
 app.get('/suits', (req, res) => {
     db.query(`SELECT * FROM women WHERE category='suits'`, (err, result) => {
         if(err) {
@@ -73,6 +83,46 @@ app.get('/earings', (req, res) => {
             res.status(405).send(err);
         } else {
             res.status(200).send(result);
+        }
+    })
+})
+
+app.get('/rings', (req, res) => {
+    db.query(`SELECT * FROM jewelry WHERE category='rings'`, (err, result) => {
+        if(err) {
+            res.status(405).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
+app.delete('/womenCat', (req, res) => {
+    db.query(`DELETE From women`, (err, result) => {
+        if(err) {
+            res.status(405).send(err);
+        } else {
+            res.status(205).send(result);
+        }
+    })
+})
+
+app.delete('/menCat', (req, res) => {
+    db.query(`DELETE From men`, (err, result) => {
+        if(err) {
+            res.status(405).send(err);
+        } else {
+            res.status(205).send(result);
+        }
+    })
+})
+
+app.delete('/jewelryCat', (req, res) => {
+    db.query(`DELETE From jewelry`, (err, result) => {
+        if(err) {
+            res.status(405).send(err);
+        } else {
+            res.status(205).send(result);
         }
     })
 })
@@ -109,6 +159,36 @@ app.get('/jewelry', (req, res) => {
 
 app.get('/necklace', (req, res) => {
     db.query(`SELECT * FROM jewelry WHERE category='necklace'`, (err, result) => {
+        if(err) {
+            res.status(404).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
+app.get('/bangles', (req, res) => {
+    db.query(`SELECT * FROM jewelry WHERE category='bangles'`, (err, result) => {
+        if(err) {
+            res.status(404).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
+app.get('/chokers', (req, res) => {
+    db.query(`SELECT * FROM jewelry WHERE category='chokers'`, (err, result) => {
+        if(err) {
+            res.status(404).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
+app.get('/mathas', (req, res) => {
+    db.query(`SELECT * FROM jewelry WHERE category='matha'`, (err, result) => {
         if(err) {
             res.status(404).send(err);
         } else {
@@ -229,6 +309,16 @@ app.put('/emptyCart', (req, res) => {
 
 app.put('/cartEmpty', (req, res) => {
     db.query(`UPDATE user SET cart = "[]" WHERE username = "${req.body.username}"`, (err, result) => {
+        if(err) {
+            res.status(404).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
+app.get('/gharara', (req, res) => {
+    db.query(`SELECT * FROM women WHERE category = "ghararas"`, (err, result) => {
         if(err) {
             res.status(404).send(err);
         } else {

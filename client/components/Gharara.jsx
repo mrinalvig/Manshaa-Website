@@ -1,14 +1,16 @@
 import React from "react";
+import axios from 'axios';
+import CurrentProduct from './CurrentProduct.jsx';
 import NavBar from './NavBar.jsx';
 import FooterTwo from './FooterTwo.jsx';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-class Necklace extends React.Component {
+class Gharara extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        men: [],
+        images: [],
+        bridal: [],
         titles: [],
         descriptions: [],
         prices: []
@@ -22,31 +24,26 @@ class Necklace extends React.Component {
     let description = [];
     let price = [];
 
-    axios.get('/necklace')
+    axios.get('/gharara')
+    .then( result => {
+      this.setState ({
+        bridal: result.data
+      })
+    })
     .then(result => {
-        this.setState({
-            men: result.data
-            // images: imgs,
-            // images2: imgs2,
-            // images3: imgs3
-        },() => {
-            let array = [];
-            let array2 = [];
-            let array3 = [];
-            let ammount = result.data.length;
+      for(var i = 0; i < this.state.bridal.length; i++) {
+        imgs.push(this.state.bridal[i].images);
+        title.push(this.state.bridal[i].title);
+        description.push(this.state.bridal[i].description);
+        price.push(this.state.bridal[i].price);
 
-            for(var i = 0; i < ammount; i++) {
-                array.push(result.data[i].title);
-                array2.push(result.data[i].description);
-                array3.push(result.data[i].price);
-            }
-
-            this.setState({
-                titles: array,
-                descriptions: array2,
-                prices: array3
-            })
-        })
+      }
+      this.setState ({
+        images: imgs,
+        titles: title,
+        descriptions: description,
+        prices: price
+      })
     })
 
   }
@@ -67,10 +64,10 @@ class Necklace extends React.Component {
         <div>
           <NavBar name={this.props.name} />
             <div id='mensPage'>
-              {this.state.men.map((image, index) => (
+              {this.state.images.map((image, index) => (
                   <div id='productContainer'>
                     <Link to='/product'>
-                      <img id='productImage' name={index} src={image.images} onClick={(e) => this.changePage(e)} />
+                      <img id='productImage' name={index} src={image} onClick={(e) => this.changePage(e)} />
                     </Link>
                   </div>
               ))}
@@ -81,4 +78,7 @@ class Necklace extends React.Component {
   }
 }
 
-export default Necklace;
+export default Gharara;
+
+
+
