@@ -26,6 +26,9 @@ import Earings from './Earings.jsx';
 import Rings from './Rings.jsx';
 import Anklet from './Anklet.jsx';
 import Lehenga from './Lehenga.jsx';
+import MenSale from './MenSale.jsx';
+import JewelrySale from './JewelrySale.jsx';
+import WomenSale from './WomenSale.jsx';
 import Gharara from './Gharara.jsx';
 import {
   BrowserRouter as Router,
@@ -90,6 +93,9 @@ class App extends React.Component {
       return (
         <Router>
           <Switch>
+            <Route path="/jewelrySale" component={() => <JewelrySale name={this.state.username} change={(e) => this.setLink(e)} content={this.productContent}/>} />
+            <Route path="/womenSale" component={() => <WomenSale name={this.state.username} change={(e) => this.setLink(e)} content={this.productContent}/>} />
+            <Route path="/menSale" component={() => <MenSale name={this.state.username} change={(e) => this.setLink(e)} content={this.productContent}/>} />
             <Route path="/ghararas" component={() => <Gharara name={this.state.username} change={(e) => this.setLink(e)} content={this.productContent}/>} />
             <Route path="/jhumar" component={() => <Jhumar name={this.state.username} />} />
             <Route path="/mathaPatti" component={() => <MathaPatti name={this.state.username} change={(e) => this.setLink(e)} content={this.productContent}/>} />

@@ -18,7 +18,37 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 app.get('/men', (req, res) => {
-    db.query(`SELECT * FROM men`, (err, result) => {
+    db.query(`SELECT * FROM men WHERE category='men'`, (err, result) => {
+        if(err) {
+            res.status(404).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+});
+
+app.get('/menSale', (req, res) => {
+    db.query(`SELECT * FROM men WHERE category='menSale'`, (err, result) => {
+        if(err) {
+            res.status(404).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+});
+
+app.get('/womenSale', (req, res) => {
+    db.query(`SELECT * FROM women WHERE category='womenSale'`, (err, result) => {
+        if(err) {
+            res.status(404).send(err);
+        } else {
+            res.status(200).send(result);
+        }
+    })
+});
+
+app.get('/jewelrySale', (req, res) => {
+    db.query(`SELECT * FROM jewelry WHERE category='jewelrySale'`, (err, result) => {
         if(err) {
             res.status(404).send(err);
         } else {

@@ -1,10 +1,10 @@
 import React from "react";
+import axios from 'axios';
 import NavBar from './NavBar.jsx';
 import FooterTwo from './FooterTwo.jsx';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-class Chokers extends React.Component {
+class JewelrySale extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,12 +17,7 @@ class Chokers extends React.Component {
   }
 
   componentDidMount() {
-    let imgs = [];
-    let title = [];
-    let description = [];
-    let price = [];
-
-    axios.get('/chokers')
+    axios.get('/jewelrySale')
     .then(result => {
         this.setState({
             men: result.data
@@ -48,7 +43,6 @@ class Chokers extends React.Component {
             })
         })
     })
-
   }
 
   changePage(e) {
@@ -58,27 +52,27 @@ class Chokers extends React.Component {
     array.push(this.state.descriptions[e.target.name]);
     array.push(this.state.prices[e.target.name]);
 
-    this.props.content(array);
-    this.props.change(e);
+    this.props.content(array); //array
+    this.props.change(e); //link
   }
 
   render() {
     return (
         <div>
-          <NavBar name={this.props.name} />
+            <NavBar name={this.props.name} change={this.props.change} />
             <div id='menPage'>
-              {this.state.men.map((image, index) => (
-                  <div id='productContainer'>
-                    <Link to='/product'>
-                      <img id='productImage' name={index} src={image.images} onClick={(e) => this.changePage(e)} />
-                    </Link>
-                  </div>
-              ))}
+                {this.state.men.map((image, index) => (
+                    <div id='productContainer'>
+                        <Link to='/product'>
+                        <img id='productImage' name={index} src={image.images} onClick={(e) => this.changePage(e)} ></img>
+                        </Link>
+                    </div>
+                ))}
             </div>
-          <FooterTwo />
+            <FooterTwo />
         </div>
     );
   }
 }
 
-export default Chokers;
+export default JewelrySale;

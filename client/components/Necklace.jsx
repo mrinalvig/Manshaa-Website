@@ -66,7 +66,7 @@ class Necklace extends React.Component {
     return (
         <div>
           <NavBar name={this.props.name} />
-            <div id='mensPage'>
+            <div id='menPage'>
               {this.state.men.map((image, index) => (
                   <div id='productContainer'>
                     <Link to='/product'>

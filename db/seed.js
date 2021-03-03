@@ -4,13 +4,13 @@ const faker = require ('faker');
 const createCategories = () => {
     var bridalArray = ['https://i.ibb.co/T0HGrtd/1.jpg', 'https://i.ibb.co/hCLJ51c/2.jpg', 'https://i.ibb.co/3pBd2NJ/3.jpg', /*'https://i.ibb.co/MhJHFM0/4.jpg',*/ 'https://i.ibb.co/NVcDDRN/5.jpg', /*'https://i.ibb.co/FXff6Hy/6.jpg',*/ 'https://i.ibb.co/FXff6Hy/6.jpg', 'https://i.ibb.co/ngFqS2p/8.jpg', /*'https://i.ibb.co/jLBTtjs/9.jpg',*/ 'https://i.ibb.co/mT0Z9wD/10.jpg', 'https://i.ibb.co/s5rbGRW/11.jpg', /*'https://i.ibb.co/TPgCJhy/12.png',*/ 'https://i.ibb.co/pxwc5nd/13.jpg', 'https://i.ibb.co/VMVGPgM/14.jpg', 'https://i.ibb.co/MSyPybz/15.jpg', 'https://i.ibb.co/gz4nkPT/16.jpg', 'https://i.ibb.co/ZVc2YBF/17.jpg', 'https://i.ibb.co/3dQhFn9/18.jpg', 'https://i.ibb.co/tzrmGCG/20.jpg', 'https://i.ibb.co/KmwRV7h/21.jpg', 'https://i.ibb.co/S5mBbpm/22.jpg', 'https://i.ibb.co/BzBCCMW/23.jpg', 'https://i.ibb.co/BGvg7rP/24.jpg', /*'https://i.ibb.co/LPjy44h/25.jpg',*/ 'https://i.ibb.co/VNLBJdB/26.jpg', 'https://i.ibb.co/cXXV7gY/27.jpg', /*'https://i.ibb.co/nwt0HVP/28.jpg',*/ 'https://i.ibb.co/GV2rTMp/29.jpg', 'https://rb.gy/v21dxc', 'https://rb.gy/eqbzkb', 'https://i.ibb.co/KwpMFpx/5919cf99-4aa6-4603-8a35-6faf60ee2ec4.jpg', 'https://i.ibb.co/pjXvGcP/IMG-1479.jpg', 'https://i.ibb.co/2dk3krj/IMG-3882.jpg', 'https://i.ibb.co/Y0PDYxL/IMG-4748.jpg', 'https://i.ibb.co/DgSHVM4/IMG-5035.jpg', 'https://i.ibb.co/6thnyqC/IMG-5278.jpg', 'https://i.ibb.co/CzN9Dtj/IMG-7274.jpg', 'https://i.ibb.co/3mQZG5f/IMG-7568.jpg', 'https://i.ibb.co/PjWFQpq/IMG-7630.jpg'];
 
+    var bridalTitle = ['Zeenat Red Bridal Dress', 'Anaya Lacha Foster Green Bridal Dress', 'Malika Gharara Set', 'Sara Cocktail Lehanga', 'Neelam Lehanga Choli', 'White Bridal Dress', 'White Bridal Dress', 'Pink Bridal Dress', 'Pink Bridal Dress', 'Festive Bridal Dress', 'Twin Bridal Dresses', 'Twin Bridal Dresses', 'Red Bridal Dress', 'Pink Bridal Dress', 'Gray Bridal Dress', 'Silver Bridal Dresses', 'Cream Bridal Dresses', 'Red Bridal Dress', 'Red Bridal Dress', 'Red Bridal Dress', 'Fall Bridal Dress', 'Cream Bridal Dress', 'Red Bridal Dress', 'Cream Bridal Dress', 'Green Bridal Dress', 'Yellow Bridal Dress', 'Yellow Bridal Dress', 'Cream Bridal Dress', 'White Bridal Dress'];
+
+    var bridalDescription = ['An elegant red net with satin silk underlining, hand embroidered in light gold threads with gold sequencing and beads', 'A foster green velvet shirt with silk skirt embroidered with antique gold zardosi and French knots', 'A blue banarsi foil silk skirt with gold silk shirt, paired with a 2-piece red silk dupatta', 'A stylish, light blush cocktail lehanga  made with a net and satin silk under lining. Embroidered with sequencing and beads in silver and blush threads.', 'A bold champagne lehanga choli, made with silk and embroidered with light gold zardisi sequencing', 'This is description 6. Its a description.', 'This is description 7. Its a description.', 'This is description 8. Its a description.', 'This is description 9. Its a description.', 'This is description 10. Its a description.', 'This is description 1. Its a description.', 'This is description 2. Its a description.', 'This is description 3. Its a description.', 'This is description 4. Its a description.', 'This is description 5. Its a description.', 'This is description 6. Its a description.', 'This is description 7. Its a description.', 'This is description 8. Its a description.', 'This is description 9. Its a description.', 'This is description 10. Its a description.', 'This is description 1. Its a description.', 'This is description 2. Its a description.', 'This is description 3. Its a description.', 'This is description 4. Its a description.', 'This is description 5. Its a description.', 'This is description 6. Its a description.', 'This is description 7. Its a description.', 'This is description 8. Its a description.', 'This is description 9. Its a description.', 'This is description 10. Its a description.', 'This is description 1. Its a description.', 'This is description 2. Its a description.', 'This is description 3. Its a description.', 'This is description 4. Its a description.', 'This is description 5. Its a description.', 'This is description 6. Its a description.', 'This is description 7. Its a description.', 'This is description 8. Its a description.', 'This is description 9. Its a description.', 'This is description 10. Its a description.'];
+
+    var bridalPrices = [4100, 2500, 3200, 2500, 3700, 321, 567, 231, 567, 875, 2341, 553, 890, 908, 785, 2333, 553, 231, 546, 233, 675, 435, 645, 432, 2233, 534, 567, 876, 543, 2344, 150, 3345, 245, 5653, 563, 321, 567, 231, 567, 875, 2341, 553, 890, 908, 785, 2333, 553, 231, 546, 233, 675, 435, 645, 432, 2233, 534, 567, 876, 543, 2344];
+
     var necklaceArray = ['https://i.ibb.co/fFkpY5t/Necklac234.jpg', 'https://iili.io/FS35G9.md.jpg', 'https://iili.io/FSFSHb.md.jpg', 'https://iili.io/FSKLhl.md.jpg', /*'https://iili.io/FSfNae.md.jpg',*/ 'https://iili.io/FSqHFt.md.jpg', 'https://iili.io/FSB2qB.md.jpg', 'https://iili.io/FSBehx.md.jpg', 'https://iili.io/KKdS0G.md.jpg', 'https://iili.io/KKdUgf.md.jpg', /*'https://iili.io/KKd6e2.md.jpg',*/ 'https://iili.io/KKdLX9.md.jpg', 'https://iili.io/KKdbgj.md.png', /*'https://rb.gy/dvy7nh',*/ 'https://rb.gy/kvk9o2', 'https://rb.gy/fs0m0b', 'https://rb.gy/t0tomd', 'https://i.ibb.co/KFZfjtb/314-E37-C5-A97-B-49-EA-AD22-D52-B049779-DF.jpg', 'https://i.ibb.co/zV7kQCN/IMG-3880.jpg', 'https://i.ibb.co/f0PyYtZ/IMG-3881.jpg', 'https://i.ibb.co/6FkrPnZ/IMG-5056.png', 'https://i.ibb.co/SRXsYbG/IMG-5951.jpg','https://i.ibb.co/7JxNx3Y/IMG-5953.jpg', 'https://i.ibb.co/GTYVSZm/IMG-8130.jpg', 'https://i.ibb.co/122xCJ2/IMG-8586.jpg', 'https://i.ibb.co/Vx5PWkL/IMG-8587.jpg', 'https://i.ibb.co/BGLzXnx/IMG-9705.jpg', 'https://i.ibb.co/zHLyR8R/IMG-6005.jpg'];
-
-    var bridalTitle = ['Red Bridal Dress', 'Green Bridal Dress', 'Cream Bridal Dress', 'Crop Top Dress', 'Crop Top Dress', 'White Bridal Dress', 'White Bridal Dress', 'Pink Bridal Dress', 'Pink Bridal Dress', 'Festive Bridal Dress', 'Twin Bridal Dresses', 'Twin Bridal Dresses', 'Red Bridal Dress', 'Pink Bridal Dress', 'Gray Bridal Dress', 'Silver Bridal Dresses', 'Cream Bridal Dresses', 'Red Bridal Dress', 'Red Bridal Dress', 'Red Bridal Dress', 'Fall Bridal Dress', 'Cream Bridal Dress', 'Red Bridal Dress', 'Cream Bridal Dress', 'Green Bridal Dress', 'Yellow Bridal Dress', 'Yellow Bridal Dress', 'Cream Bridal Dress', 'White Bridal Dress'];
-
-    var bridalDescription = ['This is description 1. Its a description.', 'This is description 2. Its a description.', 'This is description 3. Its a description.', 'This is description 4. Its a description.', 'This is description 5. Its a description.', 'This is description 6. Its a description.', 'This is description 7. Its a description.', 'This is description 8. Its a description.', 'This is description 9. Its a description.', 'This is description 10. Its a description.', 'This is description 1. Its a description.', 'This is description 2. Its a description.', 'This is description 3. Its a description.', 'This is description 4. Its a description.', 'This is description 5. Its a description.', 'This is description 6. Its a description.', 'This is description 7. Its a description.', 'This is description 8. Its a description.', 'This is description 9. Its a description.', 'This is description 10. Its a description.', 'This is description 1. Its a description.', 'This is description 2. Its a description.', 'This is description 3. Its a description.', 'This is description 4. Its a description.', 'This is description 5. Its a description.', 'This is description 6. Its a description.', 'This is description 7. Its a description.', 'This is description 8. Its a description.', 'This is description 9. Its a description.', 'This is description 10. Its a description.', 'This is description 1. Its a description.', 'This is description 2. Its a description.', 'This is description 3. Its a description.', 'This is description 4. Its a description.', 'This is description 5. Its a description.', 'This is description 6. Its a description.', 'This is description 7. Its a description.', 'This is description 8. Its a description.', 'This is description 9. Its a description.', 'This is description 10. Its a description.'];
-
-    var bridalPrices = [150, 3345, 245, 5653, 563, 321, 567, 231, 567, 875, 2341, 553, 890, 908, 785, 2333, 553, 231, 546, 233, 675, 435, 645, 432, 2233, 534, 567, 876, 543, 2344, 150, 3345, 245, 5653, 563, 321, 567, 231, 567, 875, 2341, 553, 890, 908, 785, 2333, 553, 231, 546, 233, 675, 435, 645, 432, 2233, 534, 567, 876, 543, 2344];
 
     var kurtasPage = ['https://rb.gy/8sjn6x', 'https://rb.gy/p2vbmd', 'https://rb.gy/g8agtw', 'https://rb.gy/qmz5hs', 'https://rb.gy/fqpsuq', 'https://rb.gy/6iknsm', 'https://rb.gy/l28w3q', 'https://rb.gy/vzcdgp', 'https://rb.gy/e9hsvb', 'https://rb.gy/adrven', 'https://rb.gy/8sjn6x', 'https://rb.gy/p2vbmd', 'https://rb.gy/g8agtw', 'https://rb.gy/qmz5hs', 'https://rb.gy/fqpsuq', 'https://rb.gy/6iknsm', 'https://rb.gy/l28w3q', 'https://rb.gy/vzcdgp', 'https://rb.gy/e9hsvb', 'https://rb.gy/adrven', 'https://rb.gy/8sjn6x', 'https://rb.gy/p2vbmd', 'https://rb.gy/g8agtw', 'https://rb.gy/qmz5hs', 'https://rb.gy/fqpsuq', 'https://rb.gy/6iknsm', 'https://rb.gy/l28w3q', 'https://rb.gy/vzcdgp', 'https://rb.gy/e9hsvb', 'https://rb.gy/adrven'];
 
@@ -32,8 +32,59 @@ const createCategories = () => {
 
     var mathaPage = ['https://i.ibb.co/1KJwMMh/IMG-3597.jpg', 'https://i.ibb.co/b3QQjcy/IMG-5073.png', /*'https://i.ibb.co/SRXsYbG/IMG-5951.jpg',*/ 'https://i.ibb.co/wRdb7GN/IMG-5952.jpg', 'https://i.ibb.co/Rh1fQGv/IMG-6601.jpg'];
 
-    var mensPage = ['https://i.ibb.co/FzxHj2z/IMG-3812.jpg', 'https://i.ibb.co/SNWF3ph/IMG-4579.png', 'https://i.ibb.co/mSbK7ny/IMG-5029.png', 'https://i.ibb.co/ySNZxX5/IMG-5035.jpg', 'https://i.ibb.co/VjPVMx7/IMG-7876.jpg', 'https://i.ibb.co/f9FLNHS/IMG-9658.jpg', 'https://i.ibb.co/Wk5wT8H/IMG-9661.jpg', 'https://i.ibb.co/sgndHLJ/IMG-9665.jpg'];
+    //men info
 
+    var mensPage = ['https://i.ibb.co/FzxHj2z/IMG-3812.jpg', 'https://i.ibb.co/SNWF3ph/IMG-4579.png', 'https://i.ibb.co/mSbK7ny/IMG-5029.png', 'https://i.ibb.co/ySNZxX5/IMG-5035.jpg', 'https://i.ibb.co/VjPVMx7/IMG-7876.jpg', /*'https://i.ibb.co/f9FLNHS/IMG-9658.jpg',*/ 'https://i.ibb.co/Wk5wT8H/IMG-9661.jpg', 'https://i.ibb.co/sgndHLJ/IMG-9665.jpg', 'https://i.ibb.co/VjPVMx7/IMG-7876.jpg'];
+
+    var mensTitle = ['Dilip Sherwani', 'Namit Sherwani', 'Vikram Jodhpuri with Trousers', 'Jaden Sherwani', 'Mani Black Vest with Ivory Kurta Pajama', 'Mens Jutti', 'Meet Royal Darbar Sherwani', 'Mani Black Embroidered Kurta Pajama'];
+
+    var mensDescription = ['An exemplary brocade sherwani hand embroidered in zardosi, threads, and beadwork.', 'A sage green sherwani made with raw silk and embroidered in gold zari and threads.', 'A classic ivory jodhpuri with printed silk.', 'Royal soft mint sherwani made with raw silk and embroidered in antique gold threads with gold beads.', 'A silk vest paired with a cotton-silk kurta pajama with white thread machine embroidery', 'Allow us to create your custom made pair of mens jutti made with silk and hand embroidered threads.', 'A raw silk sherwani with a raw silk belt paired with a velvet shawl. \nEmbroidered in pure zardosi with threads and beads. \nSherwani and Pants - $2480 \nBelt - $320 \nShawl - $1100', 'A silk made kurta pajama with white thread machine embroidery'];
+
+    var mensPrice = [950, 650, 350, 1100, 375, 130, 3900, 375];
+
+    //men sale info
+    var menSale = ['https://i.ibb.co/6gZ7Sgj/6d5230ce-6dc3-49fa-95aa-7210e396faf0.jpg', 'https://i.ibb.co/YZ2vsDC/c754fcf8-c8a8-429d-9426-9aac6bf5e626.jpg', 'https://i.ibb.co/RjZXxvJ/aaa.jpg', 'https://i.ibb.co/PrW0fYc/000.jpg', 'https://i.ibb.co/zf8jcqX/000.jpg', 'https://i.ibb.co/n3xcCJ4/000.jpg', 'https://i.ibb.co/ZzHhfHL/000.jpg', 'https://i.ibb.co/FzdBR1x/000.jpg', 'https://i.ibb.co/x7wvmG9/000.jpg', 'https://i.ibb.co/SQwqWRy/000.jpg', 'https://i.ibb.co/2PLYmMg/000.jpg'];
+
+    var menSaleTitle = ['Blue Vest and Gold Kurta Pajama', 'Gold Vest and Red Kurta Pajama', 'Red Printed Vest and Gold Kurta Pajama', 'Blue Printed Vest and Gold Kurta Pajama', 'Blue Kurta Pajama and Vest', 'Gold Vest with Black Kurta Pajama', 'Simple Orange Kurta Pajama', 'Pink Kurta Pajama with Embroidered Cuffs', 'Blue Kurta Pajama', 'White Kurta Pajama with Embroidered Collar', 'Purple Kurta Pajama'];
+
+    var menSaleDescription = ['Smart blue and gold, brocade silk kurta pajama', 'Simple gold and red, brocade silk kurta pajama', 'Stylish red printed vest with a gold kurta pajama', 'Stylish blue printed vest with gold kurta pajama', 'A machine printed vest with a comfortable blue kurta pajama', 'A smart, gold printed vest paired with a black kurta pajama', 'A simple orange kurta pajama', 'A stylish kurta pajama with machine embroidered cuffs', 'Simple light blue kurta pajama', 'A clean looking white kurta pajama with a machine embroidered collar', 'Simple purple kurta pajama with an embroidered collar'];
+
+    var menSalePrice = [120, 120, 120, 120, 120, 120, 65, 65, 65, 65, 65];
+
+    //women sale info
+    var womenSale = ['https://i.ibb.co/vz3JXn1/000.jpg', 'https://i.ibb.co/Rhcmqx9/000.jpg', 'https://i.ibb.co/T4M6P64/000.jpg', 'https://i.ibb.co/2qZ0G35/000.jpg', 'https://i.ibb.co/z51G67x/000.jpg', 'https://i.ibb.co/GVnctNk/000.jpg', 'https://i.ibb.co/pPGPhWk/000.jpg', 'https://i.ibb.co/hLrLM8L/000.jpg', 'https://i.ibb.co/zrp0gXP/000.jpg', 'https://i.ibb.co/C2y4shW/000.jpg', 'https://i.ibb.co/31ytxZh/000.jpg', 'https://i.ibb.co/8x8RBTp/000.jpg', 'https://i.ibb.co/R7M69mK/000.jpg', 'https://i.ibb.co/kQ5kNFF/000.jpg', 'https://i.ibb.co/3d0jbxQ/000.jpg', 'https://i.ibb.co/X59z7Lk/000.jpg', 'https://i.ibb.co/2PDzVZW/000.jpg', 'https://i.ibb.co/Dt7JfFK/000.jpg'];
+
+    var jewelrySale = ['https://i.ibb.co/GJ9Lg67/000.jpg','https://i.ibb.co/nskc4gm/000.jpg', 'https://i.ibb.co/YLj72TN/000.jpg', 'https://i.ibb.co/1d8G96W/000.jpg', 'https://i.ibb.co/DL0LT7V/000.jpg', 'https://i.ibb.co/B4DNspB/000.jpg', 'https://i.ibb.co/7SZGp88/000.jpg', 'https://i.ibb.co/DR0xrsm/000.jpg', 'https://i.ibb.co/jwzrMBR/000.jpg', 'https://i.ibb.co/x1yFvf4/000.jpg'];
+
+    for(var i = 0; i < jewelrySale.length; i++) {
+        db.query(`INSERT INTO jewelry (title, description, price, category, images) VALUES ('${bridalTitle[i]}', '${bridalDescription[i]}', ${bridalPrices[i]}, 'jewelrySale', '${jewelrySale[i]}')`, (err, result) => {
+            if(err) {
+                console.log(err);
+            } else {
+                console.log("Jewelry Sale Logged");
+            }
+        });
+    }
+
+    for(var i = 0; i < womenSale.length; i++) {
+        db.query(`INSERT INTO women (title, description, price, category, images) VALUES ('${bridalTitle[i]}', '${bridalDescription[i]}', ${bridalPrices[i]}, 'womenSale', '${womenSale[i]}')`, (err, result) => {
+            if(err) {
+                console.log(err);
+            } else {
+                console.log("Women Sale Logged");
+            }
+        });
+    }
+
+    for(var i = 0; i < menSale.length; i++) {
+        db.query(`INSERT INTO men (title, description, price, category, images) VALUES ('${menSaleTitle[i]}', '${menSaleDescription[i]}', ${menSalePrice[i]}, 'menSale', '${menSale[i]}')`, (err, result) => {
+            if(err) {
+                console.log(err);
+            } else {
+                console.log("Men Sale Logged");
+            }
+        });
+    }
 
     // Necklace push
     for(var i = 0; i < necklaceArray.length; i++) {
@@ -148,7 +199,7 @@ const createCategories = () => {
     }
 
     for(var i = 0; i < mensPage.length; i++) {
-        db.query(`INSERT INTO men (title, description, price, category, images) VALUES ('${bridalTitle[i]}', '${bridalDescription[i]}', ${bridalPrices[i]}, 'men', '${mensPage[i]}')`, (err, result) => {
+        db.query(`INSERT INTO men (title, description, price, category, images) VALUES ('${mensTitle[i]}', '${mensDescription[i]}', ${mensPrice[i]}, 'men', '${mensPage[i]}')`, (err, result) => {
             if(err) {
                 console.log(err);
             } else {

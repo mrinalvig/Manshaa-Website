@@ -328,17 +328,19 @@ class CurentProduct extends React.Component {
               <div id='currentImage'>
                 <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
               </div>
-              <h2 id='productTitle'>{this.props.product[0]}</h2>
-              <img id='underline' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
-              <h3 id='description'>{this.props.product[1]}</h3>
-              <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
-              <div id='sizeContainer' name='closed' onClick={this.expandSize}>
-                <h3>select size</h3>
+              <div id = 'currentProductContainer'>
+                <h2 id='productTitle'>{this.props.product[0]}</h2>
+                <img id='underline' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
+                <h3 id='description'>{this.props.product[1]}</h3>
+                <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
+                <div id='sizeContainer' name='closed' onClick={this.expandSize}>
+                  <h3>select size</h3>
+                </div>
+                <div id='colorContainer' name='closed' onClick={this.expandColor}>
+                  <h3>select color</h3>
+                </div>
+                <button id='cartButton' onClick={this.purchaseAlert}>Add to Cart - ${this.props.product[2]}</button>
               </div>
-              <div id='colorContainer' name='closed' onClick={this.expandColor}>
-                <h3>select color</h3>
-              </div>
-              <button id='cartButton' onClick={this.purchaseAlert}>Add to Cart - ${this.props.product[2]}</button>
               {/* <img id='sizeChart' src="https://i.ibb.co/nC0JMLd/measurement.png"></img> */}
           </div>
           <FooterThree />
@@ -354,36 +356,38 @@ class CurentProduct extends React.Component {
               <div id='currentImage'>
                 <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
               </div>
-              <h2 id='productTitle'>{this.props.product[0]}</h2>
-              <img id='underline' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
-              <h3 id='description'>{this.props.product[1]}</h3>
-              <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
-              <div id='sizeContainer2'>
-                {/* <img id='sizeChart' src="https://rb.gy/pvf9n2"></img> */}
-                <button id='exit' name='open' onClick={this.closeSize}></button>
+              <div id = 'currentProductContainer'>
+                <h2 id='productTitle'>{this.props.product[0]}</h2>
+                <img id='underline' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
+                <h3 id='description'>{this.props.product[1]}</h3>
+                <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
+                <div id='sizeContainer2'>
+                  {/* <img id='sizeChart' src="https://rb.gy/pvf9n2"></img> */}
+                  <button id='exit' name='open' onClick={this.closeSize}></button>
+                </div>
+                <div id='measurementBox'>
+                  <h2 id='measurementMessage'>{this.state.statement}</h2>
+                  <h2 id='shoulderTag' onChange={(e) => this.changeShoulder(e)}>Shoulder: <input value={this.state.shoulder} id='shoulderInput' /> in.</h2>
+                  <h2 id='armholeTag' onChange={(e) => this.changeArmhole(e)}>Armhole: <input value={this.state.armHole} id='shoulderInput' /> in.</h2>
+                  <h2 id='upperBustTag' onChange={(e) => this.changeUpperBust(e)}>Upper Bust Round: <input value={this.state.upperBust} id='shoulderInput' /> in.</h2>
+                  <h2 id='acrossTag' onChange={(e) => this.changeAcross(e)}>Across Front: <input value={this.state.across} id='shoulderInput' /> in.</h2>
+                  <h2 id='bustTag' onChange={(e) => this.changeBust(e)}>Bust Round: <input value={this.state.bust} id='shoulderInput' /> in.</h2>
+                  <h2 id='underBustTag' onChange={(e) => this.changeUnderBust(e)}>Under Bust Round: <input value={this.state.underBust} id='shoulderInput' /> in.</h2>
+                  <h2 id='waistTag' onChange={(e) => this.changeWaist(e)}>Waist Round: <input value={this.state.waist} id='shoulderInput' /> in.</h2>
+                  <h2 id='lowWaistTag' onChange={(e) => this.changeLowWaist(e)}>Low Waist Round: <input value={this.state.lowWaist} id='shoulderInput' /> in.</h2>
+                  <h2 id='hipTag' onChange={(e) => this.changeHip(e)}>Hip Round: <input value={this.state.hip} id='shoulderInput' /> in.</h2>
+                  <h2 id='thighTag' onChange={(e) => this.changeThigh(e)}>Thigh Round: <input value={this.state.thigh} id='shoulderInput' /> in.</h2>
+                  <h2 id='midThighTag' onChange={(e) => this.changeMidThigh(e)}>Mid Thigh Round: <input value={this.state.midThigh} id='shoulderInput' /> in.</h2>
+                  <h2 id='kneeTag' onChange={(e) => this.changeKnee(e)}>Knee Round: <input value={this.state.knee} id='shoulderInput' /> in.</h2>
+                  <h2 id='calfTag' onChange={(e) => this.changeCalf(e)}>Calf Round: <input value={this.state.calf} id='shoulderInput' /> in.</h2>
+                  <h2 id='ankleTag' onChange={(e) => this.changeAnkle(e)}>Ankle Round: <input value={this.state.ankle} id='shoulderInput' /> in.</h2>
+                  <button id='logMeasure' onClick={this.savingSize}>Save Measurements</button>
+                </div>
+                <div id='colorContainer' name='closed' onClick={this.expandcolor}>
+                  <h3>select color</h3>
+                </div>
+                <button id='cartButton2' onClick={this.purchaseAlert}>Add to Cart - ${this.props.product[2]}</button>
               </div>
-              <div id='measurementBox'>
-                <h2 id='measurementMessage'>{this.state.statement}</h2>
-                <h2 id='shoulderTag' onChange={(e) => this.changeShoulder(e)}>Shoulder: <input value={this.state.shoulder} id='shoulderInput' /> in.</h2>
-                <h2 id='armholeTag' onChange={(e) => this.changeArmhole(e)}>Armhole: <input value={this.state.armHole} id='shoulderInput' /> in.</h2>
-                <h2 id='upperBustTag' onChange={(e) => this.changeUpperBust(e)}>Upper Bust Round: <input value={this.state.upperBust} id='shoulderInput' /> in.</h2>
-                <h2 id='acrossTag' onChange={(e) => this.changeAcross(e)}>Across Front: <input value={this.state.across} id='shoulderInput' /> in.</h2>
-                <h2 id='bustTag' onChange={(e) => this.changeBust(e)}>Bust Round: <input value={this.state.bust} id='shoulderInput' /> in.</h2>
-                <h2 id='underBustTag' onChange={(e) => this.changeUnderBust(e)}>Under Bust Round: <input value={this.state.underBust} id='shoulderInput' /> in.</h2>
-                <h2 id='waistTag' onChange={(e) => this.changeWaist(e)}>Waist Round: <input value={this.state.waist} id='shoulderInput' /> in.</h2>
-                <h2 id='lowWaistTag' onChange={(e) => this.changeLowWaist(e)}>Low Waist Round: <input value={this.state.lowWaist} id='shoulderInput' /> in.</h2>
-                <h2 id='hipTag' onChange={(e) => this.changeHip(e)}>Hip Round: <input value={this.state.hip} id='shoulderInput' /> in.</h2>
-                <h2 id='thighTag' onChange={(e) => this.changeThigh(e)}>Thigh Round: <input value={this.state.thigh} id='shoulderInput' /> in.</h2>
-                <h2 id='midThighTag' onChange={(e) => this.changeMidThigh(e)}>Mid Thigh Round: <input value={this.state.midThigh} id='shoulderInput' /> in.</h2>
-                <h2 id='kneeTag' onChange={(e) => this.changeKnee(e)}>Knee Round: <input value={this.state.knee} id='shoulderInput' /> in.</h2>
-                <h2 id='calfTag' onChange={(e) => this.changeCalf(e)}>Calf Round: <input value={this.state.calf} id='shoulderInput' /> in.</h2>
-                <h2 id='ankleTag' onChange={(e) => this.changeAnkle(e)}>Ankle Round: <input value={this.state.ankle} id='shoulderInput' /> in.</h2>
-                <button id='logMeasure' onClick={this.savingSize}>Save Measurements</button>
-              </div>
-              <div id='colorContainer' name='closed' onClick={this.expandcolor}>
-                <h3>select color</h3>
-              </div>
-              <button id='cartButton2' onClick={this.purchaseAlert}>Add to Cart - ${this.props.product[2]}</button>
           </div>
           <FooterThree />
         </div>
@@ -398,27 +402,31 @@ class CurentProduct extends React.Component {
               <div id='currentImage'>
                 <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
               </div>
-              <h2 id='productTitle'>{this.props.product[0]}</h2>
-              <img id='underline' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
-              <h3 id='description'>{this.props.product[1]}</h3>
-              <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
-              <div id='sizeContainer' name='closed' onClick={this.closeColor, this.expandSize}>
-                <h3>select size</h3>
-              </div>
-              <div id='colorContainer2' name='closed'>
-                <button id='exit2' name='open' onClick={this.closeColor}></button>
-                <div id='colorSelector'>
-                  <SwatchesPicker
-                    color={this.state.selectedColor}
-                    onChange={this.colorSelect}
-                  />
+              <div id = 'currentProductContainer'>
+                <h2 id='productTitle'>{this.props.product[0]}</h2>
+                <img id='underline' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
+                <h3 id='description'>{this.props.product[1]}</h3>
+                <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
+                <div id='sizeContainer' name='closed' onClick={this.closeColor, this.expandSize}>
+                  <h3>select size</h3>
                 </div>
-                <div id='selectedColor'>
-                  <h3 style={{color: this.state.selectedColor}}>Selected Color: {this.state.selectedColor}</h3>
+                <div id='colorContainer2' name='closed'>
+                  <button id='exit2' name='open' onClick={this.closeColor}></button>
+                  <div id='colorSelector'>
+                    <SwatchesPicker
+                      color={this.state.selectedColor}
+                      onChange={this.colorSelect}
+                      height='30vh'
+                      width='30vw'
+                    />
+                  </div>
+                  <div id='selectedColor'>
+                    <h3 style={{color: this.state.selectedColor}}>Selected Color: {this.state.selectedColor}</h3>
+                  </div>
+                  <button id='default' onClick={this.defaultColor}>Default Color</button>
                 </div>
-                <button id='default' onClick={this.defaultColor}>Default Color</button>
+                <button id='cartButton2' onClick={this.purchaseAlert}>Add to Cart - ${this.props.product[2]}</button>
               </div>
-              <button id='cartButton2' onClick={this.purchaseAlert}>Add to Cart - ${this.props.product[2]}</button>
           </div>
           <FooterThree />
         </div>

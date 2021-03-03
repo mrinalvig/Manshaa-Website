@@ -183,8 +183,13 @@ class LogIn extends React.Component {
                       <div id='titleBox'> <h2 id='logInTitle'>Log In</h2> </ div>
                       <div id='logInSection'>
                           <h2 id='signUpError'>{this.state.signUpError}</h2>
-                          <h2 id='userName'>Username</h2><input type="text" id='username' onChange={(e) => this.enterUsername(e)}></input>
-                          <h2 id='passWord'>Password</h2><input type="password" id='password' onChange={(e) => this.enterPassword(e)}></input>
+                          <div id="usernameBlock">
+                            <h2 id='userName'>Username</h2>
+                            <input type="text" id='username' onChange={(e) => this.enterUsername(e)} />
+                          </div>
+                          <div id="passwordBlock">
+                            <h2 id='passWord'>Password</h2><input type="password" id='password' onChange={(e) => this.enterPassword(e)}></input>
+                          </div>
                           <button id='loginButton' onClick={this.logInClick}>Log In!</button>
                       </div>
                       <div id='accountMessage'>
@@ -206,14 +211,15 @@ class LogIn extends React.Component {
                     <div id='titleBox'> <h2 id='logInTitle2'>Sign Up</h2> </ div>
                     <div id='signUpSection'>
                         <h2 id='signUpError'>{this.state.signUpError}</h2>
-                        <div id='userColumn'>
-                            <h2 id='userName2'>Username</h2>
-                            <h2 id='passWord2'>Password</h2>
-                            <h2 id='reenter'>Re-enter Password</h2>
-                        </div>
+                        {/* <div id='userColumn'>
+
+                        </div> */}
                         <div id='userColumn2'>
+                            <h2 id='userName2'>Username</h2>
                             <input type="text" id='username2' onChange={(e) => this.enterUsername(e)}></input>
+                            <h2 id='passWord2'>Password</h2>
                             <input type="text" id='password2' onChange={(e) => this.enterPassword(e)}></input>
+                            <h2 id='reenter'>Re-enter Password</h2>
                             <input type="text" id='reEnter' onChange={(e) => this.enterRePassword(e)}></input>
                         </div>
                         <button id='loginButton2' onClick={this.signUpClick}>Sign Up!</button>

@@ -107,10 +107,10 @@ class NavBar extends React.Component {
                 <Link to="/men">
                   <button type='button' name ='men' id='men'> MEN </button>
                 </Link>
-                {/* <Link to='/sherwani'>
-                  <button type='button' name='sherwani' id='menSelection' >SHERWANI</button>
+                <Link to='/menSale'>
+                  <button type='button' name='sherwani' id='menSelection' >SALE</button>
                 </Link>
-                <Link to='/shoes'>
+                {/* <Link to='/shoes'>
                   <button type='button' name='shoes' id='menSelection' >SHOES</button>
                 </Link>
                 <Link to='/kurtas'>
@@ -133,6 +133,9 @@ class NavBar extends React.Component {
                 </Link>
                 <Link to="/bridesMaids">
                   <button type='button' id='womenSelection'>BRIDESMAIDS</button>
+                </Link>
+                <Link to="/womenSale">
+                  <button type='button' id='womenSelection'>SALE</button>
                 </Link>
                 {/* <Link to="/tunics">
                   <button type='button' id='womenSelection'>TUNICS</button>
@@ -161,6 +164,9 @@ class NavBar extends React.Component {
                 <Link to="/mathaPatti">
                   <button type='button' id='jewelrySelection'>MATHA PATTI & MANGTIKKA</button>
                 </Link>
+                <Link to="/jewelrySale">
+                  <button type='button' id='jewelrySelection'>SALE</button>
+                </Link>
                 {/* <Link to="/jhumar">
                   <button type='button' id='jewelrySelection'>JHUMAR</button>
                 </Link>
@@ -176,7 +182,7 @@ class NavBar extends React.Component {
           </Link>
           <Link to='/shoppingCart'>
             <div id={this.checkBadge()}>{this.cartNumber()}</div>
-            <button type='button' id='shoppingLogo' />
+            <button type='button' id='shoppingLogo'></button>
           </Link>
       </div>
     );

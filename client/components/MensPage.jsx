@@ -105,9 +105,9 @@ class MensPage extends React.Component {
 
   render() {
     return (
-        <div id='mensTransition'>
+        <div>
             <NavBar name={this.props.name} change={this.props.change} />
-            <div id='mensPage'>
+            <div id='menPage'>
                 {this.state.men.map((image, index) => (
                     <div id='productContainer'>
                         <Link to='/product'>

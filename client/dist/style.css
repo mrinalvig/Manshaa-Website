@@ -92,6 +92,7 @@ body {
   left: 84.85%;
   top: 25%;
   transition: .3s;
+  cursor: pointer;
 }
 
 #shoppingLogo {
@@ -113,6 +114,7 @@ body {
   left: 89.85%;
   top: 25%;
   transition: .3s;
+  cursor: pointer;
 }
 
 #searchLogo {
@@ -138,6 +140,7 @@ body {
   margin-top: 10px;
   outline: none;
   position: relative;
+  cursor: pointer;
 }
 
 #women {
@@ -148,6 +151,7 @@ body {
   outline: none;
   position: relative;
   margin-left: -.5vw;
+  cursor: pointer;
 }
 
 #jewelry {
@@ -206,6 +210,7 @@ body {
   margin-top: 10px;
   outline: none;
   position: relative;
+  cursor: pointer;
 }
 
 #womenSelectionBox {
@@ -239,6 +244,7 @@ body {
   margin-top: 10px;
   outline: none;
   margin-left: -.5vw;
+  cursor: pointer;
 }
 
 #jewelrySelectionBox {
@@ -275,6 +281,7 @@ body {
   font-size: 20px;
   margin-top: 10px;
   outline: none;
+  cursor: pointer;
 }
 
 #slide {
@@ -374,42 +381,223 @@ body {
   opacity: 0.5;
 }
 
-#chokerPage {
+#lehangasPage {
   opacity: 1;
-  animation: fade .7s linear;
+  animation: lahangaFade .7s linear forwards;
   border: none;
   position: absolute;
-  top: 22vh;
-  bottom: 0;
-  left: 8vw;
-  right: 0;
-  margin: auto;
-  margin-left: 5vw;
-  margin-top: 1vh;
-  width: 75vw;
-  height: 150vh;
-  display: flex;
-  border: 1px solid black;
-  /* overflow: hidden; */
-}
-
-#mensPage {
-  opacity: 1;
-  animation: fade .7s linear;
-  border: none;
-  position: absolute;
-	top:0;
+	top:62vh;
 	bottom: 0;
-	left: 0;
+	left: 8vw;
 	right: 0;
 	margin: auto;
-  margin-left: 5vw;
-  margin-top: 1vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 75vw;
+  height: fit-content;
 }
 
-@keyframes fade {
-  0% { opacity: 0; left:50vw; top:22vh;}
-  100% { opacity: 1; left:8vw; top:22vh;}
+#suitsPage {
+  opacity: 1;
+  animation: suitFade .7s linear forwards;
+  border: none;
+  position: absolute;
+	top:62vh;
+	bottom: 0;
+	left: 8vw;
+	right: 0;
+	margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 75vw;
+  height: fit-content;
+}
+
+#bridalsPage {
+  opacity: 1;
+  animation: bridalFade .7s linear forwards;
+  border: none;
+  position: absolute;
+	top:62vh;
+	bottom: 0;
+	left: 8vw;
+	right: 0;
+	margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 75vw;
+  height: fit-content;
+}
+
+#mathaPage {
+  opacity: 1;
+  animation: mathaFade .7s linear forwards;
+  border: none;
+  position: absolute;
+	top:22vh;
+	bottom: 0;
+	left: 8vw;
+	right: 0;
+	margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 75vw;
+  height: fit-content;
+}
+
+#chokerPage {
+  opacity: 1;
+  animation: chokerFade .7s linear forwards;
+  border: none;
+  position: absolute;
+	top:22vh;
+	bottom: 0;
+	left: 8vw;
+	right: 0;
+	margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 75vw;
+  height: fit-content;
+  /* overflow: auto; */
+}
+
+#menPage {
+  opacity: 1;
+  position: absolute;
+  animation: menFade .7s linear forwards;
+  border: none;
+	top: 100vh; bottom: 0; left: 0vw; right: 0;
+	margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 75vw;
+  height: 100%;
+  /* margin-left: 5vw;
+  margin-top: 1vh; */
+}
+
+#ghararasPage {
+  opacity: 1;
+  animation: ghararaFade .7s linear forwards;
+  border: none;
+  position: absolute;
+	top:22vh;
+	bottom: 0;
+	left: 8vw;
+	right: 0;
+	margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 75vw;
+  height: fit-content;
+}
+
+#necklacePage{
+  opacity: 1;
+  animation: necklaceFade .7s linear forwards;
+  border: none;
+  position: absolute;
+	top:62vh;
+	bottom: 0;
+	left: 8vw;
+	right: 0;
+	margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 75vw;
+  height: fit-content;
+}
+
+#earingsPage{
+  opacity: 1;
+  animation: earingFade .7s linear forwards;
+  border: none;
+  position: absolute;
+	top:62vh;
+	bottom: 0;
+	left: 8vw;
+	right: 0;
+	margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 75vw;
+  height: fit-content;
+}
+
+#banglesPage {
+  opacity: 1;
+  animation: bangleFade .7s linear forwards;
+  border: none;
+  position: absolute;
+	top:62vh;
+	bottom: 0;
+	left: 8vw;
+	right: 0;
+	margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 75vw;
+  height: fit-content;
+}
+
+@keyframes bangleFade {
+  0% { opacity: 0; left:50vw; top:156vh;}
+  100% { opacity: 1; left: 0vw; top:156vh;}
+}
+
+@keyframes earingFade {
+  0% { opacity: 0; left:50vw; top:267vh;}
+  100% { opacity: 1; left: 0vw; top:267vh;}
+}
+
+@keyframes necklaceFade {
+  0% { opacity: 0; left:50vw; top:431vh;}
+  100% { opacity: 1; left: 0vw; top:431vh;}
+}
+
+@keyframes ghararaFade {
+  0% { opacity: 0; left:50vw; top:101vh;}
+  100% { opacity: 1; left: 0vw; top:101vh;}
+}
+
+@keyframes lahangaFade {
+  0% { opacity: 0; left:50vw; top:156vh;}
+  100% { opacity: 1; left: 0vw; top:156vh;}
+}
+
+@keyframes suitFade {
+  0% { opacity: 0; left:50vw; top:212vh;}
+  100% { opacity: 1; left: 0vw; top:212vh;}
+}
+
+@keyframes bridalFade {
+  0% { opacity: 0; left:50vw; top:486vh;}
+  100% { opacity: 1; left: 0vw; top:486vh;}
+}
+
+@keyframes mathaFade {
+  0% { opacity: 0; left:50vw; top:47vh;}
+  100% { opacity: 1; left: 0vw; top:47vh;}
+}
+
+@keyframes chokerFade {
+  0% { opacity: 0; left:50vw; top:47vh;}
+  100% { opacity: 1; left: 0vw; top:47vh;}
+}
+
+@keyframes menFade {
+  0% { opacity: 0; left:50vw; top:50vh;}
+  100% { opacity: 1; left: 0vw; top:50vh;}
 }
 
 #types {
@@ -765,41 +953,49 @@ body {
   z-index: 1;
 }
 
+#currentProductContainer {
+  width: 30vw;
+  height: 100%;
+  position: relative;
+  left: 5vw;
+  top: 0vh;
+}
+
 #productTitle{
   position: relative;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  left: 9.5vw;
-  width: 20vw;
-  top: -4vh;
+  font-size: 3.5vh;
+  width: auto;
+  text-align: center;
+  white-space: nowrap;
 }
 
 #underline{
-  width: 25vw;
-  height: 10vh;
+  width: 37vw;
+  height: 100%;
   position: relative;
-  left: -14.6vw;
-  top: 3vh;
+  right: 2.8vw;
+  margin-top: -2vh;
 }
 
 #underline2{
-  width: 25vw;
-  height: 10vh;
+  width: 37vw;
+  height: 100%;
   position: relative;
-  left: -69.6vw;
-  top: 36vh;
+  right: 2.8vw;
 }
 
 #description{
   position: relative;
-  top: 12vh;
   width: 30vw;
-  left: -42vw;
+  height: 100%;
   text-align: center;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
   font-weight: normal;
+  font-size: 3vh;
+  left: 1vw;
 }
 
 #sizeChart {
@@ -812,11 +1008,9 @@ body {
 
 #sizeContainer {
   position: absolute;
-  width: 8vw;
+  width: 11vw;
   height: 5vh;
   background-color: rgb(238, 222, 197, 0.4);
-  left: 47vw;
-  top: 50vh;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -824,6 +1018,7 @@ body {
   align-items: center;
   border: .5px solid black;
   transition: .8s;
+  left: 2.1vw;
 }
 
 #sizeContainer2 {
@@ -834,8 +1029,6 @@ body {
   background-image: url("https://rb.gy/pvf9n2");
   background-size: 25vw 65vh;
   background-repeat: no-repeat;
-  left: 31vw;
-  top: 0vh;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -845,6 +1038,7 @@ body {
   transition: .6s;
   overflow: hidden;
   z-index: 2;
+  top: 0vh;
 }
 
 #exit {
@@ -872,26 +1066,30 @@ body {
   background-color: transparent;
   border: none;
   outline: none;
-  top: -22.5vh;
-  left: 1vw;
+  margin: auto;
   z-index: 1;
+  top: -22vh;
+  left: 13vw;
 }
 
 #measurementBox {
-  position: relative;
-  top: 4vh;
-  left: -72vw;
+  position: absolute;
   width: 20vw;
   height: 25vh;
   transition: .6s;
   align-content: flex-end;
+  top: 5vh;
+  left: 25vw;
 }
 
 #measurementMessage {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 1.3vh;
   text-align: right;
+  right: 2vw;
+  position: relative;
+  color: white;
 }
 
 #shoulderInput {
@@ -910,6 +1108,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #armholeTag {
@@ -920,6 +1119,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #acrossTag {
@@ -930,6 +1130,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #bustTag {
@@ -940,6 +1141,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #underBustTag {
@@ -950,6 +1152,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #upperBustTag {
@@ -960,6 +1163,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #waistTag {
@@ -970,6 +1174,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #lowWaistTag {
@@ -980,6 +1185,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #hipTag {
@@ -990,6 +1196,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #thighTag {
@@ -1000,6 +1207,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #midThighTag {
@@ -1010,6 +1218,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #kneeTag {
@@ -1020,6 +1229,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #calfTag {
@@ -1030,6 +1240,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #ankleTag {
@@ -1040,6 +1251,7 @@ body {
   top: 1vh;
   left: -3.5vw;
   text-align: right;
+  color: white;
 }
 
 #logMeasure {
@@ -1049,10 +1261,13 @@ body {
   outline: none;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
+  font-size: 1vh;
   background-color: rgb(238, 222, 197, 0.4);
   position: relative;
-  top: 2vh;
+  width: 7vw;
+  height: 3vh;
   left: 9vw;
+  top: 2vh;
 }
 #logMeasure:active {
   box-shadow: none;
@@ -1061,11 +1276,9 @@ body {
 
 #colorContainer {
   position: absolute;
-  width: 8vw;
+  width: 11vw;
   height: 5vh;
   background-color: rgb(238, 222, 197, 0.4);
-  left: 35vw;
-  top: 50vh;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -1074,14 +1287,13 @@ body {
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.4);
   transition: .8s;
   z-index: 1;
+  left: 18vw;
 }
 
 #colorContainer2 {
   position: absolute;
-  width: 23vw;
-  height: 48vh;
-  left: 23vw;
-  top: 25vh;
+  width: 32vw;
+  height: 50vh;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -1089,32 +1301,34 @@ body {
   transition: .6s;
   overflow: hidden;
   z-index: 2;
+  top: 1vh;
+  left: 10vw;
+  border: 1px solid black;
+  background-color: rgba(134, 119, 95, 0.76);
 }
 
 #colorSelector {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  left: 0vw;
-  top: -22vh;
+  position: absolute;
   z-index: 0;
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  margin: auto;
+  top: 5vh;
 }
 
 #default{
-  position: relative;
-  top: 20vh;
-  left: -7.2vw;
+  position: absolute;
   width: 20vw;
   height: 5vh;
   background-color: rgb(238, 222, 197, 0.4);
   outline: none;
+  text-align: center;
+  margin: auto;
+  top: 42vh;
 }
 
 #cartButton{
   position: relative;
-  top: 60vh;
-  left: -91.8vw;
   height: 5vh;
   width: 20vw;
   transition: .6s;
@@ -1126,6 +1340,8 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
   background-color: rgb(238, 222, 197, 0.4);
+  top: 12vh;
+  left: 5.5vw;
 }
 #cartButton:active {
   box-shadow: none;
@@ -1154,12 +1370,13 @@ body {
 }
 
 #selectedColor {
-  position: relative;
-  top: 8vh;
-  left: 2.2vw;
+  position: absolute;
+  margin: auto;
   font-size: 18px;
   width: 20vw;
   height: 5vh;
+  text-align: center;
+  top: 35vh;
 }
 
 #circleProfile{
@@ -1272,7 +1489,7 @@ body {
   height: 60vh;
   left: 30.5%;
   top: 35%;
-  background-color: rgb(238, 222, 197);
+  background-color: rgb(161, 150, 133);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.6);
   border: 1px solid black;
   transition: .6s;
@@ -1450,16 +1667,38 @@ body {
   width: 13vw;
   height: 25vh;
   border: none;
-  top: 8.5vh;
-  left: 17vw;
+  top: 6vh;
+  left: 13vw;
+  display: flex;
+  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#usernameBlock {
+  display: flex;
+  position: absolute;
+  top: 4vh;
+  margin: auto;
+  left: 13.2vw;
+  right: 0;
+}
+
+#passwordBlock {
+  display: flex;
+  position: absolute;
+  top: 12vh;
+  margin: auto;
+  left: 13.5vw;
+  right: 0;
 }
 
 #userName{
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   position: relative;
-  left: 9vw;
-  top: 6.5vh;
+  /* left: 9vw;
+  top: 6.5vh; */
   font-size: 15px;
   transition: .6s;
 }
@@ -1490,23 +1729,29 @@ body {
   position: relative;
   margin:0 auto;
   display:block;
-  top: 3vh;
   transition: .6s;
+  margin-left: 1vw;
+  top: 1.3vh;
+  height: 1vh;
+  width: 5vw;
 }
 
 #username2{
   position: relative;
   top: 0vh;
   transition: .6s;
+  height: 1vh;
+  width: 5vw;
+  margin-top: 1vh;
 }
 
 
 #passWord{
-  position: relative;
-  left: 9vw;
-  top: 7.4vh;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
+  position: relative;
+  /* left: 9vw;
+  top: 6.5vh; */
   font-size: 15px;
   transition: .6s;
 }
@@ -1514,7 +1759,6 @@ body {
 #passWord2{
   position: relative;
   left: 0vw;
-  top: 6vh;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -1525,14 +1769,20 @@ body {
   position: relative;
   margin:0 auto;
   display:block;
-  top: 4vh;
   transition: .6s;
+  margin-left: 1vw;
+  top: 1.3vh;
+  height: 1vh;
+  width: 5vw;
 }
 
 #password2{
   position: relative;
-  top: 7vh;
-  transition: .6s;
+  left: 0;
+  transform: .6s;
+  height: 1vh;
+  width: 5vw;
+  margin-top: 1vh;
 }
 
 #loginButton{
@@ -1540,7 +1790,7 @@ body {
   width: 50%;
   margin:0 auto;
   display:block;
-  top: 7vh;
+  top: 23vh;
   font-size: 16px;
   width: 90px;
   transition: .6s;
@@ -1562,15 +1812,16 @@ body {
   Helvetica, Arial, sans-serif;
   position: relative;
   left: 0vw;
-  top: 12vh;
   font-size: 15px;
   transition: .6s;
 }
 
 #reEnter{
   position: relative;
-  top: 14vh;
   transition: .6s;
+  height: 1vh;
+  width: 5vw;
+  margin-top: 1.5vh;
 }
 
 .switch-wrapper {
@@ -1638,7 +1889,7 @@ body {
 }
 
 #shoppingCartContainer {
-  position: relative;
+  position: absolute;
   top: 26vh;
   left: 10vw;
   margin-bottom: 5vh;
@@ -1699,14 +1950,16 @@ body {
   height: 5vh;
   width: 3vw;
   position: relative;
-  left: 46vw;
-  top: -37vh;
+  margin: auto;
+  display: block;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   background-color: transparent;
   border: none;
   outline: none;
   font-size: 17px;
+  top: -147%;
+  left: 23vw;
 }
 #shoppingRemove:active{
   transform: translateY(2px);
@@ -2338,13 +2591,15 @@ body {
   position: absolute;
   height: 18px;
   width: 18px;
-  left: 92.4vw;
-  top: 2.3vh;
+  left: 91.1%;
+  top: 26%;
   border-radius: 50%;
   background-color: rgb(253, 72, 72);
   text-align: center;
   transition: .5s;
+  opacity: .78;
   color: white;
+  z-index: 2;
 }
 
 /* #dropDown{

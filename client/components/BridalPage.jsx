@@ -104,7 +104,7 @@ class BridalPage extends React.Component {
       return (
           <div>
             <NavBar name={this.props.name} />
-              <div id='mensPage'>
+              <div id='menPage'>
                 {this.state.bridal1.map((image, index) => (
                     <div id='productContainer'>
                       <Link to='/product'>
@@ -125,7 +125,7 @@ class BridalPage extends React.Component {
       return (
           <div>
             <NavBar name={this.props.name} />
-              <div id='mensPage'>
+              <div id='menPage'>
                 {this.state.bridal2.map((image, index) => (
                     <div id='productContainer'>
                       <Link to='/product'>
