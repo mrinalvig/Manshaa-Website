@@ -54,6 +54,7 @@ class App extends React.Component {
     this.setLink = this.setLink.bind(this);
     this.productContent = this.productContent.bind(this);
     this.returnName = this.returnName.bind(this);
+    this.logOut = this.logOut.bind(this);
   }
 
   componentDidMount() {
@@ -89,6 +90,12 @@ class App extends React.Component {
     })
   }
 
+  logOut() {
+    this.setState({
+      username: ""
+    })
+  }
+
   render() {
       return (
         <Router>
@@ -112,7 +119,7 @@ class App extends React.Component {
             <Route path="/lehenga" component={() => <Lehenga name={this.state.username} change={(e) => this.setLink(e)} content={this.productContent}/>} />
             <Route path="/checkout" component={() => <Checkout name={this.state.username} />} />
             <Route path="/shoppingCart" component={() => <Shopping name={this.state.username} />} />
-            <Route path="/logIn" component={() => <LogIn users={this.state.storedUsers} currentUser={this.state.currentUser} current={this.currentUser} name={this.state.username}/>} />
+            <Route path="/logIn" component={() => <LogIn users={this.state.storedUsers} currentUser={this.state.currentUser} current={this.currentUser} name={this.state.username} logOut={this.logOut} />} />
             <Route path="/product" component={() => <CurrentProduct name={this.state.username} product={this.state.productInfo} link={this.state.link}/>} />
             <Route path="/kurtas" component={() => <Kurtas name={this.state.username} />} />
             <Route path="/shoes" component={() => <Shoes name={this.state.username} />} />

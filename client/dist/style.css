@@ -136,7 +136,7 @@ body {
 #men {
   background-color: transparent;
   border: solid 1px transparent;
-  font-size: 20px;
+  font-size: 1.5vh;
   margin-top: 10px;
   outline: none;
   position: relative;
@@ -146,7 +146,7 @@ body {
 #women {
   background-color: transparent;
   border: solid 1px transparent;
-  font-size: 20px;
+  font-size: 1.5vh;
   margin-top: 10px;
   outline: none;
   position: relative;
@@ -157,7 +157,7 @@ body {
 #jewelry {
   background-color: transparent;
   border: solid 1px transparent;
-  font-size: 20px;
+  font-size: 1.5vh;
   margin-top: 10px;
   outline: none;
   position: relative;
@@ -206,7 +206,7 @@ body {
 #menSelection {
   background-color: transparent;
   border: solid 1px transparent;
-  font-size: 20px;
+  font-size: 1.5vh;
   margin-top: 10px;
   outline: none;
   position: relative;
@@ -240,7 +240,7 @@ body {
 #womenSelection {
   background-color: transparent;
   border: solid 1px transparent;
-  font-size: 20px;
+  font-size: 1.5vh;
   margin-top: 10px;
   outline: none;
   margin-left: -.5vw;
@@ -278,7 +278,7 @@ body {
 #jewelrySelection {
   background-color: transparent;
   border: solid 1px transparent;
-  font-size: 20px;
+  font-size: 1.5vh;
   margin-top: 10px;
   outline: none;
   cursor: pointer;

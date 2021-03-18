@@ -142,18 +142,23 @@ class LogIn extends React.Component {
   }
 
   logOutClick() {
-    axios.put('/userId', {
-        username: this.props.name,
-        logged: "no"
-    })
-    .then( result => {
-        this.setState ({
-            signedInUser: "",
-            signedIn: false,
-            password: "",
-            hiddenPassword: ""
+    if(this.props.users[i].username === this.state.signedInUser) {
+        axios.put('/userId', {
+            username: this.state.signedInUser,
+            logged: "no"
         })
-    })
+        .then( result => {
+            this.setState ({
+                signedInUser: "",
+                signedIn: false,
+                password: "",
+                hiddenPassword: ""
+            })
+        })
+        .then(() => {
+            this.props.logOut();
+        })
+    }
   }
 
   logOutClick2(){
@@ -166,6 +171,9 @@ class LogIn extends React.Component {
             signedInUser: "",
             signedIn: false
         })
+    })
+    .then(() => {
+        this.props.logOut();
     })
   }
 
