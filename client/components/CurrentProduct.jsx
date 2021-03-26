@@ -7,6 +7,9 @@ import NavBar from './NavBar.jsx';
 import FooterThree from "./FooterThree.jsx";
 import FooterTwo from "./FooterTwo.jsx";
 import Picker from 'react-mobile-picker';
+import e from "cors";
+import validator from 'validator';
+import emailjs from 'emailjs-com';
 
 
 class CurentProduct extends React.Component {
@@ -34,7 +37,13 @@ class CurentProduct extends React.Component {
       calf: "",
       ankle: "",
       measurements: [],
-      statement: "Please enter your measurements!"
+      statement: "Please enter your measurements!",
+      jewelry: "",
+      expandButton: false,
+      emailAddress: "",
+      phoneNumber: 0,
+      nameInfo: "",
+      message: ""
     };
     this.expandSize = this.expandSize.bind(this);
     this.closeSize = this.closeSize.bind(this);
@@ -43,6 +52,7 @@ class CurentProduct extends React.Component {
     this.colorSelect = this.colorSelect.bind(this);
     this.defaultColor = this.defaultColor.bind(this);
     this.purchaseAlert = this.purchaseAlert.bind(this);
+    this.purchaseAlert2 = this.purchaseAlert2.bind(this);
     this.changeShoulder = this.changeShoulder.bind(this);
     this.changeArmhole = this.changeArmhole.bind(this);
     this.changeUpperBust = this.changeUpperBust.bind(this);
@@ -58,14 +68,21 @@ class CurentProduct extends React.Component {
     this.changeCalf = this.changeCalf.bind(this);
     this.changeAnkle = this.changeAnkle.bind(this);
     this.savingSize = this.savingSize.bind(this);
+    this.changeButton = this.changeButton.bind(this);
+    this.checkEmail = this.checkEmail.bind(this);
+    this.checkEntry = this.checkEntry.bind(this);
+    this.checkNumber = this.checkNumber.bind(this);
+    this.checkName = this.checkName.bind(this);
+    this.checkMessage = this.checkMessage.bind(this);
   }
 
   componentDidMount() {
     axios.post('/loggedIn', {username: this.props.name})
     .then(result => {
-      console.log(result.data);
+      // console.log(result.data);
         this.setState ({
-            userInfo: result.data
+            userInfo: result.data,
+            jewelry: this.props.product[3]
         })
     })
   }
@@ -119,6 +136,58 @@ class CurentProduct extends React.Component {
     }
     else {
       let array = [this.props.link, this.props.product, this.state.measurements, this.state.selectedColor];
+      let previous = this.state.userInfo[0].cart;
+      if(previous != "") {
+        previous = JSON.parse(previous);
+      }
+
+      if(previous.length === 0) {
+        var container = [];
+        container.push(array);
+        container = JSON.stringify(container);
+
+        axios.put('/cart', { cart:container, username:this.state.userInfo[0].username })
+        .then(() => {
+          window.alert("You have successfully added this item to your cart");
+          // axios.get('/loggedUser')
+          // .then(result => {
+          //   console.log(JSON.parse(result.data[0].cart));
+          // })
+        })
+      }
+      if(previous.length === 4 && previous[0].length != 4) {
+        var container = [];
+        container.push(previous);
+        container.push(array);
+        container = JSON.stringify(container);
+
+        axios.put('/cart', { cart:container, username:this.state.userInfo[0].username })
+        .then(() => {
+          window.alert("You have successfully added this item to your cart");
+        })
+      }
+      else {
+        previous.push(array);
+        previous = JSON.stringify(previous);
+
+        axios.put('/cart', { cart:previous, username:this.state.userInfo[0].username })
+        .then(() => {
+          window.alert("You have successfully added this item to your cart");
+        })
+      }
+
+    }
+  }
+
+  purchaseAlert2() {
+    if(this.state.userInfo.length === 0) {
+      window.alert("You must log in to add products to your shopping cart");
+    }
+    // if(this.state.measurements.length === 0) {
+    //   window.alert("You must fill in measurements before adding product to cart");
+    // }
+    else {
+      let array = [this.props.link, this.props.product];
       let previous = this.state.userInfo[0].cart;
       if(previous != "") {
         previous = JSON.parse(previous);
@@ -319,7 +388,165 @@ class CurentProduct extends React.Component {
 
   }
 
+  changeButton(e) {
+    if(e.target.id === 'buttonMessage') {
+      this.setState ({
+        expandButton: true
+      })
+    } else {
+      this.setState ({
+        expandButton: false
+      })
+    }
+  }
+
+  checkEmail(e) {
+    this.setState ({
+      emailAddress: e.target.value
+    })
+  }
+
+  checkNumber(e) {
+    this.setState ({
+      phoneNumber: e.target.value
+    })
+  }
+
+  checkName(e) {
+    this.setState ({
+      nameInfo: e.target.value
+    })
+  }
+
+  checkMessage(e) {
+    this.setState ({
+      message: e.target.value
+    })
+  }
+
+  checkEntry() {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if ( re.test(this.state.emailAddress) ) {
+      if(validator.isMobilePhone(this.state.phoneNumber) && this.state.phoneNumber.length === 10) {
+        if(this.state.nameInfo != "") {
+          window.open('mailto:'+'manshaa@live.com'+'?cc='+''+'&subject='+this.props.product[0]+'&body='+'Hello, my name is ' + this.state.nameInfo +' and I would like to know how much your ' + this.props.product[0] + ' is? My number is ' + this.state.phoneNumber + ' and you can email me at ' + this.state.emailAddress + '. I look forward to your reply. Sincerely, ' + this.state.nameInfo, '_self');
+        } else {
+          window.alert('invalid info');
+        }
+      } else {
+        window.alert('invalid info');
+      }
+    } else {
+      window.alert('invalid info');
+    }
+
+  }
+
   render() {
+    if(this.props.product[2] === 0 && this.state.expandButton === false) {
+      return (
+        <div>
+          <NavBar name={this.props.name}/>
+          <div id='currentProduct'>
+              <div id='currentImage'>
+                <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
+              </div>
+              <div id = 'currentProductContainer'>
+                <h2 id='productTitle'>{this.props.product[0]}</h2>
+                <img id='underline' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
+                <h3 id='description'>{this.props.product[1]}</h3>
+                <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
+                {/* <div id='sizeContainer' name='closed' onClick={this.expandSize}>
+                  <h3>select size</h3>
+                </div>
+                <div id='colorContainer' name='closed' onClick={this.expandColor}>
+                  <h3>select color</h3>
+                </div> */}
+                <div onClick={this.changeButton} id='cartButton3'><h2 id='buttonMessage'>Click to inquire about price</h2></div>
+              </div>
+              {/* <img id='sizeChart' src="https://i.ibb.co/nC0JMLd/measurement.png"></img> */}
+          </div>
+          <FooterThree />
+        </div>
+      )
+    }
+
+    if(this.props.product[2] === 0 && this.state.expandButton === true) {
+      return (
+        <div>
+          <NavBar name={this.props.name}/>
+          <div id='currentProduct'>
+              <div id='currentImage'>
+                <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
+              </div>
+              <div id = 'currentProductContainer'>
+                <h2 id='productTitle'>{this.props.product[0]}</h2>
+                <img id='underline' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
+                <h3 id='description'>{this.props.product[1]}</h3>
+                <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
+                {/* <div id='sizeContainer' name='closed' onClick={this.expandSize}>
+                  <h3>select size</h3>
+                </div>
+                <div id='colorContainer' name='closed' onClick={this.expandColor}>
+                  <h3>select color</h3>
+                </div> */}
+                <div id='cartButton4'>
+                  <button id='exitEnquire' onClick={(e) => this.changeButton(e)}>X</button>
+                  <div id='nameLineEnquire'>
+                    <h2 type='email' id='nameTitleEnquire'>Name</h2>
+                    <input id='nameEnquire' name='from_name' onChange={(e) => this.checkName(e)}/>
+                  </div>
+                  <div id='phoneLineEnquire'>
+                    <h2 id='phoneTitleEnquire'>Phone #</h2>
+                    <input id='phoneEnquire' name='phone' onChange={(e) => this.checkNumber(e)}/>
+                  </div>
+                  <div id='emailLineEnquire'>
+                    <h2 id='emailTitleEnquire'>Email</h2>
+                    <input id='emailEnquire' name='email' type='email' onChange={(e) => this.checkEmail(e)}/>
+                  </div>
+                  {/* <div id='messageLineEnquire'>
+                    <h2 id='messageTitleEnquire'>Special Message</h2>
+                    <input id='messageEnquire' name='message' onChange = {(e) => this.checkMessage(e)}/>
+                  </div> */}
+                  <button id='enquireEntryButton' onClick={this.checkEntry}>Submit</button>
+                </div>
+              </div>
+              {/* <img id='sizeChart' src="https://i.ibb.co/nC0JMLd/measurement.png"></img> */}
+          </div>
+          <FooterThree />
+        </div>
+      )
+    }
+
+    if(this.state.size === false && this.state.color === false && this.props.product[3] != undefined) {
+      return (
+        <div>
+          <NavBar name={this.props.name}/>
+          <div id='currentProduct'>
+              <div id='currentImage'>
+                <Magnifier src={this.props.link} width={'100%'} height={'100%'}/>
+              </div>
+              <div id = 'currentProductContainer'>
+                <h2 id='productTitle'>{this.props.product[0]}</h2>
+                <img id='underline' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
+                <h3 id='description'>{this.props.product[1]}</h3>
+                <img id='underline2' src="https://i.ibb.co/ZTY5TmN/underline.png"></img>
+                {/* <div id='sizeContainer' name='closed' onClick={this.expandSize}>
+                  <h3>select size</h3>
+                </div>
+                <div id='colorContainer' name='closed' onClick={this.expandColor}>
+                  <h3>select color</h3>
+                </div> */}
+                <button id='cartButton3' onClick={this.purchaseAlert2}>Add to Cart - ${this.props.product[2]}</button>
+              </div>
+              {/* <img id='sizeChart' src="https://i.ibb.co/nC0JMLd/measurement.png"></img> */}
+          </div>
+          <FooterThree />
+        </div>
+      );
+    }
+
     if(this.state.size === false && this.state.color === false) {
       return(
         <div>

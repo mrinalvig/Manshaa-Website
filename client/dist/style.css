@@ -1369,6 +1369,184 @@ body {
   transition: .01s;
 }
 
+#cartButton3{
+  position: relative;
+  top: 6vh;
+  left: 5.5vw;
+  height: 5vh;
+  width: 20vw;
+  transition: .6s;
+  border-radius: 10px;
+  border: none;
+  border: .5px solid black;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
+  outline: none;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  background-color: rgb(238, 222, 197, 0.4);
+  text-align: center;
+  cursor: pointer;
+}
+#cartButton3:active {
+  box-shadow: none;
+  transition: .01s;
+}
+
+#buttonMessage {
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+    font-size: 1.5vh;
+    text-align: center;
+    position: relative;
+    display: block;
+    margin: auto;
+    top: 1.5vh; bottom: 0; left: 0; right: 0;
+}
+
+#cartButton4{
+  position: relative;
+  top: -30vh;
+  left: -2vw;
+  height: 35vh;
+  width: 30vw;
+  transition: .6s;
+  border-radius: 10px;
+  border: 1px solid black;
+  border: .5px solid black;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
+  outline: none;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  background-color: rgb(238, 222, 197);
+  font-weight: bolder;
+}
+
+#exitEnquire {
+  position: absolute;
+  display: block;
+  margin: auto;
+  bottom: 30vh; top: 0; left: 27vw; right: 0;
+  height: 1.5vh;
+  width: 1vw;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#exitEnquire:active {
+  box-shadow: none;
+}
+
+#nameLineEnquire {
+  display: flex;
+  position: relative;
+  margin: auto;
+  width: 16vw;
+  height: 2vh;
+  top: 6vh; bottom: 0; left: 0; right: 0;
+}
+
+#nameEnquire {
+  position: relative;
+  margin: auto;
+  border: none;
+  border-bottom: 1px solid #000000;
+  background-color: rgb(238, 222, 197);
+}
+
+#nameTitleEnquire{
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 1.5vh;
+  position: relative;
+  margin: auto;
+}
+
+#phoneLineEnquire {
+  display: flex;
+  position: relative;
+  margin: auto;
+  width: 16vw;
+  height: 2vh;
+  top: 9vh; bottom: 0; left: -.2vw; right: 0;
+}
+
+#phoneEnquire {
+  position: relative;
+  margin: auto;
+  border: none;
+  border-bottom: 1px solid #000000;
+  background-color: rgb(238, 222, 197);
+}
+
+#phoneTitleEnquire {
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 1.5vh;
+  position: relative;
+  margin: auto;
+}
+
+#emailLineEnquire {
+  display: flex;
+  position: relative;
+  margin: auto;
+  width: 16vw;
+  height: 2vh;
+  top: 12vh; bottom: 0; left: 0; right: 0;
+}
+
+#emailEnquire {
+  position: relative;
+  margin: auto;
+  border: none;
+  border-bottom: 1px solid #000000;
+  background-color: rgb(238, 222, 197);
+}
+
+#emailTitleEnquire {
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 1.5vh;
+  position: relative;
+  margin: auto;
+}
+
+#messageLineEnquire {
+  display: flex;
+  position: relative;
+  margin: auto;
+  width: 16vw;
+  height: 2vh;
+  top: 15vh; bottom: 0; left: -1vw; right: 0;
+}
+
+#messageEnquire{
+  position: relative;
+  margin: auto;
+  border: none;
+  border-bottom: 1px solid #000000;
+  background-color: rgb(238, 222, 197);
+}
+
+#messageTitleEnquire {
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 1.5vh;
+  position: relative;
+  margin: auto;
+}
+
+#enquireEntryButton {
+  position: relative;
+  display: block;
+  margin: auto;
+  top: 20vh; bottom: 0; left: 0; right: 0;
+  height: 2vh;
+  width: 4vw;
+  background-color: rgba(155, 155, 155, 0.171);
+}
+
 #selectedColor {
   position: absolute;
   margin: auto;

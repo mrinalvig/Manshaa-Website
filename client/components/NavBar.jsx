@@ -165,9 +165,9 @@ class NavBar extends React.Component {
                 <Link to="/mathaPatti">
                   <button type='button' id='jewelrySelection'>MATHA PATTI & MANGTIKKA</button>
                 </Link>
-                <Link to="/jewelrySale">
+                {/* <Link to="/jewelrySale">
                   <button type='button' id='jewelrySelection'>SALE</button>
-                </Link>
+                </Link> */}
                 {/* <Link to="/jhumar">
                   <button type='button' id='jewelrySelection'>JHUMAR</button>
                 </Link>

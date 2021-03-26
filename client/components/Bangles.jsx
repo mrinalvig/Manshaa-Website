@@ -13,7 +13,8 @@ class Bangles extends React.Component {
         bridal: [],
         titles: [],
         descriptions: [],
-        prices: []
+        prices: [],
+        category: []
     };
     this.changePage = this.changePage.bind(this);
   }
@@ -23,6 +24,7 @@ class Bangles extends React.Component {
     let title = [];
     let description = [];
     let price = [];
+    let category = [];
 
     axios.get('/bangles')
     .then( result => {
@@ -36,13 +38,14 @@ class Bangles extends React.Component {
         title.push(this.state.bridal[i].title);
         description.push(this.state.bridal[i].description);
         price.push(this.state.bridal[i].price);
-
+        category.push(this.state.bridal[i].category);
       }
       this.setState ({
         images: imgs,
         titles: title,
         descriptions: description,
-        prices: price
+        prices: price,
+        category: category
       })
     })
 
@@ -54,6 +57,7 @@ class Bangles extends React.Component {
     array.push(this.state.titles[e.target.name]);
     array.push(this.state.descriptions[e.target.name]);
     array.push(this.state.prices[e.target.name]);
+    array.push(this.state.category[e.target.name]);
 
     this.props.content(array);
     this.props.change(e);

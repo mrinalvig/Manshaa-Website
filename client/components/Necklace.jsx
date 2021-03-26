@@ -33,18 +33,21 @@ class Necklace extends React.Component {
             let array = [];
             let array2 = [];
             let array3 = [];
+            let array4 = [];
             let ammount = result.data.length;
 
             for(var i = 0; i < ammount; i++) {
                 array.push(result.data[i].title);
                 array2.push(result.data[i].description);
                 array3.push(result.data[i].price);
+                array4.push(result.data[i].category);
             }
 
             this.setState({
                 titles: array,
                 descriptions: array2,
-                prices: array3
+                prices: array3,
+                category: array4
             })
         })
     })
@@ -57,6 +60,7 @@ class Necklace extends React.Component {
     array.push(this.state.titles[e.target.name]);
     array.push(this.state.descriptions[e.target.name]);
     array.push(this.state.prices[e.target.name]);
+    array.push(this.state.category[e.target.name]);
 
     this.props.content(array);
     this.props.change(e);
