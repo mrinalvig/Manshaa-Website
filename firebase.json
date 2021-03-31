@@ -1,0 +1,17 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": "client/dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "site": "manshaa"
+  },
+  "remoteconfig": {
+    "template": "remoteconfig.template.json"
+  }
+}
