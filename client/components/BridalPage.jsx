@@ -113,8 +113,8 @@ class BridalPage extends React.Component {
                     </div>
                 ))}
               </div>
-              <button id='page1' onClick={this.changeSelection}>1</button>
-              <button id='page2' onClick={this.changeSelection2}>2</button>
+              {/* <button id='page1' onClick={this.changeSelection}>1</button>
+              <button id='page2' onClick={this.changeSelection2}>2</button> */}
               {/* <button id='page3' onClick={(e) => this.changePage(e)}>3</button> */}
             <FooterTwo />
           </div>
@@ -134,8 +134,8 @@ class BridalPage extends React.Component {
                     </div>
                 ))}
               </div>
-              <button id='page1' onClick={this.changeSelection}>1</button>
-              <button id='page2' onClick={this.changeSelection2}>2</button>
+              {/* <button id='page1' onClick={this.changeSelection}>1</button>
+              <button id='page2' onClick={this.changeSelection2}>2</button> */}
               {/* <button id='page3' onClick={(e) => this.changePage(e)}>3</button> */}
             <FooterTwo />
           </div>

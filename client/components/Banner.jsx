@@ -8,7 +8,7 @@ class Banner extends React.Component {
     this.state = {
         slideDeck: ['','','','',''],
         pic: "./dist/images/banner.jpg",
-        images: ['https://rb.gy/zwcumt', 'https://rb.gy/dwa3ue', 'https://rb.gy/zwcumt', 'https://rb.gy/dwa3ue', 'https://rb.gy/zwcumt'],
+        images: ['https://i.ibb.co/YPJ4Dvq/Amber-Mack-W-0039.jpg', 'https://rb.gy/zwcumt', 'https://i.ibb.co/XbMpyv7/Amber-Mack-W-0076.jpg', 'https://i.ibb.co/YPJ4Dvq/Amber-Mack-W-0039.jpg', 'https://rb.gy/zwcumt'],
         reviews: ['https://i.ibb.co/4S0Stp5/review1.png', 'https://i.ibb.co/G97pWvr/review2.png', 'https://i.ibb.co/LpygKPs/review3.png', 'https://i.ibb.co/jZ1VY43/review4.png', 'https://i.ibb.co/n8yDzp7/review5.png'],
         x: 0,
         x2: 0
@@ -88,9 +88,9 @@ class Banner extends React.Component {
                 </div>
                 {/* <h2 id='styles'>Check Out Our Styles</h2> */}
                 <div id='types'>
+                    <div id='rightBox'><h2 id='western'>Bold</h2></div>
                     <div id='leftBox'><h2 id='traditional'>Traditional</h2></ div>
                     <div id='middleBox'><h2 id='fusion'>Fusion</h2></div>
-                    <div id='rightBox'><h2 id='western'>Western</h2></div>
                 </div>
                 <div id='reviews'>
                     {

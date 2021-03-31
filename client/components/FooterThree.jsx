@@ -10,17 +10,21 @@ class Footer extends React.Component {
   }
 
   redirect(e) {
-      if(e.target.id === 'facebookBox') {
-        window.open('https://www.facebook.com/manshaaobsession/', '_blank');
-      }
+    if(e.target.id === 'facebookBox') {
+      window.open('https://www.facebook.com/manshaaobsession/', '_blank');
+    }
 
-      if(e.target.id === 'instagramBox') {
-        window.open('https://www.instagram.com/manshaaobsession/?hl=en', '_blank');
-      }
-  }
+    if(e.target.id === 'instagramBox') {
+      window.open('https://www.instagram.com/manshaaobsession/?hl=en', '_blank');
+    }
 
-  render() {
-    return(
+    if(e.target.id === 'mailBox') {
+      window.open('mailto:'+'manshaa@live.com', '_self');
+    }
+}
+
+render() {
+  return(
       <div id='footer3'>
         {/* <h2 id='links'>Links</h2>
         <h2 id='contacts'>Contact Info</h2> */}
@@ -33,13 +37,17 @@ class Footer extends React.Component {
         <h2 id='bestPrice'>Best Prices Guaranteed</h2>
         <button type='button' id='facebookBox' onClick={(e) => this.redirect(e)}/>
         <button type='button' id='instagramBox' onClick={(e) => this.redirect(e)}/>
-        <button type='button' id='mailBox' />
-        <button type='button' id='phoneBox' />
-        <h2 id='email'>manshaa@live.com</h2>
-        <h2 id='phone'>(562) 402-7525</h2>
+        <div id='emailDiv'>
+          <button type='button' id='mailBox' onClick={(e) => this.redirect(e)} />
+          <h2 id='email'>manshaa@live.com</h2>
+        </div>
+        <div id='phoneDiv'>
+          <button type='button' id='phoneBox' />
+          <h2 id='phone'>(562)402-7525</h2>
+        </div>
       </div>
-    );
-  }
+  );
+}
 }
 
 export default Footer;

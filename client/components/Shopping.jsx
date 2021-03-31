@@ -8,7 +8,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from '@stripe/react-stripe-js';
 import StripeCheckout from 'react-stripe-checkout';
 import { toast } from "react-toastify";
-const stripePromise = loadStripe("pk_test_51HsJ7VDg5ZnilIdl9bQedkfG4aJzkutg2bHf6I9uO2oxVtWLIA5WfbUimXKPPqR2EhcIWiNb5ZZeUP0VMXFbggx100DHcuPban");
+const stripePromise = loadStripe("pk_live_51HsJ7VDg5ZnilIdl1WX6h9l0giShWscAdbxzBqXkS0R7dugEvliFE6SmJeIxsEgzwEKpM7Muslqd8oysFDtVHlmy00hEhEEWlA");
 
 toast.configure();
 
@@ -167,16 +167,18 @@ class Shopping extends React.Component {
               <NavBar name={this.props.name}/>
               <div id='shoppingContainer'>
                   <h2 id='shoppingHeader'>Shopping Cart</h2>
-                  {this.state.cart.map((image, index) => (
-                  <div id='shoppingCartContainer'>
-                      <img id='shoppingImage' src={image[0]} />
-                      <h2 id='shoppingTitle'>{image[1][0]}</h2>
-                      <h2 id='shoppingPrice'>$ {image[1][2]}.00</h2>
-                      <h2 id='shoppingColor'>Color: {image[3]} <div id='colorSquare' style={{backgroundColor: image[3]}} /></h2>
-                      <button id='shoppingRemove' name={index} onClick={e => this.removeItem(e)} >✖</button>
-                      <h2 id='shoppingMeasure'>Measurements: <button onClick={this.changeMeasure} id='measureDescription' name={index} value="button"></button> </h2>
+                  <div id='shoppingCartFlex'>
+                    {this.state.cart.map((image, index) => (
+                    <div id='shoppingCartContainer'>
+                        <img id='shoppingImage' src={image[0]} />
+                        <h2 id='shoppingTitle'>{image[1][0]}</h2>
+                        <h2 id='shoppingPrice'>$ {image[1][2]}.00</h2>
+                        {/* <h2 id='shoppingColor'>Color: {image[3]} <div id='colorSquare' style={{backgroundColor: image[3]}} /></h2> */}
+                        <button id='shoppingRemove' name={index} onClick={e => this.removeItem(e)} >✖</button>
+                        {/* <h2 id='shoppingMeasure'>Measurements: <button onClick={this.changeMeasure} id='measureDescription' name={index} value="button"></button> </h2> */}
+                    </div>
+                    ))}
                   </div>
-                  ))}
                   <div id='measureDescription3' value='button' />
                   <div id='couponBox'>
                     <h2 id='discountCode'>ADD A DISCOUNT CODE</h2>
@@ -191,7 +193,7 @@ class Shopping extends React.Component {
                     </Link> */}
                     <div id='stripeCheckout'>
                     <StripeCheckout
-                      stripeKey="pk_test_51HsJ7VDg5ZnilIdl9bQedkfG4aJzkutg2bHf6I9uO2oxVtWLIA5WfbUimXKPPqR2EhcIWiNb5ZZeUP0VMXFbggx100DHcuPban"
+                      stripeKey="pk_live_51HsJ7VDg5ZnilIdl1WX6h9l0giShWscAdbxzBqXkS0R7dugEvliFE6SmJeIxsEgzwEKpM7Muslqd8oysFDtVHlmy00hEhEEWlA"
                       token={this.handleToken}
                       billingAddress
                       shippingAddress
@@ -254,7 +256,7 @@ class Shopping extends React.Component {
                       <button id='checkoutProceed'>CONTINUE TO CHECKOUT</button>
                     </Link> */}
                     <StripeCheckout
-                      stripeKey="pk_test_51HsJ7VDg5ZnilIdl9bQedkfG4aJzkutg2bHf6I9uO2oxVtWLIA5WfbUimXKPPqR2EhcIWiNb5ZZeUP0VMXFbggx100DHcuPban"
+                      stripeKey="pk_live_51HsJ7VDg5ZnilIdl1WX6h9l0giShWscAdbxzBqXkS0R7dugEvliFE6SmJeIxsEgzwEKpM7Muslqd8oysFDtVHlmy00hEhEEWlA"
                       token={this.handleToken}
                       billingAddress
                       shippingAddress
