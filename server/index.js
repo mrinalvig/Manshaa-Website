@@ -404,4 +404,4 @@ app.post("/checkout", async (req, res) => {
   });
 
 // eslint-disable-next-line no-console
-app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
+app.listen(process.env.PORT || 3000, () => console.log(`Listening at http://localhost:${port}`));
