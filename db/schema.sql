@@ -37,3 +37,5 @@ CREATE TABLE user(
   logged VARCHAR(60000) NOT NULL,
   cart VARCHAR(60000) NOT NULL
 );
+
+-- All tables created
