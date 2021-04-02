@@ -477,7 +477,7 @@ body {
   position: absolute;
   animation: menFade .7s linear forwards;
   border: none;
-	top: 100vh; bottom: 0; left: 0vw; right: 0;
+	top: 100vh; bottom: 0; left: -1vw; right: 0;
 	margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -882,16 +882,20 @@ body {
   top: 7vh; bottom: 0; left: 1.8vw; right: 0;
 }
 
-#mensPage {
+/* #menPage {
   position: absolute;
   display: flex;
+  margin: auto;
   flex-wrap: wrap;
+  margin-right: -10vw;
+  margin-bottom: -115vh;
   top: 22vh;
   left: 8.2vw;
   width: 100vw;
   height: 200vh;
   z-index: 1;
-}
+  animation: fade .7s linear;
+} */
 
 #productImage {
   width: 20vw;
