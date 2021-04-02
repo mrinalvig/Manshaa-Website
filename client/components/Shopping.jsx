@@ -38,6 +38,7 @@ class Shopping extends React.Component {
     var price = 0;
     axios.post('/loggedIn', {username: this.props.name})
     .then(result => {
+        console.log(result.data);
         this.setState ({
             userInfo: result.data,
             cart: JSON.parse(result.data[0].cart),
@@ -74,7 +75,6 @@ class Shopping extends React.Component {
         measurementBox: false
       })
     }
-    console.log(this.state.measurements);
   }
 
   removeItem(e) {

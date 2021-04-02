@@ -118,7 +118,7 @@ class CurentProduct extends React.Component {
   colorSelect(color) {
     this.setState({
       selectedColor: color.hex
-    },() => console.log(this.state.selectedColor))
+    })
   }
 
   defaultColor() {

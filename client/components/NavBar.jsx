@@ -37,7 +37,7 @@ class NavBar extends React.Component {
     // setInterval(() => {
       axios.get('/loggedUser')
       .then(result => {
-        console.log(result.data);
+        // console.log(result.data);
           this.setState ({
               cart: JSON.parse(result.data[0].cart),
           })
