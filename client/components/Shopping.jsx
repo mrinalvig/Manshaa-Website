@@ -26,7 +26,8 @@ class Shopping extends React.Component {
         tax: 0,
         totalPrice: 0,
         username: "",
-        receipt: {}
+        receipt: {},
+        testText: "Default"
     };
     this.changeMeasure = this.changeMeasure.bind(this);
     this.removeItem = this.removeItem.bind(this);
@@ -38,12 +39,14 @@ class Shopping extends React.Component {
     var price = 0;
     axios.post('/loggedIn', {username: this.props.name})
     .then(result => {
-        this.setState ({
-            userInfo: result.data,
-            cart: JSON.parse(result.data[0].cart),
-            purchased: JSON.parse(result.data[0].purchased),
-            username: result.data[0].username
-        },() => console.log(this.state.userInfo + this.state.cart + this.state.purchased + this.state.username))
+      // console.log('Hello');
+      this.setState({
+        userInfo: result.data,
+        cart: JSON.parse(result.data[0].cart),
+        // purchased: JSON.parse(result.data[0].purchased),
+        username: result.data[0].username
+        // testText: "Changed"
+      }/*, () => {console.log(this.state.cart)}*/);
     })
     .then(() => {
       this.state.cart.map((image, index) => {
@@ -145,21 +148,21 @@ class Shopping extends React.Component {
   }
 
   render() {
-    // if(this.state.userInfo.length === 0) {
-    //     return (
-    //     <div>
-    //         <NavBar name={this.props.name}/>
-    //         <div id='shoppingLog'>
-    //             <div id='shoppingMessage'>
-    //                 <h2 id='shoppingLine'>You must log in to view your shopping cart</h2>
-    //             </div>
-    //         </div>
-    //         <FooterThree />
-    //     </div>
-    //     );
-    // }
+    if(this.state.userInfo.length === 0) {
+        return (
+        <div>
+            <NavBar name={this.props.name}/>
+            <div id='shoppingLog'>
+                <div id='shoppingMessage'>
+                    <h2 id='shoppingLine'>You must log in to view your shopping cart</h2>
+                </div>
+            </div>
+            <FooterThree />
+        </div>
+        );
+    }
 
-    // else {
+    else {
       if(this.state.measurementBox === false) {
         return (
           <div>
@@ -270,7 +273,7 @@ class Shopping extends React.Component {
           </div>
         );
       }
-    // }
+    }
   }
 }
 
