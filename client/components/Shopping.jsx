@@ -38,7 +38,7 @@ class Shopping extends React.Component {
     var price = 0;
     axios.post('/loggedIn', {username: this.props.name})
     .then(result => {
-        console.log(result.data);
+        // console.log(result.data);
         this.setState ({
             userInfo: result.data,
             cart: JSON.parse(result.data[0].cart),
@@ -146,19 +146,19 @@ class Shopping extends React.Component {
   }
 
   render() {
-    if(this.state.userInfo.length === 0) {
-        return (
-        <div>
-            <NavBar name={this.props.name}/>
-            <div id='shoppingLog'>
-                <div id='shoppingMessage'>
-                    <h2 id='shoppingLine'>You must log in to view your shopping cart</h2>
-                </div>
-            </div>
-            <FooterThree />
-        </div>
-        );
-    }
+    // if(this.state.userInfo.length === 0) {
+    //     return (
+    //     <div>
+    //         <NavBar name={this.props.name}/>
+    //         <div id='shoppingLog'>
+    //             <div id='shoppingMessage'>
+    //                 <h2 id='shoppingLine'>You must log in to view your shopping cart</h2>
+    //             </div>
+    //         </div>
+    //         <FooterThree />
+    //     </div>
+    //     );
+    // }
 
     else {
       if(this.state.measurementBox === false) {
