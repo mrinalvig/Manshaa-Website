@@ -30,6 +30,7 @@ body {
   position: absolute;
   margin: auto;
   top: 0; bottom: 0; left: 0; right: 0;
+  animation: fade2 .7s linear;
   /* background-image: url("./images/manshaa.png");
   background-size: 40vw 80vh;
   background-repeat: no-repeat;
