@@ -38,13 +38,12 @@ class Shopping extends React.Component {
     var price = 0;
     axios.post('/loggedIn', {username: this.props.name})
     .then(result => {
-        // console.log(result.data);
         this.setState ({
             userInfo: result.data,
             cart: JSON.parse(result.data[0].cart),
             purchased: JSON.parse(result.data[0].purchased),
             username: result.data[0].username
-        })
+        },() => console.log(this.state.userInfo + this.state.cart + this.state.purchased + this.state.username))
     })
     .then(() => {
       this.state.cart.map((image, index) => {
