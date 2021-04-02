@@ -160,7 +160,7 @@ class Shopping extends React.Component {
     //     );
     // }
 
-    else {
+    // else {
       if(this.state.measurementBox === false) {
         return (
           <div>
@@ -271,7 +271,7 @@ class Shopping extends React.Component {
           </div>
         );
       }
-    }
+    // }
   }
 }
 
