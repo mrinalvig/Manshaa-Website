@@ -2109,12 +2109,15 @@ body {
   width: 50vw;
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.438);
   border: 2px solid rgba(206, 180, 31, 0.719);
-  animation: fade10 .7s linear;
+  animation: fade10 .7s;
 }
 
 @keyframes fade10 {
-  0% { opacity: 0; left:50vw; top:22vh;}
-  100% { opacity: 1; left:8vw; top:22vh;}
+  0% { opacity: 0; }
+  25% { opacity: .25;}
+  50% { opacity: .5;}
+  75% { opacity: .75;}
+  100% { opacity: 1;}
 }
 
 #shoppingImage {
