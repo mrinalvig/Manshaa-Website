@@ -427,9 +427,7 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         id: "profileLogo"
       })), /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_router_dom__["d" /* Link */], {
         to: "/shoppingCart"
-      }, /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        id: this.checkBadge()
-      }, this.cartNumber()), /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
+      }, /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
         type: "button",
         id: "shoppingLogo"
       })));

@@ -1,23 +1,3 @@
-/* body {
-  background-color: rgb(247, 200, 162);
-  width: 100%;
-  height: 100%;
-  overflow: hidden auto;
-  position: absolute;
-  margin: auto;
-  top: 0; bottom: 0; left: 0; right: 0;
-}
-
-#NavBar {
-  background-color: rgb(238, 222, 197);
-  width: 101vw;
-  height: 85px;
-  display: flex;
-  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
-  position: fixed;
-  z-index: 3;
-} */
-
 body {
   /* background-color: rgb(134, 119, 95); */
   background-color: rgb(165, 154, 136);
@@ -30,18 +10,12 @@ body {
   position: absolute;
   margin: auto;
   top: 0; bottom: 0; left: 0; right: 0;
-  /* background-image: url("./images/manshaa.png");
-  background-size: 40vw 80vh;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: 80vh; */
 }
 
 #NavBar {
-  /* background-color: rgb(165, 154, 136); */
   background-color: rgb(134, 119, 95);
   width: 101vw;
-  height: 85px;
+  height: 6.5vh;
   display: flex;
   box-shadow: 0 10px 10px -2px rgba(0, 0, 0, 0.3);
   position: fixed;
@@ -61,9 +35,9 @@ body {
 
 #logo {
   background-image: url("./images/manshaa.png");
-  width: 90px;
-  height: 90px;
-  background-size: 90px 90px;
+  width: 4vw;
+  height: 6vh;
+  background-size: 4vw 6vh;
   background-repeat: no-repeat;
   position: absolute;
   background-color: transparent;
@@ -83,13 +57,13 @@ body {
   top: 26%;
   background-color: transparent;
   border: solid 1px transparent;
-  background-size: 35px 35px;
+  background-size: 1.5vw 3vh;
   background-repeat: no-repeat;
   outline: none;
   transition: .3s;
 }
 #profileLogo:hover {
-  background-size: 40px 40px;
+  background-size: 1.8vw 3.3vh;
   left: 84.85%;
   top: 25%;
   transition: .3s;
@@ -105,15 +79,14 @@ body {
   top: 26%;
   background-color: transparent;
   border: solid 1px transparent;
-  background-size: 35px 35px;
+  background-size: 1.5vw 3vh;
   background-repeat: no-repeat;
   outline: none;
   transition: .3s;
 }
 #shoppingLogo:hover {
-  background-size: 40px 40px;
-  left: 89.85%;
-  top: 25%;
+  background-size: 1.7vw 3.2vh;
+  left: 89.83%;
   transition: .3s;
   cursor: pointer;
 }
@@ -136,32 +109,32 @@ body {
 
 #men {
   background-color: transparent;
-  border: solid 1px transparent;
   font-size: 1.5vh;
-  margin-top: 10px;
+  margin-top: 1vh;
   outline: none;
   position: relative;
   cursor: pointer;
+  border: solid 1px transparent;
 }
 
 #women {
   background-color: transparent;
-  border: solid 1px transparent;
   font-size: 1.5vh;
-  margin-top: 10px;
+  margin-top: 1vh;
   outline: none;
   position: relative;
   margin-left: -.5vw;
   cursor: pointer;
+  border: solid 1px transparent;
 }
 
 #jewelry {
   background-color: transparent;
-  border: solid 1px transparent;
   font-size: 1.5vh;
-  margin-top: 10px;
+  margin-top: 1vh;
   outline: none;
   position: relative;
+  border: solid 1px transparent;
 }
 
 #categoryBox{
@@ -208,7 +181,7 @@ body {
   background-color: transparent;
   border: solid 1px transparent;
   font-size: 1.5vh;
-  margin-top: 10px;
+  margin-top: 1vh;
   outline: none;
   position: relative;
   cursor: pointer;
@@ -242,7 +215,7 @@ body {
   background-color: transparent;
   border: solid 1px transparent;
   font-size: 1.5vh;
-  margin-top: 10px;
+  margin-top: 1vh;
   outline: none;
   margin-left: -.5vw;
   cursor: pointer;
@@ -280,7 +253,7 @@ body {
   background-color: transparent;
   border: solid 1px transparent;
   font-size: 1.5vh;
-  margin-top: 10px;
+  margin-top: 1vh;
   outline: none;
   cursor: pointer;
 }
@@ -290,7 +263,7 @@ body {
   background-size: 101.5% 55vh;
   min-width: 102.4%;
   height: 55vh;
-  margin-top: 40px;
+  margin-top: 3.8vh;
   /* margin-left: -10px; */
   box-shadow: 0 5px 18px 15px rgba(0, 0, 0, 0.3);
   transition: 1s;
@@ -321,29 +294,29 @@ body {
 #leftButton {
   position: absolute;
   background-image: url("./images/arrow.png");
-  background-size: 25px 25px;
+  background-size: 1.5vw 3vh;
   background-repeat: no-repeat;
   transform: rotate(180deg);
-  height: 35px;
-  width: 35px;
+  height: 3vh;
+  width: 1.5vw;
   background-color: transparent;
   border: none;
   outline: none;
   opacity: .75;
   margin: auto;
   top: 5vh; bottom: 0; left: -95vw; right: 0;
-  filter: contrast(.01%);
+  filter: contrast(1%);
   cursor: pointer;
 }
 
 #leftButton2 {
   position: absolute;
   background-image: url("./images/arrow.png");
-  background-size: 25px 25px;
+  background-size: 1.5vw 3vh;
   background-repeat: no-repeat;
   transform: rotate(180deg);
-  height: 35px;
-  width: 35px;
+  height: 3vh;
+  width: 1.5vw;
   margin: auto;
   top: 263vh; bottom: 0; right: 60vw; left: 0;
   background-color: transparent;
@@ -356,10 +329,10 @@ body {
 #rightButton {
   position: absolute;
   background-image: url("./images/arrow.png");
-  background-size: 25px 25px;
+  background-size: 1.5vw 3vh;
   background-repeat: no-repeat;
-  height: 35px;
-  width: 35px;
+  height: 3vh;
+  width: 1.5vw;
   background-color: transparent;
   border: none;
   outline: none;
@@ -373,10 +346,10 @@ body {
 #rightButton2 {
   position: absolute;
   background-image: url("./images/arrow.png");
-  background-size: 25px 25px;
+  background-size: 1.5vw 3vh;
   background-repeat: no-repeat;
-  height: 35px;
-  width: 35px;
+  height: 3vh;
+  width: 1.5vw;
   margin: auto;
   top: 265vh; bottom: 0; left: 65vw; right: 0;
   background-color: transparent;
@@ -386,223 +359,26 @@ body {
   cursor: pointer;
 }
 
-#lehangasPage {
-  opacity: 1;
-  animation: lahangaFade .7s linear forwards;
-  border: none;
-  position: absolute;
-	top:62vh;
-	bottom: 0;
-	left: 8vw;
-	right: 0;
-	margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 75vw;
-  height: fit-content;
-}
-
-#suitsPage {
-  opacity: 1;
-  animation: suitFade .7s linear forwards;
-  border: none;
-  position: absolute;
-	top:62vh;
-	bottom: 0;
-	left: 8vw;
-	right: 0;
-	margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 75vw;
-  height: fit-content;
-}
-
-#bridalsPage {
-  opacity: 1;
-  animation: bridalFade .7s linear forwards;
-  border: none;
-  position: absolute;
-	top:62vh;
-	bottom: 0;
-	left: 8vw;
-	right: 0;
-	margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 75vw;
-  height: fit-content;
-}
-
-#mathaPage {
-  opacity: 1;
-  animation: mathaFade .7s linear forwards;
-  border: none;
-  position: absolute;
-	top:22vh;
-	bottom: 0;
-	left: 8vw;
-	right: 0;
-	margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 75vw;
-  height: fit-content;
-}
-
-#chokerPage {
-  opacity: 1;
-  animation: chokerFade .7s linear forwards;
-  border: none;
-  position: absolute;
-	top:22vh;
-	bottom: 0;
-	left: 8vw;
-	right: 0;
-	margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 75vw;
-  height: fit-content;
-  /* overflow: auto; */
-}
-
 #menPage {
   opacity: 1;
   position: absolute;
   animation: menFade .7s linear forwards;
-  border: none;
-	top: 100vh; bottom: 0; left: -1vw; right: 0;
+  border: 1px solid transparent;
+	top: 60vh; bottom: 0; left: 8vw; right: 0;
 	margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 75vw;
+  width: 90vw;
   height: 100%;
+  justify-content: space-evenly;
+  justify-content: center;
   /* margin-left: 5vw;
   margin-top: 1vh; */
 }
 
-#ghararasPage {
-  opacity: 1;
-  animation: ghararaFade .7s linear forwards;
-  border: none;
-  position: absolute;
-	top:22vh;
-	bottom: 0;
-	left: 8vw;
-	right: 0;
-	margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 75vw;
-  height: fit-content;
-}
-
-#necklacePage{
-  opacity: 1;
-  animation: necklaceFade .7s linear forwards;
-  border: none;
-  position: absolute;
-	top:62vh;
-	bottom: 0;
-	left: 8vw;
-	right: 0;
-	margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 75vw;
-  height: fit-content;
-}
-
-#earingsPage{
-  opacity: 1;
-  animation: earingFade .7s linear forwards;
-  border: none;
-  position: absolute;
-	top:62vh;
-	bottom: 0;
-	left: 8vw;
-	right: 0;
-	margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 75vw;
-  height: fit-content;
-}
-
-#banglesPage {
-  opacity: 1;
-  animation: bangleFade .7s linear forwards;
-  border: none;
-  position: absolute;
-	top:62vh;
-	bottom: 0;
-	left: 8vw;
-	right: 0;
-	margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 75vw;
-  height: fit-content;
-}
-
-@keyframes bangleFade {
-  0% { opacity: 0; left:50vw; top:156vh;}
-  100% { opacity: 1; left: 0vw; top:156vh;}
-}
-
-@keyframes earingFade {
-  0% { opacity: 0; left:50vw; top:267vh;}
-  100% { opacity: 1; left: 0vw; top:267vh;}
-}
-
-@keyframes necklaceFade {
-  0% { opacity: 0; left:50vw; top:431vh;}
-  100% { opacity: 1; left: 0vw; top:431vh;}
-}
-
-@keyframes ghararaFade {
-  0% { opacity: 0; left:50vw; top:101vh;}
-  100% { opacity: 1; left: 0vw; top:101vh;}
-}
-
-@keyframes lahangaFade {
-  0% { opacity: 0; left:50vw; top:156vh;}
-  100% { opacity: 1; left: 0vw; top:156vh;}
-}
-
-@keyframes suitFade {
-  0% { opacity: 0; left:50vw; top:212vh;}
-  100% { opacity: 1; left: 0vw; top:212vh;}
-}
-
-@keyframes bridalFade {
-  0% { opacity: 0; left:50vw; top:486vh;}
-  100% { opacity: 1; left: 0vw; top:486vh;}
-}
-
-@keyframes mathaFade {
-  0% { opacity: 0; left:50vw; top:47vh;}
-  100% { opacity: 1; left: 0vw; top:47vh;}
-}
-
-@keyframes chokerFade {
-  0% { opacity: 0; left:50vw; top:47vh;}
-  100% { opacity: 1; left: 0vw; top:47vh;}
-}
-
 @keyframes menFade {
   0% { opacity: 0; left:50vw; top:50vh;}
-  100% { opacity: 1; left: 0vw; top:50vh;}
+  100% { opacity: 1; left: 8vw; top:50vh;}
 }
 
 #types {
@@ -651,7 +427,7 @@ body {
   margin: auto;
 }
 
-#styles {
+/* #styles {
   position: relative;
   top: 65vh;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -659,7 +435,7 @@ body {
   font-size: 35px;
   text-align: center;
   color: gray;
-}
+} */
 
 #yourOwn {
   display: flex;
@@ -694,7 +470,7 @@ body {
   top: 53vh;
 }
 
-#reviewTitle {
+/* #reviewTitle {
   position: relative;
   top: 130vh;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -702,7 +478,7 @@ body {
   font-size: 35px;
   text-align: center;
   color: gray;
-}
+} */
 
 #reviews {
   display: flex;
@@ -744,99 +520,102 @@ body {
 
 #facebookBox {
   background-image: url("./images/facebook.png");
-  width: 52px;
-  height: 52px;
+  width: 5vw;
+  height: 10vh;
   position: absolute;
-  left: 65%;
-  top: 67%;
+  left: 55%;
+  top: 20%;
   background-color: transparent;
   border: solid 1px transparent;
-  background-size: 50px 50px;
+  background-size: 5vw 10vh;
   background-repeat: no-repeat;
   outline: none;
   transition: .5s;
   cursor: pointer;
 }
 #facebookBox:hover{
-  width: 56px;
-  height: 56px;
-  background-size: 54px 54px;
+  width: 5.5vw;
+  height: 11vh;
+  background-size: 5.5vw 11vh;
   transition: .5s;
-  left: 64.8%;
-  top: 66%;
+  left: 54.8%;
+  top: 19%;
 }
 
 #instagramBox {
   background-image: url("./images/instagram.png");
-  width: 52px;
-  height: 52px;
+  width: 5vw;
+  height: 10vh;
   position: absolute;
-  left: 73%;
-  top:68%;
+  left: 55%;
+  top: 60%;
   background-color: transparent;
   border: solid 1px transparent;
-  background-size: 50px 50px;
+  background-size: 5vw 10vh;
   background-repeat: no-repeat;
   outline: none;
   transition: .5s;
   cursor: pointer;
 }
 #instagramBox:hover{
-  width: 56px;
-  height: 56px;
-  background-size: 54px 54px;
+  width: 5.5vw;
+  height: 11vh;
+  background-size: 5.5vw 11vh;
   transition: .5s;
-  top: 67%;
-  left: 72.8;
+  left: 54.8%;
+  top: 59.8%;
 }
 
 #emailDiv {
   display: flex;
   position: absolute;
-  width: 8vw;
-  height: 8vh;
-  left: 80vw;
-  top: 25vh;
+  width: 6vw;
+  height: 12vh;
+  left: 75vw;
+  top: 20%;
+  border: 1px solid transparent;
+  justify-content: center;
 }
 
 #mailBox {
   background-image: url("./images/mail.png");
-  width: 52px;
-  height: 52px;
+  width: 5vw;
+  height: 10vh;
   position: absolute;
   background-color: transparent;
   border: solid 1px transparent;
-  background-size: 50px 50px;
+  background-size: 5vw 10vh;
   background-repeat: no-repeat;
   outline: none;
   display: block;
   margin: auto;
-  top: 0; bottom: 0; left: 0; right: 0;
+  top: -1vh; bottom: 0; left: 0; right: 0;
   cursor: pointer;
 }
 
 #phoneDiv {
   display: flex;
   position: absolute;
-  width: 8vw;
-  height: 8vh;
-  left: 90vw;
+  width: 7vw;
+  height: 11vh;
+  left: 75vw;
   top: 25vh;
+  justify-content: center;
 }
 
 #phoneBox {
   background-image: url("./images/phone.png");
-  width: 52px;
-  height: 52px;
+  width: 5vw;
+  height: 10vh;
   position: absolute;
   background-color: transparent;
   border: solid 1px transparent;
-  background-size: 50px 50px;
+  background-size: 5vw 10vh;
   background-repeat: no-repeat;
   outline: none;
   display: block;
   margin: auto;
-  top: 0; bottom: 0; left: 0; right: 0;
+  top: -1vh; bottom: 0; left: 0; right: 0;
   cursor: pointer;
 }
 
@@ -862,24 +641,25 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
   color: rgb(238, 222, 197);
-  font-size: 15px;
+  font-size: 1.5vh;
   position: absolute;
   height: 3vh;
   display: block;
   margin: auto;
-  top: 7vh; bottom: 0; left: .8vw; right: 0;
+  top: 9vh; bottom: 0; left: -.4vw; right: 0;
 }
 
 #phone {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
   color: rgb(238, 222, 197);
-  font-size: 15px;
+  font-size: 1.5vh;
   position: absolute;
   height: 3vh;
   display: block;
   margin: auto;
-  top: 7vh; bottom: 0; left: 1.8vw; right: 0;
+  top: 12vh; bottom: 0; left: 0; right: 0;
+  width: 6vw;
 }
 
 /* #menPage {
@@ -903,12 +683,10 @@ body {
   /* padding-right: 140px;
   padding-bottom: 50px;
   padding-left: 20px; */
-  margin-right: 140px;
-  margin-bottom: 50px;
-  margin-left: 20px;
+  margin-bottom: 7vh;
   position: relative;
   box-shadow: 8px 5px 10px 10px rgba(0, 0, 0, 0.3);
-  border: .5px solid rgb(160, 139, 20);
+  border: 2px solid rgb(160, 139, 20);
 }
 
 /* #productImageButton {
@@ -1054,6 +832,7 @@ body {
   border: .5px solid black;
   transition: .8s;
   left: 2.1vw;
+  cursor: pointer;
 }
 
 #sizeContainer2 {
@@ -1078,9 +857,9 @@ body {
 
 #exit {
   background-image: url("./images/X.png");
-  width: 50px;
-  height: 30px;
-  background-size: 30px 30px;
+  width: 2vw;
+  height: 4vh;
+  background-size: 2vw 4vh;
   background-repeat: no-repeat;
   background-position-x: -9px;
   position: relative;
@@ -1089,13 +868,14 @@ body {
   outline: none;
   top: -30vh;
   left: 12vw;
+  cursor: pointer;
 }
 
 #exit2 {
   background-image: url("./images/X.png");
-  width: 25px;
-  height: 25px;
-  background-size: 25px 25px;
+  width: 2vw;
+  height: 4vh;
+  background-size: 2vw 4vh;
   background-repeat: no-repeat;
   position: relative;
   background-color: transparent;
@@ -1105,6 +885,7 @@ body {
   z-index: 1;
   top: -22vh;
   left: 13vw;
+  cursor: pointer;
 }
 
 #measurementBox {
@@ -1130,15 +911,15 @@ body {
 #shoulderInput {
   width: 3vw;
   height: 1.5vh;
-  margin-left: 2px;
-  margin-right: 3px;
+  margin-left: .8vw;
+  margin-right: 1vw;
   position: relative;
 }
 
 #shoulderTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1149,7 +930,7 @@ body {
 #armholeTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1160,7 +941,7 @@ body {
 #acrossTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1171,7 +952,7 @@ body {
 #bustTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1182,7 +963,7 @@ body {
 #underBustTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1193,7 +974,7 @@ body {
 #upperBustTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1204,7 +985,7 @@ body {
 #waistTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1215,7 +996,7 @@ body {
 #lowWaistTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1226,7 +1007,7 @@ body {
 #hipTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1237,7 +1018,7 @@ body {
 #thighTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1248,7 +1029,7 @@ body {
 #midThighTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1259,7 +1040,7 @@ body {
 #kneeTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1270,7 +1051,7 @@ body {
 #calfTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1281,7 +1062,7 @@ body {
 #ankleTag {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 1.3vh;
   position: relative;
   top: 1vh;
   left: -3.5vw;
@@ -1323,6 +1104,7 @@ body {
   transition: .8s;
   z-index: 1;
   left: 18vw;
+  cursor: pointer;
 }
 
 #colorContainer2 {
@@ -1585,7 +1367,7 @@ body {
 #selectedColor {
   position: absolute;
   margin: auto;
-  font-size: 18px;
+  font-size: 1.8vh;
   width: 20vw;
   height: 5vh;
   text-align: center;
@@ -1607,8 +1389,8 @@ body {
 #tailorLogo {
   position: absolute;
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 3vw;
+  height: 6vh;
   left: 25%;
   top: 10%;
   background-image: url('./images/tailor.png');
@@ -1631,8 +1413,8 @@ body {
 #shippingLogo {
   position: absolute;
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 3vw;
+  height: 6vh;
   left: 24%;
   top: 42%;
   background-image: url('./images/shipping.png');
@@ -1654,8 +1436,8 @@ body {
 #priceLogo {
   position: absolute;
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 3vw;
+  height: 6vh;
   left: 24%;
   top: 72%;
   background-image: url('./images/price.png');
@@ -1667,7 +1449,7 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   color: rgb(238, 222, 197);
-  font-size: 25px;
+  font-size: 2vh;
   position: absolute;
   left: 31%;
   top: 72%;
@@ -1757,9 +1539,10 @@ body {
 #logInTitle{
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 35px;
+  font-size: 3vh;
   position: relative;
   margin: auto;
+  top: 2vh; bottom: 0; right: 0; left: 0;
   text-align: center;
   transition: .6s;
 }
@@ -1767,27 +1550,29 @@ body {
 #logInTitle2{
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 35px;
+  font-size: 3vh;
   position: relative;
   margin: auto;
   text-align: center;
   transition: .6s;
+  top: 2vh;
 }
 
 #successTitle{
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 35px;
+  font-size: 3vh;
   position: relative;
   margin: auto;
   text-align: center;
   transition: .6s;
+  top: 2vh;
 }
 
 #successMessage{
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 25px;
+  font-size: 2.5vh;
   position: relative;
   top: 7vh;
   transition: .6s;
@@ -1797,7 +1582,7 @@ body {
 #signUp{
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 1.5vh;
   position: relative;
   top: 0vh;
   text-align: center;
@@ -1807,7 +1592,7 @@ body {
 #signUp2{
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 1.5vh;
   position: relative;
   top: 0vh;
   text-align: center;
@@ -1820,15 +1605,16 @@ body {
   color: blue;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 1.5vh;
   outline: none;
   position: absolute;
   transition: .6s;
   top: 0vh;
 }
 #signUpButton:hover{
-  font-size: 25px;
-  top: -.5vh;
+  font-size: 1.8vh;
+  top: -.3vh;
+  cursor: pointer;
 }
 
 #signUpButton2{
@@ -1837,15 +1623,16 @@ body {
   color: blue;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 1.5vh;
   outline: none;
   position: absolute;
   transition: .6s;
   top: 0vh;
 }
 #signUpButton2:hover{
-  font-size: 25px;
+  font-size: 1.8vh;
   top: -.5vh;
+  cursor: pointer;
 }
 
 #signUpButton3{
@@ -1854,7 +1641,7 @@ body {
   color: blue;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 1.5vh;
   outline: none;
   position: absolute;
   margin: auto;
@@ -1862,7 +1649,7 @@ body {
   top: 0; bottom: 0; left: 0; right: 0;
 }
 #signUpButton3:hover{
-  font-size: 25px;
+  font-size: 1.5vh;
 }
 
 #userColumn{
@@ -1916,7 +1703,7 @@ body {
   position: relative;
   /* left: 9vw;
   top: 6.5vh; */
-  font-size: 15px;
+  font-size: 1.5vh;
   transition: .6s;
 }
 
@@ -1926,7 +1713,7 @@ body {
   position: relative;
   left: 0vw;
   top: 0vh;
-  font-size: 15px;
+  font-size: 1.5vh;
   transition: .6s;
 }
 
@@ -1937,7 +1724,7 @@ body {
   left: 21%;
   top: 1.5vh;
   margin-bottom: -4vh;
-  font-size: 15px;
+  font-size: 1.5vh;
   transition: .6s;
   color: red;
 }
@@ -1947,7 +1734,7 @@ body {
   margin:0 auto;
   display:block;
   transition: .6s;
-  margin-left: 1vw;
+  margin-left: .8vw;
   top: 1.3vh;
   height: 1vh;
   width: 5vw;
@@ -1969,7 +1756,7 @@ body {
   position: relative;
   /* left: 9vw;
   top: 6.5vh; */
-  font-size: 15px;
+  font-size: 1.5vh;
   transition: .6s;
 }
 
@@ -1978,7 +1765,7 @@ body {
   left: 0vw;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 1.5vh;
   transition: .6s;
 }
 
@@ -2008,8 +1795,8 @@ body {
   margin:0 auto;
   display:block;
   top: 23vh;
-  font-size: 16px;
-  width: 90px;
+  font-size: 1.6vh;
+  width: 6.5vw;
   transition: .6s;
 }
 
@@ -2019,8 +1806,8 @@ body {
   margin:0 auto;
   display:block;
   top: 40vh;
-  font-size: 16px;
-  width: 90px;
+  font-size: 1.6vh;
+  width: 6.5vw;
   transition: .6s;
 }
 
@@ -2029,7 +1816,7 @@ body {
   Helvetica, Arial, sans-serif;
   position: relative;
   left: 0vw;
-  font-size: 15px;
+  font-size: 1.5vh;
   transition: .6s;
 }
 
@@ -2055,7 +1842,7 @@ body {
   height: 40vh;
   left: 30.5%;
   top: 35%;
-  background-color: rgb(238, 222, 197);
+  background-color: rgb(161, 150, 133);
   box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.6);
   border: 1px solid black;
   transition: 1s;
@@ -2102,7 +1889,7 @@ body {
   top: 13vh;
   width: 100%;
   text-align:center;
-  font-size: 40px;
+  font-size: 4vh;
 }
 
 #shoppingCartContainer {
@@ -2158,7 +1945,7 @@ body {
   position: relative;
   left: 12vw;
   top: -17vh;
-  font-size: 15px;
+  font-size: 1.5vh;
   display: flex;
   font-weight: normal;
 }
@@ -2183,7 +1970,7 @@ body {
   background-color: transparent;
   border: none;
   outline: none;
-  font-size: 17px;
+  font-size: 1.7vh;
   top: -20vh; bottom: 0; left: 45vw; right: 0;
 }
 #shoppingRemove:active{
@@ -2209,7 +1996,7 @@ body {
   background-color: transparent;
   border: none;
   outline: none;
-  font-size: 17px;
+  font-size: 1.7vh;
 }
 
 #shoppingMeasure {
@@ -2218,7 +2005,7 @@ body {
   position: relative;
   left: 12vw;
   top: -32.5vh;
-  font-size: 14px;
+  font-size: 1.4vh;
   display: flex;
   font-weight: normal;
 }
@@ -2303,7 +2090,7 @@ body {
   position: relative;
   top: 3vh;
   left: 2vw;
-  font-size: 18px;
+  font-size: 1.8vh;
   font-weight: normal;
 }
 
@@ -2313,7 +2100,7 @@ body {
   position: relative;
   top: 7vh;
   left: 5vw;
-  font-size: 14px;
+  font-size: 1.4vh;
   font-weight: normal;
 }
 
@@ -2323,7 +2110,7 @@ body {
   position: relative;
   top: 4vh;
   left: 5vw;
-  font-size: 14px;
+  font-size: 1.4vh;
   font-weight: normal;
 }
 
@@ -2333,7 +2120,7 @@ body {
   position: relative;
   top: 4vh;
   left: 5vw;
-  font-size: 14px;
+  font-size: 1.4vh;
   font-weight: normal;
 }
 
@@ -2343,7 +2130,7 @@ body {
   position: relative;
   top: 2vh;
   left: 5vw;
-  font-size: 14px;
+  font-size: 1.4vh;
   font-weight: normal;
 }
 
@@ -2353,7 +2140,7 @@ body {
   position: relative;
   top: -3.6vh;
   left: 16vw;
-  font-size: 14px;
+  font-size: 1.4vh;
   font-weight: normal;
 }
 
@@ -2363,7 +2150,7 @@ body {
   position: relative;
   top: -3.6vh;
   left: 16vw;
-  font-size: 14px;
+  font-size: 1.4vh;
   font-weight: normal;
 }
 
@@ -2373,7 +2160,7 @@ body {
   position: relative;
   top: -3.6vh;
   left: 16vw;
-  font-size: 14px;
+  font-size: 1.4vh;
   font-weight: normal;
 }
 
@@ -2387,7 +2174,7 @@ body {
   outline: none;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.8vh;
   font-weight: normal;
 }
 
@@ -2432,7 +2219,7 @@ body {
   position: absolute;
   top: 4vh;
   left: 18vw;
-  font-size: 25px;
+  font-size: 2.5vh;
   font-weight: normal;
 }
 
@@ -2442,7 +2229,7 @@ body {
   position: absolute;
   top: 4vh;
   left: 21vw;
-  font-size: 25px;
+  font-size: 2.5vh;
   font-weight: normal;
 }
 
@@ -2452,7 +2239,7 @@ body {
   position: absolute;
   top: 4vh;
   left: 21vw;
-  font-size: 25px;
+  font-size: 2.5vh;
   font-weight: normal;
 }
 
@@ -2462,7 +2249,7 @@ body {
   position: absolute;
   top: 5.5vh;
   left: 45vw;
-  font-size: 30px;
+  font-size: 3vh;
   font-weight: bold;
   border: none;
   outline: none;
@@ -2478,7 +2265,7 @@ body {
   position: absolute;
   top: 5.5vh;
   left: 45vw;
-  font-size: 30px;
+  font-size: 3vh;
   font-weight: bold;
   border: none;
   outline: none;
@@ -2494,7 +2281,7 @@ body {
   position: absolute;
   top: 5.5vh;
   left: 45vw;
-  font-size: 30px;
+  font-size: 3vh;
   font-weight: bold;
   border: none;
   outline: none;
@@ -2508,7 +2295,7 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   position: absolute;
-  font-size: 15px;
+  font-size: 1.5vh;
   font-weight: normal;
   top: 15vh;
   left: 10vw;
@@ -2518,7 +2305,7 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   position: absolute;
-  font-size: 15px;
+  font-size: 1.5vh;
   font-weight: normal;
   top: 15vh;
   left: 8vw;
@@ -2528,7 +2315,7 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   position: absolute;
-  font-size: 15px;
+  font-size: 1.5vh;
   font-weight: normal;
   top: 15vh;
   left: 26vw;
@@ -2538,7 +2325,7 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   position: absolute;
-  font-size: 15px;
+  font-size: 1.5vh;
   font-weight: normal;
   top: 30vh;
   left: 8vw;
@@ -2548,7 +2335,7 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   position: absolute;
-  font-size: 15px;
+  font-size: 1.5vh;
   font-weight: normal;
   top: 30vh;
   left: 26vw;
@@ -2558,7 +2345,7 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   position: absolute;
-  font-size: 15px;
+  font-size: 1.5vh;
   font-weight: normal;
   top: 30vh;
   left: 35vw;
@@ -2568,7 +2355,7 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   position: absolute;
-  font-size: 15px;
+  font-size: 1.5vh;
   font-weight: normal;
   top: 45vh;
   left: 8vw;
@@ -2578,7 +2365,7 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   position: absolute;
-  font-size: 15px;
+  font-size: 1.5vh;
   font-weight: normal;
   top: 45vh;
   left: 26vw;
@@ -2588,7 +2375,7 @@ body {
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
   position: absolute;
-  font-size: 15px;
+  font-size: 1.5vh;
   font-weight: normal;
   top: 60vh;
   left: 8vw;
@@ -2601,7 +2388,7 @@ body {
   outline: none;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.8vh;
   font-weight: normal;
   height: 5vh;
   width: 25vw;
@@ -2615,7 +2402,7 @@ body {
   outline: none;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.8vh;
   font-weight: normal;
   height: 5vh;
   width: 15vw;
@@ -2629,7 +2416,7 @@ body {
   outline: none;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.8vh;
   font-weight: normal;
   height: 5vh;
   width: 15vw;
@@ -2643,7 +2430,7 @@ body {
   outline: none;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.8vh;
   font-weight: normal;
   height: 5vh;
   width: 15vw;
@@ -2657,7 +2444,7 @@ body {
   outline: none;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.8vh;
   font-weight: normal;
   height: 5vh;
   width: 15vw;
@@ -2671,7 +2458,7 @@ body {
   outline: none;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.8vh;
   font-weight: normal;
   height: 5vh;
   width: 6vw;
@@ -2685,7 +2472,7 @@ body {
   outline: none;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.8vh;
   font-weight: normal;
   height: 5vh;
   width: 6vw;
@@ -2699,7 +2486,7 @@ body {
   outline: none;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.8vh;
   font-weight: normal;
   height: 5vh;
   width: 15vw;
@@ -2713,7 +2500,7 @@ body {
   outline: none;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.8vh;
   font-weight: normal;
   height: 5vh;
   width: 15vw;
@@ -2727,7 +2514,7 @@ body {
   outline: none;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.8vh;
   font-weight: normal;
   height: 5vh;
   width: 15vw;
@@ -2820,7 +2607,7 @@ body {
   top: 6vh;
 }
 
-#shoppingBadge{
+/* #shoppingBadge{
   position: absolute;
   height: 18px;
   width: 18px;
@@ -2833,7 +2620,7 @@ body {
   opacity: .78;
   color: white;
   z-index: 2;
-}
+} */
 
 /* #dropDown{
   width: 21vw;
@@ -2857,4 +2644,3 @@ body {
   margin: auto;
   top: 0; bottom: 0; right: 0; left: 15vw;
 }
-

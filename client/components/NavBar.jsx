@@ -182,7 +182,7 @@ class NavBar extends React.Component {
             <button type='button' name='logIn' id='profileLogo' />
           </Link>
           <Link to='/shoppingCart'>
-            <div id={this.checkBadge()}>{this.cartNumber()}</div>
+            {/* <div id={this.checkBadge()}>{this.cartNumber()}</div> */}
             <button type='button' id='shoppingLogo'></button>
           </Link>
       </div>
